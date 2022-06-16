@@ -1,0 +1,407 @@
+.wd-content {
+  a {
+    @apply text-ui-primary underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply -mt-12 pt-20;
+  }
+
+  h2 + h3,
+  h2 + h2,
+  h3 + h3 {
+    @apply border-none -mt-20;
+  }
+
+  h2,
+  h3 {
+    @apply border-b border-ui-border pb-1 mb-3;
+  }
+
+  ul {
+    @apply list-disc;
+
+    ul {
+      list-style: circle;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ol,
+  ul {
+    @apply pl-5 py-1;
+
+    li {
+      @apply mb-2;
+
+      p {
+        @apply mb-0;
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  dl dd {
+    margin: 0 1.5em;
+  }
+
+  blockquote {
+    @apply border-l-4 border-ui-border py-2 pl-4;
+
+    p:last-child {
+      @apply mb-0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply leading-snug font-black mb-4 text-ui-typo;
+
+    &:hover {
+      a::before {
+        @apply opacity-100;
+      }
+    }
+
+    a {
+      &::before {
+        content: '#';
+        margin-left: -1em;
+        padding-right: 1em;
+        @apply text-ui-primary absolute opacity-0 float-left;
+      }
+    }
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  // TODO: This doesn't work with SCSS
+  // a:not(.active):not(.text-ui-primary):not(.text-white) {
+  //   @apply text-ui-typo;
+  // }
+
+  p,
+  ol,
+  ul,
+  pre,
+  strong,
+  blockquote {
+    @apply mb-4 text-base text-ui-typo;
+  }
+
+  code {
+    @apply px-1 py-1 text-ui-typo bg-ui-sidebar font-mono border-b border-r border-ui-border text-sm rounded;
+  }
+  
+
+  pre {
+    z-index: 0;
+    @apply px-5 py-4 max-w-full overflow-x-auto rounded;
+
+    & + p {
+      @apply mt-4;
+    }
+
+    & > code[class*='language-'] {
+      @apply border-none leading-relaxed;
+    }
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+  }
+
+  footer {
+    a {
+      @apply text-ui-primary underline;
+    }
+  }
+
+  table {
+    @apply text-left mb-6;
+
+    td,
+    th {
+      @apply py-3 px-4;
+      &:first-child {
+        @apply pl-0;
+      }
+      &:last-child {
+        @apply pr-0;
+      }
+    }
+
+    tr {
+      @apply border-b border-ui-border;
+      &:last-child {
+        @apply border-b-0;
+      }
+    }
+  }
+
+  .badge__inline svg {
+    @apply inline mr-1;
+  }
+
+  .badge__inline.badge__readonly,
+  .badge__inline.badge__optional {
+    @apply px-1 py-1 bg-ui-sidebar border-b border-r border-ui-border text-sm rounded font-bold italic;
+  }
+
+  .sidebar {
+    @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    @screen lg {
+      @apply w-1/4 px-0 bg-transparent top-0 bottom-auto inset-x-auto sticky z-0;
+      transform: translateX(0);
+    }
+  }
+
+  // notecards
+  .notecard__warning,
+  .notecard__note,
+  .notecard__deprecated {
+    @apply border-l-4 py-2 pl-4 pr-4 mb-4;
+
+    h4 {
+      @apply pt-0 mt-0 mb-1;
+    }
+
+    p:last-child {
+      @apply mb-0;
+    }
+  }
+
+  .notecard__deprecated {
+    background: var(--color-ui-deprecated);
+    border-color: var(--color-ui-deprecated-border);
+  }
+
+  .notecard__warning {
+    background: var(--color-ui-warning);
+    border-color: var(--color-ui-warning-border);
+  }
+
+  .notecard__note {
+    background: var(--color-ui-note);
+    border-color: var(--color-ui-note-border);
+  }
+
+  // spec table
+  .table--standard {
+    @apply text-left mb-6 w-full;
+    background: var(--color-ui-sidebar-lighter-1);
+
+    td,
+    th {
+      &:first-child {
+        @apply pl-2;
+      }
+      &:last-child {
+        @apply pr-2;
+      }
+    }
+
+    tbody tr {
+      @apply border-t border-ui-border;
+    }
+  }
+
+  // compatibility table
+  .bc__table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .bc__table {
+    background: var(--color-ui-sidebar-lighter-1);
+
+    td,
+    th {
+      @apply py-2 px-2;
+      font-weight: normal;
+
+      &:nth-child(n + 2) {
+        @apply border-l border-ui-border;
+      }
+
+      &:first-child {
+        @apply pl-2;
+      }
+      &:last-child {
+        @apply pr-2;
+      }
+    }
+
+    .bc-platforms {
+      span {
+        @apply invisible inline-block w-0 h-0 overflow-hidden absolute;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      .bc-platform-desktop::after,
+      .bc-platform-mobile::after,
+      .bc-platform-server::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+
+      .bc-platform-desktop::after {
+        background: var(--icon-platform-desktop);
+      }
+
+      .bc-platform-mobile::after {
+        background: var(--icon-platform-mobile);
+      }
+
+      .bc-platform-server::after {
+        background: var(--icon-platform-server);
+      }
+    }
+
+    .bc-browsers {
+      span {
+        @apply invisible inline-block w-0 h-0 overflow-hidden absolute;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      th::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+      .bc-browser-chrome::after,
+      .bc-browser-chrome_android::after {
+        background: var(--icon-browser-chrome);
+      }
+      .bc-browser-edge::after {
+        background: var(--icon-browser-edge);
+      }
+      .bc-browser-firefox::after,
+      .bc-browser-firefox_android::after {
+        background: var(--icon-browser-firefox);
+      }
+      .bc-browser-ie::after {
+        background: var(--icon-browser-ie);
+      }
+      .bc-browser-opera::after,
+      .bc-browser-opera_android::after {
+        background: var(--icon-browser-opera);
+      }
+      .bc-browser-safari::after,
+      .bc-browser-safari_ios::after {
+        background: var(--icon-browser-safari);
+      }
+      .bc-browser-webview_android::after {
+        background: var(--icon-browser-android);
+      }
+      .bc-browser-samsunginternet_android::after {
+        background: var(--icon-browser-samsung-internet);
+      }
+      .bc-browser-deno::after {
+        background: var(--icon-browser-deno);
+      }
+      .bc-browser-nodejs::after {
+        background: var(--icon-browser-nodejs);
+      }
+    }
+
+    tbody tr {
+      @apply border-t border-ui-border;
+
+      td {
+        text-align: center;
+
+        abbr {
+          @apply invisible inline-block w-0 h-0 overflow-hidden absolute;
+        }
+      }
+    }
+
+    .bc-icons {
+      @apply flex px-1 py-2;
+    }
+
+    .bc-icons span {
+      @apply invisible inline-block w-0 h-0 overflow-hidden absolute;
+    }
+
+    .bc-browser-name {
+      @apply invisible inline-block w-0 h-0 overflow-hidden absolute;
+    }
+
+    .bc-supports-yes {
+      background: var(--color-ui-supported);
+    }
+    .bc-supports-no {
+      background: var(--color-ui-deprecated);
+    }
+    .bc-supports-partial {
+      background: var(--color-ui-deprecated);
+      background: repeating-linear-gradient(
+        130deg,
+        var(--color-ui-deprecated),
+        var(--color-ui-deprecated) 8px,
+        var(--color-ui-supported) 8px,
+        var(--color-ui-supported) 16px
+      );
+    }
+  }
+
+  // properties table
+
+  table.properties {
+    min-width: 100%;
+  }
+
+  // responsive stuff
+
+  .properties td,
+  .properties th {
+    @apply block;
+  }
+}

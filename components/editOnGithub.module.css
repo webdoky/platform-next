@@ -1,0 +1,4 @@
+.highlightBlock {
+  border: 1px solid var(--color-ui-primary-lighter-1);
+  background: var(--color-ui-sidebar-lighter-1);
+}
