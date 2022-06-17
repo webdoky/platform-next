@@ -10,6 +10,7 @@ module.exports = {
     licenseLink: '/docs/licensing/',
     ourGithub: 'https://github.com/webdoky',
   },
+  trailingSlash: true,
   async redirects() {
     return [
       {
