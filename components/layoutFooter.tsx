@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { GlobeIcon } from './icons';
 
 interface Params {
-  originalLink: string;
-  originalTitle: string;
-  originalPath: string;
+  originalLink?: string;
+  originalTitle?: string;
+  originalPath?: string;
 }
 
 export default function LayoutFooter({

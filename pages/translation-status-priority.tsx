@@ -6,6 +6,7 @@ import WdContentLoader from '../content/wdContentLoader';
 import PopularitiesLoader from '../content/wdPopularitiesLoader';
 import { pick } from 'lodash';
 import TranslationStatus from '../components/translationStatus';
+import Link from 'next/link';
 
 export async function getStaticProps() {
   const pages = await WdContentLoader.getAll();
@@ -82,9 +83,9 @@ export default function IndexPage({
                 Статус перекладу пріоритетних сторінок
               </h1>
               <p>
-                <a href="/translation-status-general">
+                <Link href="/translation-status-general">
                   Перейти на огляд сторінок загалом
-                </a>
+                </Link>
               </p>
               <h2 id="як-зявився-цей-проєкт">
                 <a href="#Огляд" aria-hidden="true">

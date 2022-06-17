@@ -98,18 +98,17 @@ export default function Layout({
           </footer>
         </div>
 
-        <div
-          v-if="hasSidebar"
-          className="fixed bottom-0 right-0 z-50 p-8 lg:hidden"
-        >
-          <button
-            className="p-3 text-white rounded-full shadow-lg bg-ui-primary hover:text-white"
-            onClick={sidebarTogglerHandler}
-          >
-            <XIcon v-if="sidebarOpen" size={1.5} />
-            <MenuIcon v-else size={1.5} />
-          </button>
-        </div>
+        {hasSidebar && (
+          <div className="fixed bottom-0 right-0 z-50 p-8 lg:hidden">
+            <button
+              className="p-3 text-white rounded-full shadow-lg bg-ui-primary hover:text-white"
+              onClick={sidebarTogglerHandler}
+            >
+              {sidebarOpen && <XIcon size={1.5} />}
+              {!sidebarOpen && <MenuIcon size={1.5} />}
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

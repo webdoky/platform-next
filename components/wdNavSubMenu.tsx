@@ -20,7 +20,7 @@ export default function WdNavSubMenu({
     if (isExpanded === undefined) {
       setIsExpanded(expanded ?? false);
     }
-  }, []);
+  }, [expanded, isExpanded]);
   return (
     <div>
       {showHeader && (
