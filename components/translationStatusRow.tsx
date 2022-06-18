@@ -116,7 +116,7 @@ export default function TranslationStatusRow({
           <CopyToClipboard
             text={listOfChanges}
             className={'px-2'}
-            title={'скопіювати перелік комітів зі змінами'}
+            title={'Cкопіювати перелік комітів зі змінами'}
           >
             <CopyIcon size={1.7} />
           </CopyToClipboard>
@@ -127,7 +127,7 @@ export default function TranslationStatusRow({
             text={bashCommand}
             className={'px-2'}
             title={
-              'скопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
+              'Cкопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
             }
           >
             <TerminalIcon size={1.7} />

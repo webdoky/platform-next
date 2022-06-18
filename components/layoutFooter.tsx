@@ -15,10 +15,7 @@ export default function LayoutFooter({
   return (
     <div className="py-2 border-b-2 border-t-1 border-ui-primary bg-ui-footer">
       <div className="container">
-        <div
-          className=" flex lg:items-center items-end justify-between -mx-2 sm:-mx-4 flex-col sm:flex-row
-        "
-        >
+        <div className="flex lg:items-center items-end justify-between -mx-2 sm:-mx-4 flex-col sm:flex-row">
           {(!originalLink || !originalPath) && (
             <div className="px-2 mr-auto sm:px-4">
               <p className="mb-0.5 text-sm">
@@ -100,7 +97,7 @@ export default function LayoutFooter({
                 className="ml-3 flex items-center text-sm whitespace-nowrap underline"
                 target="_blank"
                 rel="noopener noreferrer"
-                title={`MDN: &quot;${originalTitle}&quot;`}
+                title={`MDN: "${originalTitle}"`}
               >
                 <span>Оригінал статті</span>
                 <GlobeIcon size={1.7} className="m-1" />

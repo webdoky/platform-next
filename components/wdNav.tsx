@@ -12,13 +12,10 @@ export default function WdNav({ currentPage, sidebar }: Params) {
   return sidebar.length ? (
     <div className="px-4 pt-8 lg:pt-12">
       {navigationStructure.map((supSection, index) => (
-        <div
-          v-for="(supSection, i) in navigationStructure"
-          key={`${index}_${supSection.title}`}
-        >
+        <div key={`${index}_${supSection.title}`}>
           {!supSection.items && <WdNavMenu supSection={supSection} />}
           {supSection.groupItems && (
-            <div v-if="supSection.groupItems" className="pt-1">
+            <div className="pt-1">
               <h2 className="text-base tracking-tight mt-2">
                 {supSection.title}:
               </h2>

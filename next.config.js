@@ -10,18 +10,8 @@ module.exports = {
     licenseLink: '/docs/licensing/',
     ourGithub: 'https://github.com/webdoky',
   },
-  i18n: {
-    locales: ['uk-UA'],
-    defaultLocale: 'uk-UA',
-  },
   trailingSlash: true,
   async redirects() {
-    return [
-      {
-        source: '/docs',
-        destination: '/docs/index',
-        permanent: false,
-      },
-    ];
+    return [];
   },
 };

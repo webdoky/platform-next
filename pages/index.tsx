@@ -30,7 +30,7 @@ export default function IndexPage({
   return (
     <main className="wd-main-page">
       <MetaHead
-        title="Вебдоки — про веб, у вебі, для вебу — Webdoky"
+        title="Про веб, у вебі, для вебу | ВебДоки"
         description="Проєкт Webdoky — це зібрання інформації про технології відкритого вебу. HTML, CSS, JavaScript, та API, як для вебсайтів, так і для прогресивних вебзастосунків"
         canonicalUrl={`${basePath}/`}
         basePath={`${basePath}`}
@@ -74,17 +74,7 @@ export default function IndexPage({
             </div>
           </div>
 
-          <div
-            className="
-          pt-8
-          mx-auto
-          mt-8
-          border-t
-          md:mt-16 md:pt-16
-          border-top border-ui-border
-          max-w-screen-sm
-        "
-          ></div>
+          <div className="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
 
           <div className="section-info flex flex-wrap justify-center -mx-4">
             <div className="flex flex-col w-full px-4 mb-8 md:w-2/3">
@@ -92,7 +82,7 @@ export default function IndexPage({
                 Що нового
               </h3>
               <p className="mb-0">
-                Найсвіжіші оновлення з нашого
+                Найсвіжіші оновлення з нашого{' '}
                 <a
                   href="https://github.com/webdoky/content/"
                   target="_blank"
@@ -130,7 +120,7 @@ export default function IndexPage({
               <p className="text-lg text-left">
                 WebDoky — це відкритий проєкт, і будь-хто може долучитися і
                 допомогти нам робити вебдокументацію доступною для україномовних
-                читачів.
+                читачів.{' '}
                 <a href="/docs/">
                   Докладніше — в розділі &quot;Про проєкт&quot;
                 </a>

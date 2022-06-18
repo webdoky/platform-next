@@ -155,12 +155,11 @@ export default class InternalContentLoader {
       const mainHeading = headings.find(({ depth }) => depth === 1);
       const title = mainHeading ? mainHeading.value : '';
 
-      const slug = articleName.replace('.md', '');
+      const path = `/docs/${articleName.replace('.md', '')}`;
 
-      this.registry.set(slug, {
+      this.registry.set(path, {
         ...data,
-        slug,
-        path: `/docs/${slug}`,
+        path,
         headings,
         title,
         content,
@@ -177,6 +176,10 @@ export default class InternalContentLoader {
     }
 
     try {
+      // TODO: NextJS seemingly runs page generation in subprocess, which leads to several attempts to
+      // access (and remove) this directory. Which, in turn, sometimes crashes build.
+      //
+      // Need to find a better way of isolating this
       await fs.access(destinationFolder);
     } catch (error) {
       if (error.code === 'ENOENT') {

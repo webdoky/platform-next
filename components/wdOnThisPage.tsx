@@ -1,8 +1,4 @@
-import {
-  MacroData,
-  ContentItem,
-  HeadingItem,
-} from '../content/wdContentLoader';
+import { ContentItem, HeadingItem } from '../content/wdContentLoader';
 import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -21,7 +17,6 @@ export default function WdOnThisPage({
   const [observer, setObserver] = useState(null);
   const router = useRouter();
 
-  // TODO: we need to parse HTML in loaders, and transform headings into links, with exctractig meaningful navigation info
   const headings = externalHeadings.filter((h) => h.depth > 1);
 
   const observerCallback = useCallback(

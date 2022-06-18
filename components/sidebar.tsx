@@ -39,7 +39,6 @@ export default function Sidebar({
     <div className="px-4 pt-8 lg:pt-12">
       {sections.map((section, index) => (
         <div
-          v-for="(section, index) in sidebar.sections"
           key={section.title}
           className={classNames(
             'pb-4 mb-4 border-ui-border',

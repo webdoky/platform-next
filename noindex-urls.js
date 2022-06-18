@@ -2391,4 +2391,4 @@ const noindexUrls = [
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/groupToMap/',
 ];
 
-export default noindexUrls;
+exports.default = noindexUrls;

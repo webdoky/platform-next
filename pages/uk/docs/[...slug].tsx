@@ -11,7 +11,6 @@ import EditOnGithub from '../../../components/editOnGithub';
 import LayoutFooter from '../../../components/layoutFooter';
 import MetaHead from '../../../components/metaHead';
 
-const targetLocale = process.env.TARGET_LOCALE;
 const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
 
 export async function getStaticPaths() {
@@ -63,6 +62,7 @@ export default function DocEntry({
     headings,
     originalPath,
     path,
+    section,
   } = page;
   const robots = hasContent ? 'all' : 'noindex,nofollow';
   const hasSidebar = !!macros.length;
@@ -107,7 +107,7 @@ export default function DocEntry({
   return (
     <main className="wd-doc-page">
       <MetaHead
-        title={title}
+        title={`${title} ${section ? `— ${section}` : ''} | ВебДоки`}
         description={description}
         canonicalUrl={`${basePath}${path}`}
         basePath={`${basePath}`}

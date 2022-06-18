@@ -1,34 +1,3 @@
-// import ToggleDarkMode from '@/components/ToggleDarkMode';
-// import Logo from '@/components/Logo';
-// import GithubIcon from '@/components/icons/Github';
-// import SunIcon from '@/components/icons/Sun';
-// import MoonIcon from '@/components/icons/Moon';
-
-// const Search = () =>
-//   import(/* webpackChunkName: "search" */ '@/components/Search').catch(
-//     (error) => console.warn(error)
-//   );
-
-// export const xxx = {
-//   components: {
-//     Logo,
-//     Search,
-//     ToggleDarkMode,
-//     SunIcon,
-//     MoonIcon,
-//     GithubIcon,
-//   },
-
-//   computed: {
-//     meta() {
-//       return this.$static.metadata;
-//     },
-//     settings() {
-//       return this.meta.settings;
-//     },
-//   },
-// };
-
 import Logo from './logo';
 import Search from './search';
 import ToggleDarkMode from './toggleDarkMode';
@@ -61,10 +30,7 @@ export default function LayoutHeader({ searchData }) {
               </a>
             </Link>
 
-            <div
-              v-if="settings.nav.links.length > 0"
-              className="hidden ml-2 mr-5 sm:flex items-center sm:ml-2"
-            >
+            <div className="hidden ml-2 mr-5 sm:flex items-center sm:ml-2">
               {nav.map(({ path, title }) => (
                 <a
                   href={path}
@@ -102,17 +68,3 @@ export default function LayoutHeader({ searchData }) {
     </div>
   );
 }
-
-// header {
-//   svg:not(.feather-search) {
-//     &:hover {
-//       @apply text-ui-primary;
-//     }
-//   }
-// }
-
-// .nav-link {
-//   &.active {
-//     @apply text-ui-primary font-bold border-ui-primary;
-//   }
-// }

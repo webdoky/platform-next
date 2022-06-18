@@ -19,7 +19,7 @@ export default function NotFoundPage({ searchData, basePath }) {
   return (
     <main className="wd-main-page">
       <MetaHead
-        title="Нічого не знайдено — Webdoky"
+        title="Нічого не знайдено | ВебДоки"
         description="Проєкт Webdoky — це зібрання інформації про технології відкритого вебу. HTML, CSS, JavaScript, та API, як для вебсайтів, так і для прогресивних вебзастосунків"
         basePath={`${basePath}`}
       />

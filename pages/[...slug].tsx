@@ -1,21 +1,47 @@
-import { ContentItem } from '../../content/wdContentLoader';
+import { ContentItem } from '../content/wdContentLoader';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../components/layout';
-import InternalContentLoader from '../../content/indetrnalContentLoader';
-import WdContentLoader from '../../content/wdContentLoader';
-import { prepareSearchData } from '../../components/search';
-import { SidebarSection } from '../../components/sidebar';
-import NextPrevLinks from '../../components/nextPrevLinks';
-import WdOnThisPage from '../../components/wdOnThisPage';
-import MetaHead from '../../components/metaHead';
+import Layout from '../components/layout';
+import InternalContentLoader from '../content/indetrnalContentLoader';
+import WdContentLoader from '../content/wdContentLoader';
+import { prepareSearchData } from '../components/search';
+import { SidebarSection } from '../components/sidebar';
+import NextPrevLinks from '../components/nextPrevLinks';
+import WdOnThisPage from '../components/wdOnThisPage';
+import MetaHead from '../components/metaHead';
+
+const sidebarSections = [
+  {
+    title: 'Про проєкт',
+    items: [
+      {
+        title: 'Кілька слів про нас',
+        path: '/docs',
+      },
+      {
+        title: 'Як відбувається переклад',
+        path: '/docs/translation',
+      },
+      {
+        title: 'Як перекладати в середовищі GitHub',
+        path: '/docs/translating-in-github',
+      },
+      {
+        title: 'Прийняті патерни іменування в репозиторіях',
+        path: '/docs/git-naming-conventions',
+      },
+      { title: 'Глосарій', path: '/docs/glossary' },
+      { title: 'Ліцензії на вміст WebDoky', path: '/docs/licensing' },
+    ],
+  },
+];
 
 export async function getStaticPaths() {
   const elements = await InternalContentLoader.getAll();
 
-  const paths = elements.map(({ slug }) => ({
+  const paths = elements.map(({ path }) => ({
     params: {
-      slug: slug,
+      slug: path.split('/'),
     },
   }));
 
@@ -28,36 +54,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const page = await InternalContentLoader.getbySlug(slug);
+  const page = await InternalContentLoader.getbySlug(slug.join('/'));
   const pages = await WdContentLoader.getAll(['path', 'title', 'hasContent']);
   const internalPages = await InternalContentLoader.getAll(['path', 'title']);
   const translatedPages = pages.filter((page) => page.hasContent);
-
-  const sidebarSections = [
-    {
-      title: 'Про проєкт',
-      items: [
-        {
-          title: 'Пара слів про нас',
-          path: '/docs/index',
-        },
-        {
-          title: 'Як відбувається переклад',
-          path: '/docs/translation',
-        },
-        {
-          title: 'Як перекладати в середовищі GitHub',
-          path: '/docs/translating-in-github',
-        },
-        {
-          title: 'Прийняті патерни іменування в репозиторіях',
-          path: '/docs/git-naming-conventions',
-        },
-        { title: 'Глосарій', path: '/docs/glossary' },
-        { title: 'Ліцензії на вміст WebDoky', path: '/docs/licensing' },
-      ],
-    },
-  ];
 
   return {
     props: {
@@ -125,7 +125,7 @@ export default function InnerDocEntry({
   return (
     <main className="wd-doc-page" ref={mainContentRef}>
       <MetaHead
-        title={title}
+        title={`${title} — Про нас | ВебДоки`}
         description={description}
         canonicalUrl={`${basePath}/${path}`}
         basePath={`${basePath}`}

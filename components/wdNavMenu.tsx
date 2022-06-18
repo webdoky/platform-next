@@ -62,7 +62,6 @@ export default function WdNavMenu({ supSection }: Params) {
                       'transition transform hover:translate-x-1 hover:text-ui-primary':
                         !page.isCurrent,
                     })}
-                    //   @mousedown="$emit('navigate')" TODO:
                   >
                     <WdNavItem page={page} isCurrent={page.isCurrent} />
                   </li>

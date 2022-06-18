@@ -19,7 +19,7 @@ export function prepareSearchData(pages: Partial<ContentItem>[]) {
 }
 
 interface FuseInterface {
-  search: (_query) => unknown[];
+  search: (_query: string) => unknown[];
 }
 
 export default function Search({ searchData }) {
@@ -98,20 +98,8 @@ export default function Search({ searchData }) {
   return (
     <div className="relative">
       <label className="relative block">
-        <span className="sr-only">Пошук в документації</span>
-        <div
-          className="
-          absolute
-          inset-y-0
-          left-0
-          flex
-          items-center
-          justify-center
-          px-3
-          py-2
-          opacity-50
-        "
-        >
+        <span className="sr-only">Пошук у документації</span>
+        <div className="absolute inset-y-0 left-0 flex items-center justify-center px-3 py-2 opacity-50">
           <SearchIcon size={1.4} className="text-ui-typo" />
         </div>
         <input
@@ -127,15 +115,14 @@ export default function Search({ searchData }) {
             setFocusIndex(-1);
             setQuery(event.target?.value || '');
           }}
-          placeholder="Пошук в документації..."
+          placeholder="Пошук у документації..."
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
         />
       </label>
       {showResult && (
         <div
-          className="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-sidebar
-        "
+          className="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-sidebar"
           style={{ maxHeight: 'calc(100vh - 120px)' }}
         >
           <ul className="px-4 py-2 m-0">
@@ -163,7 +150,7 @@ export default function Search({ searchData }) {
                       )}
                     >
                       <span className="flex items-center">
-                        {result.term}
+                        {result.title}
                         <ChevronRightIcon size={1.3} class-name="mx-1" />
                         <span className="font-normal opacity-75">
                           {result.path}

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/layout';
 import { prepareSearchData } from '../components/search';
 import WdChangelogLoader from '../content/wdChangelogLoader';
@@ -7,7 +6,7 @@ import PopularitiesLoader from '../content/wdPopularitiesLoader';
 import { pick } from 'lodash';
 import TranslationStatus from '../components/translationStatus';
 import Link from 'next/link';
-import MetaHead from '../components/metaHead'
+import MetaHead from '../components/metaHead';
 
 export async function getStaticProps() {
   const pages = await WdContentLoader.getAll();
@@ -49,7 +48,7 @@ export default function IndexPage({
   return (
     <main className="wd-main-page">
       <MetaHead
-        title="Вебдоки — Стан перекладу пріоритетних сторінок — Webdoky"
+        title="Стан перекладу пріоритетних сторінок | ВебДоки"
         description="Тут наведена порівняльна таблиця стану перекладу документації
         за розділами, у розрізі їхньої популярності."
         canonicalUrl={`${basePath}/translation-status-priority`}

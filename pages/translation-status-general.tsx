@@ -7,7 +7,7 @@ import PopularitiesLoader from '../content/wdPopularitiesLoader';
 import { pick } from 'lodash';
 import TranslationStatus from '../components/translationStatus';
 import Link from 'next/link';
-import MetaHead from '../components/metaHead'
+import MetaHead from '../components/metaHead';
 
 export async function getStaticProps() {
   const pages = await WdContentLoader.getAll();
@@ -49,7 +49,7 @@ export default function IndexPage({
   return (
     <main className="wd-main-page">
       <MetaHead
-        title="Вебдоки — Стан перекладу документації загалом — Webdoky"
+        title="Стан перекладу документації загалом | ВебДоки"
         description="Тут наведена порівняльна таблиця стану перекладу документації
         за розділами. Також тут зібрані корисні посилання, які можуть
         стати в пригоді під час перекладу чи редактури статей."
