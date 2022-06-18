@@ -410,7 +410,6 @@ const noindexUrls = [
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments/',
-  '/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/assign/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/all/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/any/',
@@ -577,7 +576,6 @@ const noindexUrls = [
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis/',
   '/uk/docs/Web/JavaScript/Reference/Statements/for-await...of/',
   '/uk/docs/Web/JavaScript/Reference/Operators/function/',
-  '/uk/docs/Web/JavaScript/Reference/Statements/for...in/',
   '/uk/docs/Web/JavaScript/Reference/Statements/for...of/',
   '/uk/docs/Web/JavaScript/Reference/Statements/for/',
   '/uk/docs/Web/JavaScript/Reference/Statements/function/',
@@ -1254,7 +1252,6 @@ const noindexUrls = [
   '/uk/docs/Web/HTML/Element/dfn/',
   '/uk/docs/Web/HTML/Element/dialog/',
   '/uk/docs/Web/HTML/Element/dir/',
-  '/uk/docs/Web/HTML/Element/div/',
   '/uk/docs/Web/HTML/Element/dl/',
   '/uk/docs/Web/HTML/Element/dt/',
   '/uk/docs/Web/HTML/Global_attributes/dir/',
@@ -1291,7 +1288,6 @@ const noindexUrls = [
   '/uk/docs/Web/HTML/Element/col/',
   '/uk/docs/Web/HTML/Element/colgroup/',
   '/uk/docs/Web/HTML/Element/content/',
-  '/uk/docs/Web/HTML/Global_attributes/class/',
   '/uk/docs/Web/HTML/Global_attributes/contenteditable/',
   '/uk/docs/Web/HTML/Global_attributes/contextmenu/',
   '/uk/docs/Web/SVG/Attribute/baseline-shift/',
@@ -2391,6 +2387,8 @@ const noindexUrls = [
   '/uk/docs/Web/CSS/color_value/oklch/',
   '/uk/docs/Web/CSS/color_value/oklab/',
   '/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/@@species/',
+  '/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/group/',
+  '/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/groupToMap/',
 ];
 
 export default noindexUrls;

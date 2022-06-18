@@ -1,7 +1,6 @@
-import Head from 'next/head';
-
 import Layout from '../components/layout';
 import Logo from '../components/logo';
+import MetaHead from '../components/metaHead';
 import { prepareSearchData } from '../components/search';
 import WdChangelogLoader from '../content/wdChangelogLoader';
 import WdContentLoader from '../content/wdContentLoader';
@@ -28,29 +27,14 @@ export default function IndexPage({
   targetLocale,
   basePath,
 }) {
-  const title = 'Вебдоки — про веб, у вебі, для вебу — Webdoky';
-  const description =
-    'Проєкт Webdoky — це зібрання інформації про технології відкритого вебу. HTML, CSS, JavaScript, та API, як для вебсайтів, так і для прогресивних вебзастосунків';
-
   return (
     <main className="wd-main-page">
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" name="og:title" content={title} />
-        <meta property="twitter:title" name="twitter:title" content={title} />
-        <meta
-          property="og:description"
-          name="og:description"
-          content={description}
-        />
-        <meta
-          property="twitter:description"
-          name="twitter:description"
-          content={description}
-        />
-        <link rel="canonical" href={`${basePath}/`} />
-      </Head>
+      <MetaHead
+        title="Вебдоки — про веб, у вебі, для вебу — Webdoky"
+        description="Проєкт Webdoky — це зібрання інформації про технології відкритого вебу. HTML, CSS, JavaScript, та API, як для вебсайтів, так і для прогресивних вебзастосунків"
+        canonicalUrl={`${basePath}/`}
+        basePath={`${basePath}`}
+      />
       <Layout
         currentPage={{ path: '/' }}
         searchData={searchData}

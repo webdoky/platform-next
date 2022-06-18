@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { ContentItem } from '../../content/wdContentLoader';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -9,6 +8,7 @@ import { prepareSearchData } from '../../components/search';
 import { SidebarSection } from '../../components/sidebar';
 import NextPrevLinks from '../../components/nextPrevLinks';
 import WdOnThisPage from '../../components/wdOnThisPage';
+import MetaHead from '../../components/metaHead';
 
 export async function getStaticPaths() {
   const elements = await InternalContentLoader.getAll();
@@ -124,23 +124,12 @@ export default function InnerDocEntry({
 
   return (
     <main className="wd-doc-page" ref={mainContentRef}>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" name="og:title" content={title} />
-        <meta property="twitter:title" name="twitter:title" content={title} />
-        <meta
-          property="og:description"
-          name="og:description"
-          content={description}
-        />
-        <meta
-          property="twitter:description"
-          name="twitter:description"
-          content={description}
-        />
-        <link rel="canonical" href={`${basePath}/${path}`} />
-      </Head>
+      <MetaHead
+        title={title}
+        description={description}
+        canonicalUrl={`${basePath}/${path}`}
+        basePath={`${basePath}`}
+      />
 
       <Layout
         searchData={searchData}

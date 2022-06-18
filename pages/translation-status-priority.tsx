@@ -7,6 +7,7 @@ import PopularitiesLoader from '../content/wdPopularitiesLoader';
 import { pick } from 'lodash';
 import TranslationStatus from '../components/translationStatus';
 import Link from 'next/link';
+import MetaHead from '../components/metaHead'
 
 export async function getStaticProps() {
   const pages = await WdContentLoader.getAll();
@@ -45,29 +46,15 @@ export default function IndexPage({
   allPopularities,
   pages: allPages,
 }) {
-  const title = 'Вебдоки — про веб, у вебі, для вебу — Webdoky';
-  const description =
-    'Проєкт Webdoky — це зібрання інформації про технології відкритого вебу. HTML, CSS, JavaScript, та API, як для вебсайтів, так і для прогресивних вебзастосунків';
-
   return (
     <main className="wd-main-page">
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" name="og:title" content={title} />
-        <meta property="twitter:title" name="twitter:title" content={title} />
-        <meta
-          property="og:description"
-          name="og:description"
-          content={description}
-        />
-        <meta
-          property="twitter:description"
-          name="twitter:description"
-          content={description}
-        />
-        <link rel="canonical" href={`${basePath}/`} />
-      </Head>
+      <MetaHead
+        title="Вебдоки — Стан перекладу пріоритетних сторінок — Webdoky"
+        description="Тут наведена порівняльна таблиця стану перекладу документації
+        за розділами, у розрізі їхньої популярності."
+        canonicalUrl={`${basePath}/translation-status-priority`}
+        basePath={`${basePath}`}
+      />
       <Layout
         currentPage={{ path: '/translation-status-priority' }}
         searchData={searchData}

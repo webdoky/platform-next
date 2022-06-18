@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { prepareSearchData } from '../../../components/search';
 import WdLayout from '../../../components/wdLayout';
 import WdContentLoader, { ContentItem } from '../../../content/wdContentLoader';
@@ -10,6 +9,7 @@ import WdNav from '../../../components/wdNav';
 import WdOnThisPage from '../../../components/wdOnThisPage';
 import EditOnGithub from '../../../components/editOnGithub';
 import LayoutFooter from '../../../components/layoutFooter';
+import MetaHead from '../../../components/metaHead';
 
 const targetLocale = process.env.TARGET_LOCALE;
 const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
@@ -62,6 +62,7 @@ export default function DocEntry({
     slug,
     headings,
     originalPath,
+    path,
   } = page;
   const robots = hasContent ? 'all' : 'noindex,nofollow';
   const hasSidebar = !!macros.length;
@@ -105,27 +106,13 @@ export default function DocEntry({
 
   return (
     <main className="wd-doc-page">
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" name="og:title" content={title} />
-        <meta property="twitter:title" name="twitter:title" content={title} />
-        <meta
-          property="og:description"
-          name="og:description"
-          content={description}
-        />
-        <meta
-          property="twitter:description"
-          name="twitter:description"
-          content={description}
-        />
-        <meta property="robots" name="robots" content={robots} />
-        <link rel="canonical" href={`${basePath}/`} />
-        <style global jsx>{`
-          // TODO:  ???
-        `}</style>
-      </Head>
+      <MetaHead
+        title={title}
+        description={description}
+        canonicalUrl={`${basePath}${path}`}
+        basePath={`${basePath}`}
+        robots={robots}
+      />
 
       <WdLayout searchData={searchData}>
         <main
@@ -149,11 +136,7 @@ export default function DocEntry({
               style={sidebarStyle}
             >
               <div className="w-full pb-16 bg-ui-background">
-                <WdNav
-                  sidebar={macros}
-                  currentPage={page}
-                  // @navigate="sidebarOpen = false" // TODO:
-                />
+                <WdNav sidebar={macros} currentPage={page} />
               </div>
             </aside>
           )}

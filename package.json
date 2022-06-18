@@ -35,7 +35,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build && next-sitemap && next export",
     "preexport": "npm run build",
     "export": "next export",
     "next-lint": "next lint",
