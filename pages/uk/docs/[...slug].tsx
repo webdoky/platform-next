@@ -1,4 +1,3 @@
-import { prepareSearchData } from '../../../components/search';
 import WdLayout from '../../../components/wdLayout';
 import WdContentLoader, { ContentItem } from '../../../content/wdContentLoader';
 import { XIcon, MenuIcon } from '../../../components/icons';
@@ -31,13 +30,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const page = await WdContentLoader.getBySlug(slug.join('/'));
-  const pages = await WdContentLoader.getAll(['path', 'title', 'hasContent']);
-  const translatedPages = pages.filter((page) => page.hasContent);
 
   return {
     props: {
       page: page || null,
-      searchData: prepareSearchData(translatedPages),
       basePath: process.env.BASE_PATH,
     },
   };
@@ -45,11 +41,9 @@ export async function getStaticProps({ params }) {
 
 export default function DocEntry({
   page,
-  searchData,
   basePath,
 }: {
   page: ContentItem | null;
-  searchData: unknown;
   basePath: string;
 }) {
   const {
@@ -114,7 +108,7 @@ export default function DocEntry({
         robots={robots}
       />
 
-      <WdLayout searchData={searchData}>
+      <WdLayout>
         <main
           ref={mainContentRef}
           className="

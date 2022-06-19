@@ -36,3 +36,4 @@ yarn-error.log*
 # generated public files
 /public/sitemap*
 /public/_assets
+/public/_data

@@ -113,7 +113,6 @@ export default class InternalContentLoader {
     const articles = await fs.readdir(path.resolve(pathToContent));
 
     const destinationFolder = path.resolve(pathToPublic, './_assets');
-    const imagesDestToSourceMap: { [key: string]: string } = {};
 
     const processing = articles.map(async (articleName) => {
       const articlePath = path.resolve(contentDirectory, articleName);
@@ -122,9 +121,6 @@ export default class InternalContentLoader {
       const contentPath = fileObject.isDirectory()
         ? `${articlePath}/index.md`
         : articlePath;
-
-      const nameParts = contentPath.split('/');
-      const contentFolder = nameParts.slice(0, nameParts.length - 1).join('/');
 
       const fileContent = await fs.readFile(contentPath);
 
@@ -143,14 +139,11 @@ export default class InternalContentLoader {
             const imageUniqName = `${articleName}/${imageSrc}`
               .replaceAll('/./', '/')
               .replaceAll('/', '-');
-            const imageSource = path.resolve(contentFolder, imageSrc);
 
             const destinationFile = path.resolve(
               destinationFolder,
               imageUniqName
             );
-
-            imagesDestToSourceMap[destinationFile] = imageSource;
 
             node.properties.src = `/${destinationFile
               .split('/public/')
@@ -177,33 +170,6 @@ export default class InternalContentLoader {
     });
 
     await Promise.all(processing);
-
-    try {
-      await fs.access(destinationFolder);
-      await fs.rm(destinationFolder, { recursive: true });
-    } catch (error) {
-      // directory already has been removed
-    }
-
-    try {
-      // TODO: NextJS seemingly runs page generation in subprocess, which leads to several attempts to
-      // access (and remove) this directory. Which, in turn, sometimes crashes build.
-      //
-      // Need to find a better way of isolating this
-      await fs.access(destinationFolder);
-    } catch (error) {
-      if (error.code === 'ENOENT') {
-        await fs.mkdir(destinationFolder);
-      }
-    }
-
-    const promisedCopies = Object.entries(imagesDestToSourceMap).map(
-      async ([dest, source]) => {
-        return await fs.copyFile(source, dest);
-      }
-    );
-
-    await Promise.all(promisedCopies);
   }
 
   static async getInstance(): Promise<InternalContentLoader> {

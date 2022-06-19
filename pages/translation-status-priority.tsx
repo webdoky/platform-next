@@ -1,5 +1,4 @@
 import Layout from '../components/layout';
-import { prepareSearchData } from '../components/search';
 import WdChangelogLoader from '../content/wdChangelogLoader';
 import WdContentLoader from '../content/wdContentLoader';
 import PopularitiesLoader from '../content/wdPopularitiesLoader';
@@ -17,7 +16,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      searchData: prepareSearchData(pages),
       changelogs: changeLogContent,
       targetLocale: process.env.TARGET_LOCALE,
       basePath: process.env.BASE_PATH,
@@ -40,7 +38,6 @@ export async function getStaticProps() {
 }
 
 export default function IndexPage({
-  searchData,
   basePath,
   allPopularities,
   pages: allPages,
@@ -56,7 +53,6 @@ export default function IndexPage({
       />
       <Layout
         currentPage={{ path: '/translation-status-priority' }}
-        searchData={searchData}
         sidebarSections={[]}
       >
         <div className="flex flex-wrap items-start justify-start">

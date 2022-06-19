@@ -36,6 +36,7 @@
     "unist-util-visit-parents": "^5.1.0"
   },
   "scripts": {
+    "pre-build": "ts-node --esm ./pre-build/index.mts",
     "dev": "next",
     "build": "next build && next-sitemap && next export",
     "preexport": "npm run build",

@@ -7,19 +7,19 @@ import LayoutFooter from './layoutFooter';
 import Sidebar from './sidebar';
 import { SidebarSection } from './sidebar';
 
+interface Params {
+  children: React.ReactNode;
+  hasSidebar?: boolean;
+  sidebarSections: SidebarSection[];
+  currentPage: { path };
+}
+
 export default function Layout({
   children,
   hasSidebar = false,
   sidebarSections = [],
-  searchData,
   currentPage,
-}: {
-  children: React.ReactNode;
-  hasSidebar?: boolean;
-  sidebarSections: SidebarSection[];
-  searchData: unknown;
-  currentPage: { path };
-}) {
+}: Params) {
   const [headerHeight, setHeaderHeight] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
@@ -62,7 +62,7 @@ export default function Layout({
             ref={headerRef}
             className="sticky top-0 z-10 w-full border-b bg-ui-background border-ui-border"
           >
-            <LayoutHeader searchData={searchData} />
+            <LayoutHeader />
           </header>
 
           <main className="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background">

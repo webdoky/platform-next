@@ -1,12 +1,4 @@
 {
-  "ts-node": {
-    // for content-server
-    "files": true,
-    "compilerOptions": {
-      "esModuleInterop": true,
-      "module": "esnext",
-    }
-  },
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -30,6 +22,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.mts",
     "**/*.tsx"
   ],
   "exclude": [

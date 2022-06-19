@@ -2,19 +2,15 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import Logo from '../components/logo';
 import MetaHead from '../components/metaHead';
-import { prepareSearchData } from '../components/search';
 import WdChangelogLoader from '../content/wdChangelogLoader';
-import WdContentLoader from '../content/wdContentLoader';
 
 export async function getStaticProps() {
-  const pages = await WdContentLoader.getAll();
   const changelogs = await WdChangelogLoader.getAll();
 
   const changeLogContent = changelogs[0].content || '';
 
   return {
     props: {
-      searchData: prepareSearchData(pages),
       changelogs: changeLogContent,
       targetLocale: process.env.TARGET_LOCALE,
       basePath: process.env.BASE_PATH,
@@ -22,12 +18,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function IndexPage({
-  searchData,
-  changelogs,
-  targetLocale,
-  basePath,
-}) {
+export default function IndexPage({ changelogs, targetLocale, basePath }) {
   return (
     <main className="wd-main-page">
       <MetaHead
@@ -36,11 +27,7 @@ export default function IndexPage({
         canonicalUrl={`${basePath}/`}
         basePath={`${basePath}`}
       />
-      <Layout
-        currentPage={{ path: '/' }}
-        searchData={searchData}
-        sidebarSections={[]}
-      >
+      <Layout currentPage={{ path: '/' }} sidebarSections={[]}>
         <div className="pt-8 md:pt-16">
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center mb-2 text-ui-primary">

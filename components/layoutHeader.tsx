@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
-export default function LayoutHeader({ searchData }) {
+export default function LayoutHeader() {
   const router = useRouter();
   const currentRoute = router.asPath;
   const nav: { path: string; title: string }[] = process.env
@@ -47,7 +47,7 @@ export default function LayoutHeader({ searchData }) {
           </div>
 
           <div className="w-full px-2 sm:px-4 max-w-screen-xs">
-            <Search searchData={searchData} />
+            <Search />
           </div>
 
           <div className="flex items-center justify-end px-2 sm:px-4">

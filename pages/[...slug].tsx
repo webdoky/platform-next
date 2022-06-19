@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 import InternalContentLoader from '../content/indetrnalContentLoader';
-import WdContentLoader from '../content/wdContentLoader';
-import { prepareSearchData } from '../components/search';
 import { SidebarSection } from '../components/sidebar';
 import NextPrevLinks from '../components/nextPrevLinks';
 import WdOnThisPage from '../components/wdOnThisPage';
@@ -55,15 +53,12 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
 
   const page = await InternalContentLoader.getbySlug(slug.join('/'));
-  const pages = await WdContentLoader.getAll(['path', 'title', 'hasContent']);
   const internalPages = await InternalContentLoader.getAll(['path', 'title']);
-  const translatedPages = pages.filter((page) => page.hasContent);
 
   return {
     props: {
       page,
       allPages: internalPages,
-      searchData: prepareSearchData(translatedPages),
       basePath: process.env.BASE_PATH,
       sidebarSections,
     },
@@ -73,13 +68,11 @@ export async function getStaticProps({ params }) {
 export default function InnerDocEntry({
   page,
   allPages,
-  searchData,
   basePath,
   sidebarSections,
 }: {
   page: ContentItem | null;
   allPages: Partial<ContentItem>[];
-  searchData: unknown;
   basePath: string;
   sidebarSections: SidebarSection[];
 }) {
@@ -132,7 +125,6 @@ export default function InnerDocEntry({
       />
 
       <Layout
-        searchData={searchData}
         currentPage={page}
         sidebarSections={sidebarSections}
         hasSidebar={!!sidebarSections}

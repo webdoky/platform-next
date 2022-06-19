@@ -5,24 +5,13 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { ChevronRightIcon } from './icons';
-import { ContentItem } from '../content/wdContentLoader';
-
-export function prepareSearchData(pages: Partial<ContentItem>[]) {
-  return pages.map((page) => {
-    const parts = page.path.split('/');
-    return {
-      path: page.path,
-      title: page.title,
-      slug: parts[parts.length - 1],
-    };
-  });
-}
 
 interface FuseInterface {
   search: (_query: string) => unknown[];
 }
 
-export default function Search({ searchData }) {
+export default function Search() {
+  const [searchData, setSearchData] = useState(null);
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [focusIndex, setFocusIndex] = useState(-1);
@@ -32,12 +21,20 @@ export default function Search({ searchData }) {
   const searchInput = useRef<HTMLInputElement>();
 
   useEffect(() => {
-    setSearchIndex(
-      new Fuse(searchData, {
-        keys: ['slug', 'title', 'path'],
-        threshold: 0.25,
-      })
-    );
+    if (searchData) {
+      setSearchIndex(
+        new Fuse(searchData, {
+          keys: ['slug', 'title', 'path'],
+          threshold: 0.25,
+        })
+      );
+    } else {
+      fetch('/_data/search-index.json')
+        .then((res) => res.json())
+        .then(({ data }) => {
+          setSearchData(data);
+        });
+    }
   }, [searchData]);
 
   useEffect(() => {
