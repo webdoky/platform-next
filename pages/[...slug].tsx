@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
   const paths = elements.map(({ path }) => ({
     params: {
-      slug: path.split('/'),
+      slug: path.split('/').filter((entry, index) => !(index === 0 && !entry)), // filter out first empty string element, which would turn into slash during reverse operation
     },
   }));
 

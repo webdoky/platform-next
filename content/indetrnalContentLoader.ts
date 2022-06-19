@@ -26,6 +26,15 @@ const levels = {
   h6: 6,
 };
 
+const trailingIndex = '/index';
+
+const stripTrailingIndex = (urlString: string) => {
+  if (urlString.endsWith(trailingIndex)) {
+    return urlString.slice(0, urlString.length - trailingIndex.length);
+  }
+  return urlString;
+};
+
 const findHeadings = (ast) => {
   const headings = [];
 
@@ -103,7 +112,7 @@ export default class InternalContentLoader {
     const contentDirectory = path.resolve(pathToContent);
     const articles = await fs.readdir(path.resolve(pathToContent));
 
-    const destinationFolder = path.resolve(pathToPublic, './assets');
+    const destinationFolder = path.resolve(pathToPublic, './_assets');
     const imagesDestToSourceMap: { [key: string]: string } = {};
 
     const processing = articles.map(async (articleName) => {
@@ -155,11 +164,12 @@ export default class InternalContentLoader {
       const mainHeading = headings.find(({ depth }) => depth === 1);
       const title = mainHeading ? mainHeading.value : '';
 
-      const path = `/docs/${articleName.replace('.md', '')}`;
+      const slug = stripTrailingIndex(`docs/${articleName.replace('.md', '')}`);
 
-      this.registry.set(path, {
+      this.registry.set(slug, {
         ...data,
-        path,
+        slug,
+        path: `/${slug}`,
         headings,
         title,
         content,

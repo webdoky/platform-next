@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Layout from '../components/layout';
 import Logo from '../components/logo';
 import MetaHead from '../components/metaHead';
@@ -53,24 +54,21 @@ export default function IndexPage({
               Від розробників — для розробників
             </h1>
             <div className="flex justify-space-between p-2">
-              <a
-                className="p-2 mx-5 border-b border-ui-border"
-                href={`/${targetLocale}/docs/Web/JavaScript/`}
-              >
-                JavaScript &#8594;
-              </a>
-              <a
-                className="p-2 mx-5 border-b border-ui-border"
-                href={`/${targetLocale}/docs/Web/CSS/`}
-              >
-                CSS &#8594;
-              </a>
-              <a
-                className="p-2 mx-5 border-b border-ui-border"
-                href={`/${targetLocale}/docs/Web/HTML/`}
-              >
-                HTML &#8594;
-              </a>
+              <Link href={`/${targetLocale}/docs/Web/JavaScript/`}>
+                <a className="p-2 mx-5 border-b border-ui-border">
+                  JavaScript &#8594;
+                </a>
+              </Link>
+              <Link href={`/${targetLocale}/docs/Web/CSS/`}>
+                <a className="p-2 mx-5 border-b border-ui-border">
+                  CSS &#8594;
+                </a>
+              </Link>
+              <Link href={`/${targetLocale}/docs/Web/HTML/`}>
+                <a className="p-2 mx-5 border-b border-ui-border">
+                  HTML &#8594;
+                </a>
+              </Link>
             </div>
           </div>
 
@@ -121,9 +119,9 @@ export default function IndexPage({
                 WebDoky — це відкритий проєкт, і будь-хто може долучитися і
                 допомогти нам робити вебдокументацію доступною для україномовних
                 читачів.{' '}
-                <a href="/docs/">
+                <Link href="/docs/">
                   Докладніше — в розділі &quot;Про проєкт&quot;
-                </a>
+                </Link>
               </p>
             </div>
           </div>

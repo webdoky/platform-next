@@ -11,7 +11,4 @@ module.exports = {
     ourGithub: 'https://github.com/webdoky',
   },
   trailingSlash: true,
-  async redirects() {
-    return [];
-  },
 };
