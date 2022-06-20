@@ -1,13 +1,11 @@
-import fetch from 'node-fetch';
 import matter from 'gray-matter';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import { Node, visit } from 'unist-util-visit'
+import { fetchAllPages } from './utils/fetchContent.mjs';
 
-const headers = { 'Content-Type': 'application/json' };
-const contentServer = 'http://localhost:3010';
 const pathToInternalContent = `docs/`;
 const dataOutputDir = 'public/_data';
 
@@ -30,24 +28,10 @@ interface SearchIndexData {
 }
 
 const prepareSearchIndex = async () => {
-
   // Main docs
   const fields = ['title', 'path', 'slug', 'hasContent'];
-  const res = await fetch(
-    `${contentServer}/getAll?fields=${fields.join(',')}`,
-    {
-      headers,
-    }
-  );
 
-  const json = await res.json();
-
-  if (json.errors) {
-    console.error(json.errors);
-    throw new Error('Failed to fetch API');
-  }
-
-  const pages = json.data;
+  const pages = await fetchAllPages(fields);
   const wdSearchData: SearchIndexData[] = pages
     .filter(({hasContent}) => hasContent)
     .map(({ title, path, slug }) => ({

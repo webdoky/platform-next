@@ -5,7 +5,6 @@ const pathToInternalContent = `docs/`;
 const imageOutputDir = 'public/_assets';
 
 const refreshInternalImages = async () => {
-  
   const articles = await fs.readdir(path.resolve(pathToInternalContent));
   let processedFiles = 0;
 
@@ -27,30 +26,31 @@ const refreshInternalImages = async () => {
     if (fileObject.isDirectory()) {
       // images only work in article folders
 
-      const files = (await fs.readdir(path.resolve(pathToInternalContent, articleName)))
-      .filter(
-        filename => (
-          filename.endsWith('.png') 
-          || filename.endsWith('.jpg') 
-          || filename.endsWith('.gif') 
-          || filename.endsWith('.jpeg')
-        )
+      const files = (
+        await fs.readdir(path.resolve(pathToInternalContent, articleName))
+      ).filter(
+        (filename) =>
+          filename.endsWith('.png') ||
+          filename.endsWith('.jpg') ||
+          filename.endsWith('.gif') ||
+          filename.endsWith('.jpeg')
       );
 
-      const promisedCopies = files.map(
-        async (filename) => {
-          await fs.copyFile(path.resolve(pathToInternalContent, articleName, filename), path.resolve(imageOutputDir, `${articleName}-${filename}`));
-          processedFiles += 1;
-        }
-      );
+      const promisedCopies = files.map(async (filename) => {
+        await fs.copyFile(
+          path.resolve(pathToInternalContent, articleName, filename),
+          path.resolve(imageOutputDir, `${articleName}-${filename}`)
+        );
+        processedFiles += 1;
+      });
 
-      await Promise.all(promisedCopies)
+      await Promise.all(promisedCopies);
     }
   });
 
   await Promise.all(processing);
 
-  console.info('Writing image files...', `${processedFiles} written.`)
+  console.info('Writing image files...', `${processedFiles} written.`);
 };
 
 export default refreshInternalImages;
