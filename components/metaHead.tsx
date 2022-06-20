@@ -71,6 +71,8 @@ export default function MetaHead(params: Params) {
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       {robots && <meta property="robots" name="robots" content={robots} />}
+
+      <GaScript />
     </Head>
   );
 }
