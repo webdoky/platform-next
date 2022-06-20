@@ -1,4 +1,3 @@
-const noindexUrls = require('./noindex-urls');
 const fetch = require('node-fetch');
 
 const targetLocale = process.env.TARGET_LOCALE;
@@ -8,7 +7,7 @@ const headers = { 'Content-Type': 'application/json' };
 const config = {
   siteUrl: process.env.BASE_PATH,
   generateRobotsTxt: false,
-  exclude: noindexUrls,
+  exclude: ['/translation-status-priority', '/translation-status-general'],
   // Default transformation function
   transform: async (config, path) => {
     // TODO connect to page data
@@ -30,7 +29,11 @@ const config = {
         console.error(json.errors);
         throw new Error('Failed to fetch API');
       }
-      const { translationLastUpdatedAt } = json.data;
+      const { translationLastUpdatedAt, hasContent } = json.data;
+
+      if (!hasContent) {
+        return undefined;
+      }
 
       return {
         loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
