@@ -97,6 +97,7 @@ export default function IndexPage({
               <TranslationStatus
                 allPopularities={allPopularities}
                 allPages={allPages}
+                priorityOnly
               />
             </div>
           </div>

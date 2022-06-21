@@ -19,7 +19,7 @@ export default function TranslationStatusRow({
     .replace('/index.html', '')
     .replace('/index.md', '');
 
-  const bashCommand = `mkdir -p ${baseRepoPath}${tree} && wget -o ${baseRepoPath}${originalPath} ${linkToRawOriginalGithubContent}`;
+  const bashCommand = `mkdir -p ${baseRepoPath}${tree} && wget -O ${baseRepoPath}${originalPath} ${linkToRawOriginalGithubContent}`;
 
   const changes = updates
     ? `(нові зміни: ${updates
