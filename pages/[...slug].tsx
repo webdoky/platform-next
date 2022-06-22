@@ -76,7 +76,7 @@ export default function InnerDocEntry({
   basePath: string;
   sidebarSections: SidebarSection[];
 }) {
-  const { title, description, content, path, headings } = page;
+  const { title, description, content, slug, headings } = page;
 
   const [headerHeight, setHeaderHeight] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -120,7 +120,7 @@ export default function InnerDocEntry({
       <MetaHead
         title={`${title} — Про нас | ВебДоки`}
         description={description}
-        canonicalUrl={`${basePath}/${path}`}
+        canonicalUrl={`${basePath}/${slug}`}
         basePath={`${basePath}`}
       />
 

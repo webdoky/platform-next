@@ -5,10 +5,9 @@ module.exports = {
         path: '/uk/docs/Web',
         title: 'Технології',
       },
-      { path: '/docs/', title: 'Про проєкт' },
+      { path: '/docs', title: 'Про проєкт' },
     ],
-    licenseLink: '/docs/licensing/',
+    licenseLink: '/docs/licensing',
     ourGithub: 'https://github.com/webdoky',
   },
-  trailingSlash: true,
 };

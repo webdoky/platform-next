@@ -106,7 +106,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
                 WebDoky — це відкритий проєкт, і будь-хто може долучитися і
                 допомогти нам робити вебдокументацію доступною для україномовних
                 читачів.{' '}
-                <Link href="/docs/">
+                <Link href="/docs">
                   Докладніше — в розділі &quot;Про проєкт&quot;
                 </Link>
               </p>
