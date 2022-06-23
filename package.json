@@ -5,6 +5,7 @@
     "@webdoky/yari-ports": "^2.16.1",
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
+    "dotenv": "^16.0.1",
     "fuse.js": "^3.6.1",
     "github-slugger": "^1.4.0",
     "glossary-content": "https://github.com/webdoky/glossary-content.git#main",
@@ -46,7 +47,7 @@
     "prestart": "npm run export",
     "lint": "eslint ./ --ext js,jsx,ts,mts,tsx",
     "start": "serve out",
-    "start-content-server": "node ./run-content-server.mjs"
+    "start-content-server": "ts-node --esm --experimental-specifier-resolution=node ./run-content-server.mts"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
