@@ -66,7 +66,7 @@ export default function IndexPage({
                 Стан перекладу документації загалом
               </h1>
               <p>
-                <Link href="/translation-status-priority">
+                <Link href="/translation-status-priority/">
                   Перейти на огляд пріоритетних сторінок
                 </Link>
               </p>

@@ -35,7 +35,7 @@ export default function LayoutFooter({
                 >
                   CC-BY-SA 2.5
                 </a>
-                (<Link href="/docs/licensing">докладніше тут</Link>).
+                (<Link href="/docs/licensing/">докладніше тут</Link>).
               </p>
             </div>
           )}
@@ -82,7 +82,7 @@ export default function LayoutFooter({
                   CC-BY-SA 2.5
                 </a>{' '}
                 (
-                <Link href="/docs/licensing">
+                <Link href="/docs/licensing/">
                   <a className="underline">докладніше тут</a>
                 </Link>
                 ).
