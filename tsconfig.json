@@ -1,4 +1,9 @@
 {
+  "ts-node": {
+    "include": [
+      "**/*.mts",
+    ],
+  },
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -22,7 +27,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.mts",
     "**/*.tsx"
   ],
   "exclude": [

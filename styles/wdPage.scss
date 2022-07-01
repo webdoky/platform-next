@@ -138,6 +138,29 @@
     @apply border border-ui-border;
   }
 
+  .wd--interactive-example {
+    @apply border w-full border-ui-border;
+
+    &.is-js-height {
+      height: 500px;
+    }
+    &.is-shorter-height {
+      height: 420px;
+    }
+    &.is-taller-height {
+      height: 710px;
+    }
+    &.is-tabbed-shorter-height {
+      height: 340px;
+    }
+    &.is-tabbed-standard-height {
+      height: 530px;
+    }
+    &.is-tabbed-taller-height {
+      height: 760px;
+    }
+  }
+
   header {
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(4px);

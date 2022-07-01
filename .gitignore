@@ -37,4 +37,5 @@ yarn-error.log*
 /public/sitemap*
 /public/_assets
 /public/_data
+/public/interactive-examples
 /public/uk/docs

@@ -6,6 +6,7 @@
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
     "dotenv": "^16.0.1",
+    "fs-extra": "^10.1.0",
     "fuse.js": "^3.6.1",
     "github-slugger": "^1.4.0",
     "glossary-content": "https://github.com/webdoky/glossary-content.git#main",
