@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "@webdoky/content-processor": "https://github.com/webdoky/content-processor.git",
     "@webdoky/content-server": "https://github.com/webdoky/content-server",
     "@webdoky/yari-ports": "^2.16.1",
     "classnames": "^2.3.1",

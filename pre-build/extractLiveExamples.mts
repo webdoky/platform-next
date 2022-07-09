@@ -1,5 +1,4 @@
 import { promises as fs } from 'fs';
-import { fetchAllPages } from './utils/fetchContent.mjs';
 import sh from './utils/shell.mjs';
 import { missingExampleMarkup } from './utils/missingExampleMarkup.mjs';
 import { unified } from 'unified';
@@ -7,6 +6,7 @@ import rehypeParse from 'rehype-parse';
 import { Node, visit } from 'unist-util-visit';
 import { move } from 'fs-extra';
 import _ from 'lodash';
+import { readAllPages, PageData } from './utils/readContent.mjs';
 
 const { uniq } = _;
 
@@ -35,9 +35,9 @@ const extractLiveExamples = async () => {
     // directory already has been removed
   }
 
-  const fields = ['content', 'hasContent', 'slug'];
+  const fields: (keyof PageData)[] = ['content', 'hasContent', 'slug'];
 
-  const pages = await fetchAllPages(fields);
+  const pages = await readAllPages(fields);
 
   // extracting references from markup
   const preparingSources = pages

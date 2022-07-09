@@ -6,41 +6,13 @@ const mainIndexFile = 'mainIndex.json';
 const pageFileName = 'index.json';
 const pagesPath = `${contentCachePath}/files`;
 
-export interface HeadingItem {
+// TODO: mode these into type definitions in content processor
+export interface Heading {
   depth: number;
   value: string;
   anchor: string;
 }
 
-export interface MacroData {
-  macro: string;
-  result: string;
-}
-
-export interface ContentItem {
-  id?: string; // TODO???
-  title: string;
-  path: string;
-  slug: string;
-  tags: string[]; // TODO:??
-  description: string;
-  content: string;
-  hasContent: boolean;
-  originalPath: string;
-  headings: HeadingItem[];
-  macros: MacroData[];
-  // TODO: type this
-  // ...data,
-  updatesInOriginalRepo: string[];
-  section: string;
-  sourceLastUpdatetAt?: number;
-  translationLastUpdatedAt?: string;
-  browser_compat: unknown; // TODO::
-  prev?: string;
-  next?: string;
-}
-
-// TODO: merge types
 export interface ExtractedSample {
   src: string;
   id: string;
@@ -65,19 +37,16 @@ export interface MainIndexData {
 }
 
 export interface PageData {
-  id?: string;
   content: string;
   description: string;
   hasContent: boolean;
-  headings: HeadingItem[];
-  macros: MacroData[];
+  headings: Heading[];
   path: string;
   originalPath: string;
   updatesInOriginalRepo: string[];
   section: string;
   sourceLastUpdatetAt?: number;
   translationLastUpdatedAt?: string;
-  browser_compat: unknown; // TODO::
 
   // data fields
   title: string;
@@ -86,9 +55,7 @@ export interface PageData {
   browserCompat: string;
 }
 
-const headers = { 'Content-Type': 'application/json' };
-
-const readIndex = async (): Promise<IndexFileObject> => {
+export const readIndex = async (): Promise<IndexFileObject> => {
   const file = await fs.readFile(
     path.resolve(contentCachePath, mainIndexFile),
     'utf-8'
@@ -126,40 +93,3 @@ export const readAllSamples = async () => {
 
   return mainIndex.liveSamples;
 };
-
-export default class WdContentLoader {
-  static async getAll(fields: string[] = []): Promise<Partial<ContentItem>[]> {
-    const mainIndex = await readIndex();
-    const pages: Partial<PageData>[] = [];
-    const paths = mainIndex.index.map(({ slug }) => slug);
-
-    await Promise.all(
-      paths.map(async (slug, index) => {
-        const file = await fs.readFile(
-          path.resolve(pagesPath, slug, pageFileName),
-          'utf-8'
-        );
-        const pageData = JSON.parse(file) as PageData;
-        const selectedPageData = fields.length ? {} : pageData; // return full object by default
-
-        fields.forEach((key) => {
-          selectedPageData[key] = pageData[key];
-        });
-
-        pages[index] = selectedPageData;
-      })
-    );
-
-    return pages;
-  }
-
-  static async getBySlug(slug: string): Promise<ContentItem> {
-    const file = await fs.readFile(
-      path.resolve(pagesPath, slug, pageFileName),
-      'utf-8'
-    );
-    const pageData = JSON.parse(file) as PageData;
-
-    return pageData;
-  }
-}

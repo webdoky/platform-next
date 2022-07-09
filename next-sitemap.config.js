@@ -1,8 +1,13 @@
-const fetch = require('node-fetch');
+const fsStd = require('fs');
+const pathStd = require('path');
+
+const { promises: fs } = fsStd;
 
 const targetLocale = process.env.TARGET_LOCALE;
 const staticPart = `/${targetLocale}/docs/`;
-const headers = { 'Content-Type': 'application/json' };
+const contentCachePath = 'cache';
+const pageFileName = 'index.json';
+const pagesPath = `${contentCachePath}/files`;
 
 const config = {
   siteUrl: process.env.BASE_PATH,
@@ -16,20 +21,13 @@ const config = {
     if (isWebDokPage) {
       const slug = path.replace(staticPart, '');
 
-      const res = await fetch(
-        `http://localhost:3010/getBySlug?query=${encodeURIComponent(slug)}`,
-        {
-          headers,
-        }
+      const file = await fs.readFile(
+        pathStd.resolve(pagesPath, slug, pageFileName),
+        'utf-8'
       );
+      const pageData = JSON.parse(file);
 
-      const json = await res.json();
-
-      if (json.errors) {
-        console.error(json.errors);
-        throw new Error('Failed to fetch API');
-      }
-      const { translationLastUpdatedAt, hasContent } = json.data;
+      const { translationLastUpdatedAt, hasContent } = pageData;
 
       if (!hasContent) {
         return undefined;

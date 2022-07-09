@@ -2,7 +2,7 @@ import { ContentItem } from '../content/wdContentLoader';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout';
-import InternalContentLoader from '../content/indetrnalContentLoader';
+import InternalContentLoader from '../content/internalContentLoader';
 import { SidebarSection } from '../components/sidebar';
 import NextPrevLinks from '../components/nextPrevLinks';
 import WdOnThisPage from '../components/wdOnThisPage';

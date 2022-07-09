@@ -1,18 +1,22 @@
 import matter from 'gray-matter';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import { Node, visit } from 'unist-util-visit'
-import { fetchAllPages } from './utils/fetchContent.mjs';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import { Node, visit } from 'unist-util-visit';
+import { readIndex } from './utils/readContent.mjs';
 
 const pathToInternalContent = `docs/`;
 const dataOutputDir = 'public/_data';
 
-type MdNode = Node & { type: string, depth?: number, children?: MdNode[], value?: string }
+type MdNode = Node & {
+  type: string;
+  depth?: number;
+  children?: MdNode[];
+  value?: string;
+};
 
-const changelogProcessor = unified()
-  .use(remarkParse);
+const changelogProcessor = unified().use(remarkParse);
 
 const trailingIndex = '/index';
 
@@ -24,27 +28,30 @@ const stripTrailingIndex = (urlString: string) => {
 };
 
 interface SearchIndexData {
-  title: string, path: string, slug: string 
+  title: string;
+  path: string;
+  slug: string;
 }
 
 const prepareSearchIndex = async () => {
-  // Main docs
-  const fields = ['title', 'path', 'slug', 'hasContent'];
-
-  const pages = await fetchAllPages(fields);
+  const contentIndex = await readIndex();
+  const pages = contentIndex.index;
   const wdSearchData: SearchIndexData[] = pages
-    .filter(({hasContent}) => hasContent)
+    .filter(({ hasContent }) => hasContent)
     .map(({ title, path, slug }) => ({
       title,
       path,
       slug,
     }));
 
-  console.info('Collected search data for WebDocs articles...', `${wdSearchData.length} entries.`)
+  console.info(
+    'Collected search data for WebDocs articles...',
+    `${wdSearchData.length} entries.`
+  );
 
   // Internal docs
   const articles = await fs.readdir(path.resolve(pathToInternalContent));
-  const internalDocSearchData: SearchIndexData[] = []
+  const internalDocSearchData: SearchIndexData[] = [];
 
   const processing = articles.map(async (articleName) => {
     const articlePath = path.resolve(pathToInternalContent, articleName);
@@ -59,13 +66,16 @@ const prepareSearchIndex = async () => {
     const { content: markdownInput } = matter(fileContent);
 
     const ast = await changelogProcessor.parse(markdownInput);
-    let articleTitle = ''
+    let articleTitle = '';
 
     visit(
       ast,
-      (node: MdNode) => (node.type === 'heading' && node.depth === 1),
+      (node: MdNode) => node.type === 'heading' && node.depth === 1,
       (node: MdNode) => {
-        articleTitle = node.children.filter((child) => child.type === 'text').map((child) => child.value).join(' ')
+        articleTitle = node.children
+          .filter((child) => child.type === 'text')
+          .map((child) => child.value)
+          .join(' ');
       }
     );
 
@@ -75,12 +85,15 @@ const prepareSearchIndex = async () => {
       title: articleTitle,
       slug,
       path: `/${slug}`,
-    })
+    });
   });
 
   await Promise.all(processing);
 
-  console.info('Collected search data for internal articles...', `${internalDocSearchData.length} entries.`)
+  console.info(
+    'Collected search data for internal articles...',
+    `${internalDocSearchData.length} entries.`
+  );
 
   // Writing into file
   try {
@@ -90,8 +103,10 @@ const prepareSearchIndex = async () => {
       await fs.mkdir(dataOutputDir);
     }
   }
-  fs.writeFile(path.resolve(dataOutputDir, 'search-index.json'), JSON.stringify({data: [...wdSearchData, ...internalDocSearchData]}))
-
+  fs.writeFile(
+    path.resolve(dataOutputDir, 'search-index.json'),
+    JSON.stringify({ data: [...wdSearchData, ...internalDocSearchData] })
+  );
 };
 
 export default prepareSearchIndex;

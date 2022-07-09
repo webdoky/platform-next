@@ -1,7 +1,9 @@
 import { promises as fs } from 'fs';
-import path from 'path';
-import { fetchAllSamples } from './utils/fetchContent.mjs';
-import { liveSampleMarkup, missingSampleMarkup } from './utils/liveSampleMarkup.mjs';
+import {
+  liveSampleMarkup,
+  missingSampleMarkup,
+} from './utils/liveSampleMarkup.mjs';
+import { readAllSamples } from './utils/readContent.mjs';
 
 const targetLocale = 'uk';
 const publicDir = 'public';
@@ -26,7 +28,7 @@ const extractEmbeddedSamples = async () => {
     // directory already has been removed
   }
 
-  const samples = await fetchAllSamples();
+  const samples = await readAllSamples();
   let writtenFiles = 0;
   let missingSamples = 0;
 
