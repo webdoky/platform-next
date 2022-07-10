@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import isImageFile from './utils/isImageFile.mjs';
 
 const pathToInternalContent = `docs/`;
 const imageOutputDir = 'public/_assets';
@@ -28,13 +29,7 @@ const refreshInternalImages = async () => {
 
       const files = (
         await fs.readdir(path.resolve(pathToInternalContent, articleName))
-      ).filter(
-        (filename) =>
-          filename.endsWith('.png') ||
-          filename.endsWith('.jpg') ||
-          filename.endsWith('.gif') ||
-          filename.endsWith('.jpeg')
-      );
+      ).filter(isImageFile);
 
       const promisedCopies = files.map(async (filename) => {
         await fs.copyFile(
