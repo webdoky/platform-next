@@ -25,10 +25,12 @@ jobs:
       - name: Checks out the repo
         uses: actions/checkout@v3
 
-      - name: Builds nextjs app
+      - name: Sets up node
         uses: actions/setup-node@v1
         with:
           node-version: 16
+
+      - name: Builds NextJS app
         run: |
           npm install -g yarn &&
           yarn install --frozen-lockfile &&
