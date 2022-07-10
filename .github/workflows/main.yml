@@ -32,7 +32,7 @@ jobs:
 
       - name: Builds NextJS app
         run: |
-          npm install -g yarn &&
+          npm install --location=global yarn &&
           yarn install --frozen-lockfile &&
           yarn pre-build &&
           yarn build
