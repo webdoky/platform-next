@@ -23,16 +23,17 @@ jobs:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checks out the repo
-        - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Builds nextjs app
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 16
-        - run: npm install -g yarn
-        - run: yarn install --frozen-lockfile
-        - run: yarn pre-build
-        - run: yarn build
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+        run: |
+          npm install -g yarn &&
+          yarn install --frozen-lockfile &&
+          yarn pre-build &&
+          yarn build
 
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
