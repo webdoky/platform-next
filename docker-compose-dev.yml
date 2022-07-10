@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  nginx:
+    image: flashspys/nginx-static
+    container_name: nginx
+    volumes: 
+      - ./out:/static
+    ports:
+      - '3003:80'
