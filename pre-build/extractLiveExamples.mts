@@ -75,7 +75,7 @@ const extractLiveExamples = async () => {
   // preparing markup
   try {
     console.info('Building markup with interactive samples...');
-    await sh(`cd ${repoWithLiveExamples} && yarn build`);
+    await sh(`cd ${repoWithLiveExamples} && yarn && yarn build`);
   } catch (error) {
     throw new Error(`Could not build markup for live examples, ${error}`);
   }
