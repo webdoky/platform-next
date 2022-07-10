@@ -1684,7 +1684,7 @@
 
 "@webdoky/content-processor@https://github.com/webdoky/content-processor.git":
   version "1.0.0"
-  resolved "https://github.com/webdoky/content-processor.git#713e56b74246437a97783e5ed85e7fda8decb987"
+  resolved "https://github.com/webdoky/content-processor.git#276fd2cc86691d54c939e6f81a21e4c49009c89e"
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
@@ -1708,6 +1708,7 @@
     remark-gfm "^3.0.1"
     remark-parse "^10.0.1"
     remark-rehype "^10.1.0"
+    rimraf "^3.0.2"
     rollup "^2.75.7"
     rollup-plugin-import-assert "^2.1.0"
     ts-node "^10.8.1"
