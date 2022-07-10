@@ -24,8 +24,13 @@ jobs:
         with:
           submodules: true
 
+      # They have different main branches, so we have to do it separately for each submodule
       - name: Update submodules
-        run: git submodule foreach git pull --ff-only
+        run: |
+          cd external/interactive-examples && git pull origin master
+          cd ../original-content && git pull origin main
+          cd ../translated-content && git pull origin master
+          cd ../../
 
       - name: Commit update
         run: |
