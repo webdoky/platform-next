@@ -2,7 +2,6 @@
   "private": true,
   "dependencies": {
     "@webdoky/content-processor": "https://github.com/webdoky/content-processor.git",
-    "@webdoky/content-server": "https://github.com/webdoky/content-server",
     "@webdoky/yari-ports": "^2.16.1",
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
@@ -48,8 +47,7 @@
     "next-lint": "next lint",
     "prestart": "npm run export",
     "lint": "eslint ./ --ext js,jsx,ts,mts,tsx",
-    "start": "serve out",
-    "start-content-server": "ts-node --esm --experimental-specifier-resolution=node ./run-content-server.mts"
+    "start": "serve out"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
