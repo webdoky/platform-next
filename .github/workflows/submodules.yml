@@ -31,7 +31,7 @@ jobs:
         run: |
           cd external/interactive-examples && git pull origin master --ff-only
           cd ../original-content && git checkout main && git pull origin main --ff-only
-          cd ../translated-content && git pull origin master --ff-only
+          cd ../translated-content && git checkout master && git pull origin master --ff-only
           cd ../../
 
       - name: Commit update
