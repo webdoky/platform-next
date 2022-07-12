@@ -29,7 +29,7 @@ jobs:
       # They have different main branches, so we have to do it separately for each submodule
       - name: Update submodules
         run: |
-          cd external/interactive-examples && git pull origin master --ff-only
+          cd external/interactive-examples && git checkout master && git pull origin master --ff-only
           cd ../original-content && git checkout main && git pull origin main --ff-only
           cd ../translated-content && git checkout master && git pull origin master --ff-only
           cd ../../
