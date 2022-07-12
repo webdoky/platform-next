@@ -4,6 +4,7 @@ import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 import { HtmlNode } from './extractLiveExamples.mjs';
+import { warn } from './utils/logger.mjs';
 import { PageData, readAllPages } from './utils/readContent.mjs';
 
 const pathToTranslatedContent = `external/translated-content`;
@@ -92,7 +93,7 @@ const refreshExternalImages = async () => {
           await fs.copyFile(sourcePath, targetFile);
           processedImages += 1;
         } catch (error) {
-          console.error(`Missing source image for ${slug} page: ${src}`);
+          warn(`Missing source image for ${slug} page: ${src}`);
         }
       })
   );

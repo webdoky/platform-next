@@ -7,6 +7,7 @@ import { Node, visit } from 'unist-util-visit';
 import { move } from 'fs-extra';
 import _ from 'lodash';
 import { readAllPages, PageData } from './utils/readContent.mjs';
+import { warn } from './utils/logger.mjs';
 
 const { uniq } = _;
 
@@ -112,7 +113,7 @@ const extractLiveExamples = async () => {
     try {
       await fs.access(filePath);
     } catch (error) {
-      console.warn(`Missing interactive example: ${path}`);
+      warn(`Missing interactive example: ${path}`);
       missingExamples += 1;
 
       await fs.writeFile(filePath, missingExampleMarkup());

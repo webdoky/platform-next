@@ -3,6 +3,7 @@ import {
   liveSampleMarkup,
   missingSampleMarkup,
 } from './utils/liveSampleMarkup.mjs';
+import { warn } from './utils/logger.mjs';
 import { readAllSamples } from './utils/readContent.mjs';
 
 const targetLocale = 'uk';
@@ -48,7 +49,7 @@ const extractEmbeddedSamples = async () => {
     }
 
     if (!Object.values(content).length) {
-      console.warn(`Missing sample content for ${id}, source: ${src}`);
+      warn(`Missing sample content for ${id}, source: ${src}`);
       await fs.writeFile(`${publicDir}/${src}`, missingSampleMarkup());
       missingSamples += 1;
       return;
