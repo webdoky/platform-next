@@ -88,6 +88,9 @@
 
   h1 {
     @apply text-4xl;
+
+    // needs for responsive page titles
+    word-break: break-word;
   }
 
   h2 {
@@ -135,7 +138,7 @@
   }
 
   .wd--live-sample {
-    @apply border border-ui-border;
+    @apply border border-ui-border max-w-full;
   }
 
   .wd--interactive-example {

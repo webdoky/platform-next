@@ -40,7 +40,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
               Ресурси та документація. <br />
               Від розробників — для розробників
             </h1>
-            <div className="flex justify-space-between p-2">
+            <div className="flex p-2 flex-wrap justify-center">
               <Link href={`/${targetLocale}/docs/Web/JavaScript/`}>
                 <a className="p-2 mx-5 border-b border-ui-border">
                   JavaScript &#8594;
