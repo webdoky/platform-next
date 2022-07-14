@@ -441,7 +441,7 @@
     color: var(--color-ui-deprecated-border);
   }
 
-  .wd-nav-link--not-translated code {
+  .wd-nav-link--not-translated * {
     color: inherit;
   }
 }
