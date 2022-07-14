@@ -122,7 +122,7 @@ h3 {
 h4 {
   @apply text-lg;
 }
-a:not(.active):not(.text-ui-primary):not(.text-white) {
+a:not(.active):not(.text-ui-primary):not(.text-white):not(.wd-nav-link--not-translated) {
   @apply text-ui-typo;
 }
 p,

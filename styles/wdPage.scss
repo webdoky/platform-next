@@ -434,4 +434,14 @@
   .properties th {
     @apply block;
   }
+
+  // not translated links
+
+  .wd-nav-link--not-translated {
+    color: var(--color-ui-deprecated-border);
+  }
+
+  .wd-nav-link--not-translated code {
+    color: inherit;
+  }
 }
