@@ -142,7 +142,7 @@
   }
 
   .wd--interactive-example {
-    @apply border w-full border-ui-border;
+    @apply border w-full border-ui-border my-4;
 
     &.is-js-height {
       height: 500px;
@@ -251,7 +251,8 @@
   }
 
   // spec table
-  .table--standard {
+  .table--standard,
+  .wd--standard-table {
     @apply text-left mb-6 w-full;
     background: var(--color-ui-sidebar-lighter-1);
 
