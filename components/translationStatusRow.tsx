@@ -35,7 +35,7 @@ export default function TranslationStatusRow({
         .join('\n')}`
     : '';
 
-  const noteOnUpdate = `Оригінальний вміст: [${title}@MDN](https://developer.mozilla.org/en-us/docs/${page.slug}), [сирці ${title}@GitHub](https://github.com/webdoky/content/tree/master/files/uk${page.originalPath})${changes}`;
+  const noteOnUpdate = `Оригінальний вміст: [${title}@MDN](https://developer.mozilla.org/en-us/docs/${page.slug}), [сирці ${title}@GitHub](https://github.com/mdn/content/blob/main/files/en-us${page.originalPath})${changes}`;
 
   return (
     <tr>
