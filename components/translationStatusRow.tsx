@@ -21,18 +21,21 @@ export default function TranslationStatusRow({
 
   const bashCommand = `mkdir -p ${baseRepoPath}${tree} && wget -O ${baseRepoPath}${originalPath} ${linkToRawOriginalGithubContent}`;
 
-  const changes = updates
-    ? `(нові зміни: ${updates
+  const changes = updates.length
+    ? `\n\nНові зміни:\n${updates
         .map(
           (commit) =>
-            `[${commit.slice(0, 7)}](https://github.com/mdn/content/commit/${
+            `- [mdn/content@${commit.slice(
+              0,
+              7
+            )}](https://github.com/mdn/content/commit/${
               commit.split(' - ')[0]
             })`
         )
-        .join(', ')})`
+        .join('\n')}`
     : '';
 
-  const listOfChanges = `[${title}](${path})${changes ? `, ${changes}` : ''}`;
+  const noteOnUpdate = `Оригінальний вміст: [${title}@MDN](https://developer.mozilla.org/en-us/docs/${page.slug}), [сирці ${title}@GitHub](https://github.com/webdoky/content/tree/master/files/uk${page.originalPath})${changes}`;
 
   return (
     <tr>
@@ -112,27 +115,39 @@ export default function TranslationStatusRow({
         </div>
       </td>
       <td>
-        {page.updatesInOriginalRepo.length ? (
-          <CopyToClipboard
-            text={listOfChanges}
-            className={'px-2'}
-            title={'Cкопіювати перелік комітів зі змінами'}
-          >
-            <CopyIcon size={1.7} />
-          </CopyToClipboard>
-        ) : null}
+        <div className="flex flex-row">
+          {page.updatesInOriginalRepo.length ? (
+            <CopyToClipboard
+              text={noteOnUpdate}
+              className={'px-2'}
+              title={'Cкопіювати перелік комітів зі змінами'}
+            >
+              <CopyIcon size={1.7} />
+            </CopyToClipboard>
+          ) : null}
 
-        {!page.hasContent && (
-          <CopyToClipboard
-            text={bashCommand}
-            className={'px-2'}
-            title={
-              'Cкопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
-            }
-          >
-            <TerminalIcon size={1.7} />
-          </CopyToClipboard>
-        )}
+          {!page.hasContent && (
+            <>
+              <CopyToClipboard
+                text={bashCommand}
+                className={'px-2'}
+                title={
+                  'Cкопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
+                }
+              >
+                <TerminalIcon size={1.7} />
+              </CopyToClipboard>
+
+              <CopyToClipboard
+                text={noteOnUpdate}
+                className={'px-2'}
+                title={'Cкопіювати заголовок для коміт-повідомлення'}
+              >
+                <CopyIcon size={1.7} />
+              </CopyToClipboard>
+            </>
+          )}
+        </div>
       </td>
     </tr>
   );
