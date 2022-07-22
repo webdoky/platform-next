@@ -2,6 +2,7 @@ import { ContentItem } from '../content/wdContentLoader';
 import TranslationStatusSection from './translationStatusSection';
 import { useReducer } from 'react';
 import TranslationOverallStatusRow from './translationOverallStatusRow';
+import SerializedTranslationSection from './_serializedTranslationSection';
 
 const NUMBER_OF_SIGNIFICANT_DIGITS = 2;
 
