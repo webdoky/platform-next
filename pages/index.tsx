@@ -96,7 +96,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
 
             <div className="flex flex-col w-full px-4 mb-8 md:w-1/3">
               <p className="text-lg text-left">
-                WebDoky (ВебДоки) — це проект, покликаний зробит вміст MDN Web
+                WebDoky (ВебДоки) — це проект, покликаний зробити вміст MDN Web
                 Docs доступним українською мовою.
               </p>
               <h3 className="font-bold tracking-wide uppercase text-ui-primary">
