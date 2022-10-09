@@ -1684,7 +1684,7 @@
 
 "@webdoky/content-processor@https://github.com/webdoky/content-processor.git":
   version "1.0.0"
-  resolved "https://github.com/webdoky/content-processor.git#3bb17691a8b3265f453e49b81e33c95484a0de37"
+  resolved "https://github.com/webdoky/content-processor.git#09366ce893feec90b4df3e33be5f07e87c34a9cf"
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"

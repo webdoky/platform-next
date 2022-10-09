@@ -66,6 +66,7 @@ export default function TranslationStatus({
     javascript: [],
     svg: [],
     guide: [],
+    glossary: [],
   };
 
   if (priorityOnly) {
@@ -174,6 +175,11 @@ export default function TranslationStatus({
             anchor="Посібники"
           />
           <TranslationOverallStatusRow
+            allPages={supportedSections.glossary}
+            title="Глосарій"
+            anchor="Глосарій"
+          />
+          <TranslationOverallStatusRow
             allPages={allSupportedPages}
             title="Загалом"
           />
@@ -238,6 +244,17 @@ export default function TranslationStatus({
       </h3>
       <TranslationStatusSection
         pages={filterPages(supportedSections.guide, filterState)}
+        includePopularity={true}
+      />
+
+      <h3 id="Глосарій">
+        <a href="#Глосарій" aria-hidden="true">
+          <span className="icon icon-link"></span>
+        </a>
+        Глосарій
+      </h3>
+      <TranslationStatusSection
+        pages={filterPages(supportedSections.glossary, filterState)}
         includePopularity={true}
       />
     </>
