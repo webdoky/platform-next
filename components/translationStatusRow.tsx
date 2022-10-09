@@ -1,6 +1,12 @@
 import { ContentItem } from '../content/wdContentLoader';
 import classNames from 'classnames';
-import { GithubIcon, GlobeIcon, CopyIcon, TerminalIcon } from './icons';
+import {
+  GithubIcon,
+  GlobeIcon,
+  CopyIcon,
+  TerminalIcon,
+  FileCodeIcon,
+} from './icons';
 import CopyToClipboard from './copyToClipboard';
 
 interface Params {
@@ -12,29 +18,44 @@ const escapeHtml = (str: string) => {
   return str.replace('<', '&lt;');
 };
 
+const parseUpdatesList = (
+  data: string[]
+): {
+  commit: string;
+  date: string;
+}[] =>
+  data.map((entry) => {
+    const [commit, date] = entry.split(' - ');
+
+    return {
+      commit,
+      date,
+    };
+  });
+
 export default function TranslationStatusRow({
   page,
   includePopularity,
 }: Params) {
-  const { title, path, updatesInOriginalRepo: updates, originalPath } = page;
+  const { title, updatesInOriginalRepo, originalPath } = page;
   const linkToRawOriginalGithubContent = `https://raw.githubusercontent.com/mdn/content/main/files/en-us${originalPath}`;
   const baseRepoPath = 'files/uk';
   const tree = page.originalPath
     .replace('/index.html', '')
     .replace('/index.md', '');
 
+  const updates = parseUpdatesList(updatesInOriginalRepo);
+
   const bashCommand = `mkdir -p ${baseRepoPath}${tree} && wget -O ${baseRepoPath}${originalPath} ${linkToRawOriginalGithubContent}`;
 
   const changes = updates.length
     ? `\n\nНові зміни:\n${updates
         .map(
-          (commit) =>
+          ({ commit }) =>
             `- [mdn/content@${commit.slice(
               0,
               7
-            )}](https://github.com/mdn/content/commit/${
-              commit.split(' - ')[0]
-            })`
+            )}](https://github.com/mdn/content/commit/${commit})`
         )
         .join('\n')}`
     : '';
@@ -48,6 +69,12 @@ export default function TranslationStatusRow({
   )}@GitHub](https://github.com/mdn/content/blob/main/files/en-us${
     page.originalPath
   })${changes}`;
+
+  const gitDiffCommand = updates.length
+    ? `git diff ${updates[updates.length - 1].commit}^..${
+        updates[0].commit
+      } ./files/en-us${originalPath}`
+    : '';
 
   return (
     <tr>
@@ -129,13 +156,23 @@ export default function TranslationStatusRow({
       <td>
         <div className="flex flex-row">
           {page.updatesInOriginalRepo.length ? (
-            <CopyToClipboard
-              text={noteOnUpdate}
-              className={'px-2'}
-              title={'Cкопіювати перелік комітів зі змінами'}
-            >
-              <CopyIcon size={1.7} />
-            </CopyToClipboard>
+            <>
+              <CopyToClipboard
+                text={noteOnUpdate}
+                className={'px-2'}
+                title={'Cкопіювати перелік комітів зі змінами'}
+              >
+                <CopyIcon size={1.7} />
+              </CopyToClipboard>
+
+              <CopyToClipboard
+                text={gitDiffCommand}
+                className={'px-2'}
+                title={'Cкопіювати команду Git для перегляду всіх змін'}
+              >
+                <FileCodeIcon size={1.7} />
+              </CopyToClipboard>
+            </>
           ) : null}
 
           {!page.hasContent && (
