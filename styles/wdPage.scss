@@ -276,7 +276,7 @@
   }
 
   // compatibility table
-  .bc__table-wrapper, .wd-table-scroll {
+  .bc__table-wrapper {
     overflow-x: auto;
     max-width: 100%;
   }
@@ -435,6 +435,11 @@
 
   // responsive stuff
 
+  .wd-table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
   .properties td,
   .properties th {
     @apply block;
@@ -448,5 +453,19 @@
 
   .wd-nav-link--not-translated * {
     color: inherit;
+  }
+
+  // External links
+  .wd-external::after {
+    background-color: var(--color-ui-typo);
+    content: "";
+    display: inline-flex;
+    height: 16px;
+    margin-left: 3px;
+    -webkit-mask-image: url(/image-masks/icon-external.svg);
+    mask-image: url(/image-masks/icon-external.svg);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    width: 16px;
   }
 }
