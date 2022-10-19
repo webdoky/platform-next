@@ -9,6 +9,7 @@ import WdOnThisPage from '../../../components/wdOnThisPage';
 import EditOnGithub from '../../../components/editOnGithub';
 import LayoutFooter from '../../../components/layoutFooter';
 import MetaHead from '../../../components/metaHead';
+import { normalizeUrl } from '../../../utils/url';
 
 const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
 
@@ -103,7 +104,7 @@ export default function DocEntry({
       <MetaHead
         title={`${title} ${section ? `— ${section}` : ''} | ВебДоки`}
         description={description}
-        canonicalUrl={`${basePath}${path}`}
+        canonicalUrl={normalizeUrl(`${basePath}${path}`)}
         basePath={`${basePath}`}
         robots={robots}
       />

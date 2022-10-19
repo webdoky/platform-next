@@ -7,6 +7,7 @@ import { SidebarSection } from '../components/sidebar';
 import NextPrevLinks from '../components/nextPrevLinks';
 import WdOnThisPage from '../components/wdOnThisPage';
 import MetaHead from '../components/metaHead';
+import { normalizeUrl } from '../utils/url';
 
 const sidebarSections = [
   {
@@ -120,7 +121,7 @@ export default function InnerDocEntry({
       <MetaHead
         title={`${title} — Про нас | ВебДоки`}
         description={description}
-        canonicalUrl={`${basePath}/${slug}`}
+        canonicalUrl={normalizeUrl(`${basePath}/${slug}`)}
         basePath={`${basePath}`}
       />
 
