@@ -63,7 +63,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
 
           <div className="section-info flex flex-wrap justify-center -mx-4">
             <div className="flex flex-col w-full px-4 mb-8 md:w-2/3">
-              <h3 className="font-bold tracking-wide uppercase mb-0 text-ui-primary">
+              <h3 className="font-bold tracking-wide uppercase mb-0">
                 Що нового
               </h3>
               <p className="mb-0">
@@ -99,9 +99,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
                 WebDoky (ВебДоки) — це проект, покликаний зробити вміст MDN Web
                 Docs доступним українською мовою.
               </p>
-              <h3 className="font-bold tracking-wide uppercase text-ui-primary">
-                Долучитись
-              </h3>
+              <h3 className="font-bold tracking-wide uppercase">Долучитись</h3>
               <p className="text-lg text-left">
                 WebDoky — це відкритий проєкт, і будь-хто може долучитися і
                 допомогти нам робити вебдокументацію доступною для україномовних
