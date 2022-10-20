@@ -44,7 +44,7 @@ export default function NextPrevLinks({ page, pages }: Params) {
       <div className="flex flex-col sm:flex-row justify-between items-center">
         {prev && (
           <Link href={prev.path}>
-            <a className="mb-4 sm:mb-0 flex items-center mr-auto text-ui-primary font-bold px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-primary hover:text-white transition-colors">
+            <a className="mb-4 sm:mb-0 flex items-center mr-auto text-ui-primary font-bold px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-primary hover:text-white transition-colors no-underline">
               <ArrowLeftIcon className="mr-2" size={1.3} />
               {prev.title}
             </a>
@@ -53,7 +53,7 @@ export default function NextPrevLinks({ page, pages }: Params) {
 
         {next && (
           <Link href={next.path}>
-            <a className="flex items-center ml-auto text-ui-primary font-bold px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-primary hover:text-white transition-colors">
+            <a className="flex items-center ml-auto text-ui-primary font-bold px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-primary hover:text-white transition-colors no-underline">
               {next.title}
               <ArrowRightIcon className="ml-2" size={1.3} />
             </a>

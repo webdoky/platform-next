@@ -89,7 +89,7 @@ export default function TranslationStatusRow({
         <div className="flex flex-row justify-between">
           <span className={`mb-0 ${includePopularity ? '' : 'pl-4'}`}>
             <a
-              className="underline"
+              className="text-ui-typo"
               href={page.path}
               target="_blank"
               rel="noopener noreferrer"
@@ -120,7 +120,7 @@ export default function TranslationStatusRow({
           </span>
           {page.hasContent && (
             <a
-              className="underline px-2"
+              className="text-ui-typo px-2"
               title="Переглянути сирці перекладеної сторінки на GitHub"
               href={`https://github.com/webdoky/content/tree/master/files/uk${page.originalPath}`}
               target="_blank"
@@ -134,7 +134,7 @@ export default function TranslationStatusRow({
       <td className="pt-2 pb-2">
         <div className="flex flex-row">
           <a
-            className="underline px-2"
+            className="text-ui-typo px-2"
             title="Переглянути оригінальний текст на MDN"
             href={`https://developer.mozilla.org/en-us/docs/${page.slug}`}
             target="_blank"
@@ -143,7 +143,7 @@ export default function TranslationStatusRow({
             <GlobeIcon size={1.7} />
           </a>
           <a
-            className="underline px-2"
+            className="text-ui-typo px-2"
             title="Переглянути сирці оригінальної сторінки на GitHub"
             href={`https://github.com/mdn/content/blob/main/files/en-us${page.originalPath}`}
             target="_blank"

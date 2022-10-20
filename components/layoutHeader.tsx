@@ -22,7 +22,10 @@ export default function LayoutHeader() {
         <div className="flex items-center justify-between -mx-2 sm:-mx-4">
           <div className="flex flex-col items-center px-2 mr-auto sm:px-4 sm:flex-row">
             <Link href="/">
-              <a className="flex items-center text-ui-primary" title="Home">
+              <a
+                className="flex items-center text-ui-primary no-underline"
+                title="На головну"
+              >
                 <Logo width={40} className="text-ui-primary" />
                 <span className="hidden ml-2 text-xl font-black tracking-tighter sm:block">
                   WebDoky
@@ -36,7 +39,7 @@ export default function LayoutHeader() {
                   href={path}
                   key={path}
                   className={classNames(
-                    'block p-1 font-medium nav-link text-ui-typo hover:text-ui-primary sm:ml-4 md:whitespace-nowrap',
+                    'block p-1 font-medium nav-link text-ui-typo hover:text-ui-primary sm:ml-4 md:whitespace-nowrap no-underline',
                     { active: currentRoute.startsWith(path) }
                   )}
                 >
@@ -53,7 +56,7 @@ export default function LayoutHeader() {
           <div className="flex items-center justify-end px-2 sm:px-4">
             <a
               href={githubLink}
-              className="sm:ml-3"
+              className="sm:ml-3 text-ui-typo no-underline"
               target="_blank"
               rel="noopener noreferrer"
               title="Ми на GitHub"

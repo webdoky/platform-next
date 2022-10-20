@@ -51,7 +51,7 @@ export default function EditOnGithub({ currentPage }: Params) {
       <h3>Помітили помилку на цій сторінці?</h3>
       <p>
         <a
-          className="underline"
+          className="text-ui-typo"
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function EditOnGithub({ currentPage }: Params) {
       </p>
       <p>
         <a
-          className="underline"
+          className="text-ui-typo"
           href={`https://github.com/webdoky/content/edit/master/files/uk${originalPath}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export default function EditOnGithub({ currentPage }: Params) {
       </p>
       <p className="mb-0">
         <a
-          className="underline"
+          className="text-ui-typo"
           href={newIssueUrl}
           target="_blank"
           rel="noopener noreferrer"

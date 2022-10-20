@@ -42,17 +42,17 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
             </h1>
             <div className="flex p-2 flex-wrap justify-center">
               <Link href={`/${targetLocale}/docs/Web/JavaScript/`}>
-                <a className="p-2 mx-5 border-b border-ui-border">
+                <a className="p-2 mx-5 border-b border-ui-border no-underline text-ui-typo">
                   JavaScript &#8594;
                 </a>
               </Link>
               <Link href={`/${targetLocale}/docs/Web/CSS/`}>
-                <a className="p-2 mx-5 border-b border-ui-border">
+                <a className="p-2 mx-5 border-b border-ui-border no-underline text-ui-typo">
                   CSS &#8594;
                 </a>
               </Link>
               <Link href={`/${targetLocale}/docs/Web/HTML/`}>
-                <a className="p-2 mx-5 border-b border-ui-border">
+                <a className="p-2 mx-5 border-b border-ui-border no-underline text-ui-typo">
                   HTML &#8594;
                 </a>
               </Link>

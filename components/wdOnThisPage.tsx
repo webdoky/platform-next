@@ -135,7 +135,7 @@ export default function WdOnThisPage({
               <Link href={`${page.path}${heading.anchor}`}>
                 <a
                   className={classNames(
-                    'relative flex items-center py-1 text-sm transition transform hover:translate-x-1',
+                    'relative flex items-center py-1 text-sm transition transform hover:translate-x-1 text-ui-typo no-underline',
                     {
                       'pl-2': heading.depth === 3,
                       'pl-3': heading.depth === 4,

@@ -15,7 +15,7 @@ interface Params {
 export default function WdNavItem({ page, isCurrent }: Params) {
   return (
     <Link href={page.path}>
-      <a className="flex items-center py-1 font-semibold relative">
+      <a className="flex items-center py-1 font-semibold relative text-ui-typo no-underline">
         <span
           className={classNames(
             'absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center',

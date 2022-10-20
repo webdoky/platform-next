@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+// Colors ----------------------------
+
 :root {
   --color-ui-background: theme('colors.white');
   --color-ui-typo: theme('colors.gray.700');
@@ -85,6 +87,8 @@ html[lights-out] {
   }
 }
 
+// Global styles -------------------------------
+
 * {
   transition-property: color, background-color, border-color;
   transition-duration: 200ms;
@@ -122,8 +126,12 @@ h3 {
 h4 {
   @apply text-lg;
 }
-a:not(.active):not(.text-ui-primary):not(.text-white):not(.wd-nav-link--not-translated) {
-  @apply text-ui-typo;
+a {
+  @apply text-ui-typo underline;
+  color: var(--color-ui-primary);
+}
+a:hover {
+  @apply decoration-dotted;
 }
 p,
 ol,

@@ -142,8 +142,10 @@ export default function Search() {
                   <Link href={result.path}>
                     <a
                       className={classNames(
-                        'block p-2 -mx-2 text-base font-bold rounded-lg',
-                        focusIndex === index && 'bg-ui-sidebar text-ui-primary'
+                        'block p-2 -mx-2 text-base font-bold rounded-lg no-underline',
+                        focusIndex === index
+                          ? 'bg-ui-sidebar text-ui-primary'
+                          : 'text-ui-typo'
                       )}
                     >
                       <span className="flex items-center">

@@ -20,15 +20,13 @@ export default function NotFoundPage({ basePath }) {
       />
       <Layout currentPage={{ path: '/404.html' }} sidebarSections={[]}>
         <div className="pt-8 md:pt-16">
-          <h1 className="text-center font-bold text-4xl text-ui-primary">
+          <h1 className="text-center font-bold text-4xl text-ui-typo">
             От халепа, тут ніц нема!
           </h1>
         </div>
         <div className="mb-10 flex items-center justify-center">
           <Link href="/">
-            <a className="font-bold border-b border-ui-primary text-xl">
-              Повернутись на головну
-            </a>
+            <a className="font-bold text-xl">Повернутись на головну</a>
           </Link>
           .
         </div>

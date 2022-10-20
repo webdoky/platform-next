@@ -30,7 +30,7 @@ export default function TranslationOverallStatusRow({
     <tr>
       <td>
         {anchor ? (
-          <a href={`#${title}`} className="underline">
+          <a href={`#${title}`} className="text-ui-typo">
             {' '}
             {title}{' '}
           </a>

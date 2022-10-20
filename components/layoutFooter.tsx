@@ -24,18 +24,24 @@ export default function LayoutFooter({
                   href="https://github.com/webdoky/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-ui-typo"
                 >
                   спільноти WebDoky
                 </a>
-                , доступно за ліцензією
+                , доступно за ліцензією{' '}
                 <a
                   href="https://creativecommons.org/licenses/by-sa/2.5/"
                   target="_blank"
                   rel="license noopener noreferrer"
+                  className="text-ui-typo"
                 >
                   CC-BY-SA 2.5
-                </a>
-                (<Link href="/docs/licensing/">докладніше тут</Link>).
+                </a>{' '}
+                (
+                <Link href="/docs/licensing/">
+                  <a className="text-ui-typo">докладніше тут</a>
+                </Link>
+                ).
               </p>
             </div>
           )}
@@ -56,7 +62,7 @@ export default function LayoutFooter({
                   href={`https://github.com/mdn/content/commits/main/files/en-us${originalPath}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline"
+                  className="text-ui-typo"
                 >
                   пізніших учасників
                 </a>
@@ -67,7 +73,7 @@ export default function LayoutFooter({
                 <a
                   href="https://github.com/webdoky/"
                   target="_blank"
-                  className="underline"
+                  className="text-ui-typo"
                   rel="noopener noreferrer"
                 >
                   спільнотою WebDoky
@@ -76,14 +82,14 @@ export default function LayoutFooter({
                 <a
                   href="https://creativecommons.org/licenses/by-sa/2.5/"
                   target="_blank"
-                  className="underline"
+                  className="text-ui-typo"
                   rel="license noopener noreferrer"
                 >
                   CC-BY-SA 2.5
                 </a>{' '}
                 (
                 <Link href="/docs/licensing/">
-                  <a className="underline">докладніше тут</a>
+                  <a className="text-ui-typo">докладніше тут</a>
                 </Link>
                 ).
               </p>
@@ -94,7 +100,7 @@ export default function LayoutFooter({
             <div className="flex items-center justify-end px-2 sm:px-4">
               <a
                 href={originalLink}
-                className="ml-3 flex items-center text-sm whitespace-nowrap underline"
+                className="ml-3 flex items-center text-sm whitespace-nowrap text-ui-typo"
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`MDN: "${originalTitle}"`}
