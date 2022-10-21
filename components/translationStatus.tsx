@@ -108,83 +108,85 @@ export default function TranslationStatus({
 
   return (
     <>
-      <table className="table table-bordered w-full doc-status__table">
-        <thead>
-          <tr>
-            <th>Розділ</th>
-            <th>Сторінки</th>
-            <th>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={filterState.showTranslated}
-                  className="mr-2"
-                  onChange={() => dispatch({ type: 'toggleTranslated' })}
-                />
-                З них перекладено
-              </label>
-            </th>
-            <th>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={filterState.showUpToDate}
-                  className="mr-2"
-                  onChange={() => dispatch({ type: 'toggleUpToDate' })}
-                />
-                З них актуально
-              </label>
-            </th>
-            <th>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={filterState.showNotTranslated}
-                  className="mr-2"
-                  onChange={() => dispatch({ type: 'toggleNotTranslated' })}
-                />
-                Очікує на переклад
-              </label>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <TranslationOverallStatusRow
-            allPages={supportedSections.css}
-            title="CSS"
-            anchor="CSS"
-          />
-          <TranslationOverallStatusRow
-            allPages={supportedSections.html}
-            title="HTML"
-            anchor="HTML"
-          />
-          <TranslationOverallStatusRow
-            allPages={supportedSections.javascript}
-            title="JavaScript"
-            anchor="JavaScript"
-          />
-          <TranslationOverallStatusRow
-            allPages={supportedSections.svg}
-            title="SVG"
-            anchor="SVG"
-          />
-          <TranslationOverallStatusRow
-            allPages={supportedSections.guide}
-            title="Посібники"
-            anchor="Посібники"
-          />
-          <TranslationOverallStatusRow
-            allPages={supportedSections.glossary}
-            title="Глосарій"
-            anchor="Глосарій"
-          />
-          <TranslationOverallStatusRow
-            allPages={allSupportedPages}
-            title="Загалом"
-          />
-        </tbody>
-      </table>
+      <div className="wd-table-scroll">
+        <table className="table table-bordered w-full doc-status__table">
+          <thead>
+            <tr>
+              <th>Розділ</th>
+              <th>Сторінки</th>
+              <th>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={filterState.showTranslated}
+                    className="mr-2"
+                    onChange={() => dispatch({ type: 'toggleTranslated' })}
+                  />
+                  З них перекладено
+                </label>
+              </th>
+              <th>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={filterState.showUpToDate}
+                    className="mr-2"
+                    onChange={() => dispatch({ type: 'toggleUpToDate' })}
+                  />
+                  З них актуально
+                </label>
+              </th>
+              <th>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={filterState.showNotTranslated}
+                    className="mr-2"
+                    onChange={() => dispatch({ type: 'toggleNotTranslated' })}
+                  />
+                  Очікує на переклад
+                </label>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <TranslationOverallStatusRow
+              allPages={supportedSections.css}
+              title="CSS"
+              anchor="CSS"
+            />
+            <TranslationOverallStatusRow
+              allPages={supportedSections.html}
+              title="HTML"
+              anchor="HTML"
+            />
+            <TranslationOverallStatusRow
+              allPages={supportedSections.javascript}
+              title="JavaScript"
+              anchor="JavaScript"
+            />
+            <TranslationOverallStatusRow
+              allPages={supportedSections.svg}
+              title="SVG"
+              anchor="SVG"
+            />
+            <TranslationOverallStatusRow
+              allPages={supportedSections.guide}
+              title="Посібники"
+              anchor="Посібники"
+            />
+            <TranslationOverallStatusRow
+              allPages={supportedSections.glossary}
+              title="Глосарій"
+              anchor="Глосарій"
+            />
+            <TranslationOverallStatusRow
+              allPages={allSupportedPages}
+              title="Загалом"
+            />
+          </tbody>
+        </table>
+      </div>
 
       <h2 id="Стан-перекладу-за-розділами">
         <a href="#Стан-перекладу-за-розділами" aria-hidden="true">
@@ -198,10 +200,12 @@ export default function TranslationStatus({
         </a>
         CSS
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.css, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.css, filterState)}
+          includePopularity={true}
+        />
+      </div>
 
       <h3 id="HTML">
         <a href="#HTML" aria-hidden="true">
@@ -209,10 +213,12 @@ export default function TranslationStatus({
         </a>
         HTML
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.html, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.html, filterState)}
+          includePopularity={true}
+        />
+      </div>
 
       <h3 id="JavaScript">
         <a href="#JavaScript" aria-hidden="true">
@@ -220,10 +226,12 @@ export default function TranslationStatus({
         </a>
         JavaScript
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.javascript, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.javascript, filterState)}
+          includePopularity={true}
+        />
+      </div>
 
       <h3 id="SVG">
         <a href="#SVG" aria-hidden="true">
@@ -231,10 +239,12 @@ export default function TranslationStatus({
         </a>
         SVG
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.svg, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.svg, filterState)}
+          includePopularity={true}
+        />
+      </div>
 
       <h3 id="Посібники">
         <a href="#Посібники" aria-hidden="true">
@@ -242,10 +252,12 @@ export default function TranslationStatus({
         </a>
         Посібники
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.guide, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.guide, filterState)}
+          includePopularity={true}
+        />
+      </div>
 
       <h3 id="Глосарій">
         <a href="#Глосарій" aria-hidden="true">
@@ -253,10 +265,12 @@ export default function TranslationStatus({
         </a>
         Глосарій
       </h3>
-      <TranslationStatusSection
-        pages={filterPages(supportedSections.glossary, filterState)}
-        includePopularity={true}
-      />
+      <div className="wd-table-scroll">
+        <TranslationStatusSection
+          pages={filterPages(supportedSections.glossary, filterState)}
+          includePopularity={true}
+        />
+      </div>
     </>
   );
 }
