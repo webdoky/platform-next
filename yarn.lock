@@ -1704,10 +1704,10 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.0.0.tgz#0d22b52b6037b07aae1aaefe8929207119b06639"
-  integrity sha512-4j4hXHY+HdDbBaiY1MD2kszNnqk7lA7+FYd9BElQSncebGp108Yvqm8712rWdDZMK88rtfZjMDNWd5b/vXCW5Q==
+"@webdoky/content-processor@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.1.0.tgz#77a188c865da984c6188eeb65c10434183fc183a"
+  integrity sha512-G7QxTGMPOkGcON/4hxlKObTM1LtfHo3PSc5v1bh7A+AaHtWyq9ghdtNr5IyeU2147BUzavSZYbRqnPTVE5/1KA==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
