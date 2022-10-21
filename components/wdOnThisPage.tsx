@@ -17,7 +17,7 @@ export default function WdOnThisPage({
   const [observer, setObserver] = useState(null);
   const router = useRouter();
 
-  const headings = externalHeadings.filter((h) => h.depth > 1);
+  const headings = externalHeadings.filter((h) => h.depth === 2);
 
   const observerCallback = useCallback(
     (entries, observer) => {
@@ -53,9 +53,7 @@ export default function WdOnThisPage({
 
       setObserver(observerInstance);
 
-      const elements = document.querySelectorAll(
-        '.wd-content h2, .wd-content h3, .wd-content h4, .wd-content h5, .wd-content h6'
-      );
+      const elements = document.querySelectorAll('.wd-content h2');
 
       for (let i = 0; i < elements.length; i++) {
         observerInstance.observe(elements[i]);
@@ -126,9 +124,7 @@ export default function WdOnThisPage({
             <li
               key={`${page.path}${heading.anchor}`}
               className={classNames({
-                'border-t border-dashed border-ui-border pt-2 mt-2':
-                  index > 0 && heading.depth === 2,
-                'font-semibold': heading.depth === 2,
+                'pt-2': index > 0 && heading.depth === 2,
                 [`depth-${heading.depth}`]: true,
               })}
             >
@@ -137,12 +133,7 @@ export default function WdOnThisPage({
                   className={classNames(
                     'relative flex items-center py-1 text-sm transition transform hover:translate-x-1 text-ui-typo no-underline',
                     {
-                      'pl-2': heading.depth === 3,
-                      'pl-3': heading.depth === 4,
-                      'pl-4': heading.depth === 5,
-                      'pl-5': heading.depth === 6,
-                      'font-bold text-ui-primary':
-                        activeAnchor === heading.anchor,
+                      'text-ui-primary': activeAnchor === heading.anchor,
                     }
                   )}
                 >
