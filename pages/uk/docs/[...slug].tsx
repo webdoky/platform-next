@@ -148,7 +148,7 @@ export default function DocEntry({
                 {hasContent ? (
                   <EditOnGithub currentPage={page} />
                 ) : (
-                  <CtaTranslate currentPage={page} />
+                  <CtaTranslate />
                 )}
               </div>
 
