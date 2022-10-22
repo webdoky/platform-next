@@ -29,7 +29,7 @@ const sidebarSections = [
         title: 'Прийняті патерни іменування в репозиторіях',
         path: '/docs/git-naming-conventions',
       },
-      { title: 'Глосарій', path: '/docs/glossary' },
+      { title: 'Словник термінів', path: '/docs/glossary' },
       { title: 'Ліцензії на вміст WebDoky', path: '/docs/licensing' },
     ],
   },
