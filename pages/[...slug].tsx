@@ -131,13 +131,6 @@ export default function InnerDocEntry({
         hasSidebar={!!sidebarSections}
       >
         <div className="flex flex-wrap items-start justify-start">
-          <div
-            className="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky"
-            style={{ top: '4rem' }}
-          >
-            <WdOnThisPage headings={headings} page={page} />
-          </div>
-
           <div className="order-1 w-full md:w-2/3">
             <div
               className="wd-content"
@@ -147,6 +140,13 @@ export default function InnerDocEntry({
             <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
               <NextPrevLinks page={page} pages={allPages} />
             </div>
+          </div>
+
+          <div
+            className="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky"
+            style={{ top: '4rem' }}
+          >
+            <WdOnThisPage headings={headings} page={page} />
           </div>
         </div>
       </Layout>

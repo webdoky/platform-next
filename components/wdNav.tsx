@@ -11,6 +11,7 @@ export default function WdNav({ currentPage, sidebar }: Params) {
 
   return sidebar.length ? (
     <div className="px-4 pt-8 lg:pt-12">
+      <h2 className="sr-only">Навігація</h2>
       {navigationStructure.map((supSection, index) => (
         <div key={`${index}_${supSection.title}`}>
           {!supSection.items && <WdNavMenu supSection={supSection} />}

@@ -66,10 +66,19 @@ export default function Layout({
           </header>
 
           <main className="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background">
+            <div
+              className={classNames(
+                'w-full pb-24',
+                hasSidebar && 'pl-0 lg:pl-12 lg:w-3/4'
+              )}
+            >
+              {children}
+            </div>
+
             {hasSidebar && (
               <aside
                 className={classNames(
-                  'sidebar border-r sticky overflow-y-auto lg:w-1/4',
+                  'sidebar border-r sticky overflow-y-auto lg:w-1/4 order-first',
                   sidebarOpen && 'open'
                 )}
                 style={sidebarStyle}
@@ -82,15 +91,6 @@ export default function Layout({
                 </div>
               </aside>
             )}
-
-            <div
-              className={classNames(
-                'w-full pb-24',
-                hasSidebar && 'pl-0 lg:pl-12 lg:w-3/4'
-              )}
-            >
-              {children}
-            </div>
           </main>
 
           <footer className="border-t border-ui-border">

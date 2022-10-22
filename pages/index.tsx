@@ -32,9 +32,9 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center mb-2 text-ui-primary">
               <Logo width={80} />
-              <h2 className="text-3xl text-6xl font-black tracking-tighter border-none">
+              <p className="text-3xl text-6xl font-black tracking-tighter border-none">
                 WebDoky
-              </h2>
+              </p>
             </div>
             <h1 className="text-4xl text-center lg:text-5xl">
               Ресурси та документація. <br />
@@ -63,9 +63,9 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
 
           <div className="section-info flex flex-wrap justify-center -mx-4">
             <div className="flex flex-col w-full px-4 mb-8 md:w-2/3">
-              <h3 className="font-bold tracking-wide uppercase mb-0">
+              <h2 className="font-bold tracking-wide uppercase mb-0">
                 Що нового
-              </h3>
+              </h2>
               <p className="mb-0">
                 Найсвіжіші оновлення з нашого{' '}
                 <a
@@ -95,6 +95,7 @@ export default function IndexPage({ changelogs, targetLocale, basePath }) {
             </div>
 
             <div className="flex flex-col w-full px-4 mb-8 md:w-1/3">
+              <h2 className="sr-only">Про нас</h2>
               <p className="text-lg text-left">
                 WebDoky (ВебДоки) — це проект, покликаний зробити вміст MDN Web
                 Docs доступним українською мовою.

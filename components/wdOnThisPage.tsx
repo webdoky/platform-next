@@ -111,13 +111,13 @@ export default function WdOnThisPage({
   ]);
 
   return (
-    <div
+    <aside
       className="mt-8 pr-2 hidden md:block sm:pl-4 md:pl-6 md:pt-12 lg:pl-8 sm:pb-16 sm:border-l border-ui-border md:mt-0 h-full overflow-y-auto"
       style={{ maxHeight: 'calc(100vh - 4rem)' }}
     >
-      <h3 className="pt-0 mt-0 text-sm tracking-wide uppercase border-none">
+      <h2 className="pt-0 mt-0 text-sm tracking-wide uppercase border-none">
         На цій сторінці:
-      </h3>
+      </h2>
       <div>
         <ul>
           {headings.map((heading, index) => (
@@ -153,6 +153,6 @@ export default function WdOnThisPage({
           ))}
         </ul>
       </div>
-    </div>
+    </aside>
   );
 }

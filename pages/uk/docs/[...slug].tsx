@@ -112,45 +112,14 @@ export default function DocEntry({
       <WdLayout>
         <main
           ref={mainContentRef}
-          className="
-        container
-        relative
-        flex flex-wrap
-        justify-start
-        flex-1
-        w-full
-        bg-ui-background
-      "
+          className="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"
         >
-          {hasSidebar && (
-            <aside
-              className={classNames(
-                'sidebar border-t max-h-full border-ui-border lg:border-t-0 lg:max-h-auto',
-                { open: sidebarOpen }
-              )}
-              style={sidebarStyle}
-            >
-              <div className="w-full pb-16 bg-ui-background">
-                <WdNav sidebar={macros} currentPage={page} />
-              </div>
-            </aside>
-          )}
-
           <div
             className={classNames('w-full pb-4', {
               'pl-0 lg:pl-12 lg:w-3/4': hasSidebar,
             })}
           >
             <div className="flex flex-wrap items-start justify-start">
-              {hasContent && (
-                <div
-                  className="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky"
-                  style={{ top: '4rem' }}
-                >
-                  <WdOnThisPage headings={headings} page={page} />
-                </div>
-              )}
-
               <div className="order-1 w-full md:w-2/3">
                 <div className="wd-content">
                   <h1>{title}</h1>
@@ -176,8 +145,31 @@ export default function DocEntry({
 
                 {hasContent && <EditOnGithub currentPage={page} />}
               </div>
+
+              {hasContent && (
+                <div
+                  className="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky"
+                  style={{ top: '4rem' }}
+                >
+                  <WdOnThisPage headings={headings} page={page} />
+                </div>
+              )}
             </div>
           </div>
+
+          {hasSidebar && (
+            <aside
+              className={classNames(
+                'sidebar border-t max-h-full border-ui-border lg:border-t-0 lg:max-h-auto order-first',
+                { open: sidebarOpen }
+              )}
+              style={sidebarStyle}
+            >
+              <div className="w-full pb-16 bg-ui-background">
+                <WdNav sidebar={macros} currentPage={page} />
+              </div>
+            </aside>
+          )}
 
           {hasSidebar && (
             <div className="fixed bottom-0 right-0 z-50 p-8 lg:hidden">

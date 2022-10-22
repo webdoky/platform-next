@@ -37,6 +37,8 @@ export default function Sidebar({
   }, [currentPage.path, sections]);
   return (
     <div className="px-4 pt-8 lg:pt-12">
+      <h2 className="sr-only">Навігація</h2>
+
       {sections.map((section, index) => (
         <div
           key={section.title}

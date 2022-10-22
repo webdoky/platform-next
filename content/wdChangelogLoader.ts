@@ -48,7 +48,7 @@ export default class WdChangelogLoader {
         .filter(
           (_a, index) => index >= headingIndex && index < headingIndex + 4 // two latest versions
         )
-        .map((node) => ({ ...node, depth: 4 }));
+        .map((node) => ({ ...node, depth: 3 }));
 
       const processResult = await changelogProcessor.run(ast);
       const content = changelogProcessor.stringify(processResult);
