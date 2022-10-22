@@ -87,6 +87,17 @@ html[lights-out] {
   }
 }
 
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-Italic-VariableFont_wght.ttf");
+  font-style: italic;
+}
+
 // Global styles -------------------------------
 
 * {
