@@ -80,13 +80,7 @@ const changelogProcessor = unified()
     [
       rehypeAutolinkHeadings,
       {
-        content: {
-          type: 'element',
-          tagName: 'span',
-          properties: {
-            className: 'icon icon-link',
-          },
-        },
+        behavior: 'append',
         linkProperties: {
           'aria-hidden': 'true',
         },

@@ -10,6 +10,7 @@ import EditOnGithub from '../../../components/editOnGithub';
 import LayoutFooter from '../../../components/layoutFooter';
 import MetaHead from '../../../components/metaHead';
 import { normalizeUrl } from '../../../utils/url';
+import CtaTranslate from '../../../components/ctaTranslate';
 
 const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
 
@@ -133,6 +134,7 @@ export default function DocEntry({
                         статті в MDN.
                       </p>
                       <a
+                        className="wd-external"
                         href={`${mdnUrlPrefix}${slug}`}
                         target="_blank"
                         rel=" noopener noreferrer"
@@ -143,7 +145,11 @@ export default function DocEntry({
                   )}
                 </div>
 
-                {hasContent && <EditOnGithub currentPage={page} />}
+                {hasContent ? (
+                  <EditOnGithub currentPage={page} />
+                ) : (
+                  <CtaTranslate currentPage={page} />
+                )}
               </div>
 
               {hasContent && (

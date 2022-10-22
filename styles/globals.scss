@@ -110,16 +110,18 @@ h2,
 h3,
 h4 {
   @apply leading-snug font-black mb-4 text-ui-typo;
+
   &:hover {
     a::before {
       @apply opacity-100;
     }
   }
+
   a {
     &::before {
       content: '#';
-      margin-left: -1em;
-      padding-right: 1em;
+      margin-right: -1em;
+      padding-left: 0.125em;
       @apply text-ui-primary absolute opacity-0 float-left;
     }
   }

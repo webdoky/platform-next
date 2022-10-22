@@ -25,7 +25,7 @@ export default function WdNavSubMenu({
     <div>
       {showHeader && (
         <h3
-          className="pt-0 mt-0 mb-1 text-sm tracking-tight uppercase border-none"
+          className="pt-0 mt-0 mb-1 text-sm tracking-tight uppercase border-none hover:cursor-pointer"
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <div className="inline-block align-middle">
