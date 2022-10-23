@@ -51,9 +51,9 @@ const extractLiveExamples = async () => {
         htmlAst,
         (node: HtmlNode) =>
           node.tagName === 'iframe' &&
-          node.properties.className.includes(exampleSpecificClassName),
+          node.properties?.className?.includes(exampleSpecificClassName),
         (node: HtmlNode) => {
-          if (node.properties.src) {
+          if (node.properties?.src) {
             sources.push(node.properties.src);
           } else {
             throw new Error(
