@@ -15,7 +15,7 @@ const prepareNewIssueUrl = ({
 }) => {
   const url = new URL('https://github.com/webdoky/content/issues/new');
   const bodySections = [
-    `URL: ${process.env.GRIDSOME_BASE_PATH}${path}`,
+    `URL: ${process.env.BASE_PATH}${path}`,
     '#### Яка саме інформація є невірною, не корисною, чи неповною?\n',
     '#### Конкретний розділ чи заголовок?\n',
     '#### Як вона має виглядати натомість?\n',
