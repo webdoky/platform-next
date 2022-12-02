@@ -33,7 +33,7 @@ export interface ContentItem {
   // ...data,
   updatesInOriginalRepo: string[];
   section: string;
-  sourceLastUpdatetAt?: number;
+  sourceLastUpdatedAt?: number;
   translationLastUpdatedAt?: string;
   browser_compat: unknown; // TODO::
   prev?: string;
@@ -75,7 +75,7 @@ export interface PageData {
   originalPath: string;
   updatesInOriginalRepo: string[];
   section: string;
-  sourceLastUpdatetAt?: number;
+  sourceLastUpdatedAt?: number;
   translationLastUpdatedAt?: string;
   browser_compat: unknown; // TODO::
 
@@ -159,7 +159,6 @@ export default class WdContentLoader {
       'utf-8'
     );
     const pageData = JSON.parse(file) as PageData;
-
     return pageData;
   }
 }
