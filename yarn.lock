@@ -1597,15 +1597,15 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.5.0.tgz#353b051dc9293a00b1c0ebb3e6bd05d6ca754fc7"
-  integrity sha512-XWHq3KfASEmI2Aecph2JPrKP1B4/OmaLxKHamk5uIifVdFu15G9TfiAOb6PPkKesUqU/Y+86FoQdYyXXWvPELA==
+"@webdoky/content-processor@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.10.0.tgz#e8a05b74ffbc642a7aa8c209284c283eedf791ee"
+  integrity sha512-bP4zbdeM8eTeC43Ao+jwIgvYIAZEQBgP/wusW1Mosk3CwwXGk1C+bZD1l+l99TZRUBBuqYKBCe/Dzr8aodwNFQ==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-node-resolve" "^13.3.0"
-    "@webdoky/yari-ports" "^2.23.0"
+    "@webdoky/yari-ports" "^3.1.1"
     acorn-import-assertions "^1.8.0"
     cyrillic-to-translit-js "^3.2.1"
     github-slugger "^1.4.0"
@@ -1635,10 +1635,16 @@
     unist-util-visit "^4.1.0"
     unist-util-visit-parents "^5.1.0"
 
+<<<<<<< HEAD
 "@webdoky/yari-ports@^2.23.0":
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-2.23.0.tgz#44e8813244a859c1b6cfc7017247faaba61e4928"
   integrity sha512-cUtUlRc0bWor8a6uxzXwd/3IC1DRxJbDiT3lmB5VGsVnKfmCwvmZRxtp4GLvMyImGZxsxh+QUHxP2t2oKzyLqg==
+=======
+"@webdoky/yari-ports@^2.16.1":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-2.22.0.tgz#bdc8cc79584e6d5e675c791f74257371b61e1568"
+  integrity sha512-O4fhdrzMvI9ftTQZhngdIn22RGAaVjDHzvxqwq0ydkY72T4S4TS6Ly8QQ2fHuOd2Tq2ymRrJLUj9ApMf+pH13A==
   dependencies:
     "@babel/core" "^7.18.6"
     "@babel/eslint-parser" "^7.18.2"
@@ -1651,6 +1657,20 @@
     mdn-data "^2.0.26"
     rollup "^2.75.7"
     sanitize-filename "^1.6.3"
+    unist-builder "^3.0.0"
+
+"@webdoky/yari-ports@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.1.1.tgz#dae57e075ef633921ff0401b79c818bab10705a0"
+  integrity sha512-3rUnsX+JvsBbKcbF8P0DFNGtf5OBFdiq4zWZ4EOdEzU/X28rGBUCFVCVNt7ZcFU7s+I5PGgnaRh68ESQiEB11g==
+>>>>>>> master
+  dependencies:
+    "@mdn/browser-compat-data" "^4.1.2"
+    "@mdn/yari" "^1.7.0"
+    browser-specs "^2.19.3"
+    esm-resolve "^1.0.8"
+    filenamify "^5.1.1"
+    mdn-data "^2.0.26"
     unist-builder "^3.0.0"
 
 "@webdoky/yari-ports@^3.1.0":
