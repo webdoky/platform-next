@@ -36,6 +36,9 @@ interface SearchIndexData {
 const prepareSearchIndex = async () => {
   const contentIndex = await readIndex();
   const pages = contentIndex.index;
+  if (pages.length === 0) {
+    throw new Error('Index is empty');
+  }
   const wdSearchData: SearchIndexData[] = pages
     .filter(({ hasContent }) => hasContent)
     .map(({ title, path, slug }) => ({
@@ -43,6 +46,9 @@ const prepareSearchIndex = async () => {
       path,
       slug,
     }));
+  if (wdSearchData.length === 0) {
+    throw new Error('wdSearchData is empty');
+  }
 
   console.info(
     'Collected search data for WebDocs articles...',

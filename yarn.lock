@@ -1635,24 +1635,6 @@
     unist-util-visit "^4.1.0"
     unist-util-visit-parents "^5.1.0"
 
-"@webdoky/yari-ports@^2.16.1":
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-2.22.0.tgz#bdc8cc79584e6d5e675c791f74257371b61e1568"
-  integrity sha512-O4fhdrzMvI9ftTQZhngdIn22RGAaVjDHzvxqwq0ydkY72T4S4TS6Ly8QQ2fHuOd2Tq2ymRrJLUj9ApMf+pH13A==
-  dependencies:
-    "@babel/core" "^7.18.6"
-    "@babel/eslint-parser" "^7.18.2"
-    "@babel/preset-env" "^7.18.6"
-    "@mdn/browser-compat-data" "^4.1.2"
-    "@mdn/yari" "^1.7.0"
-    ava "^3.15.0"
-    browser-specs "^2.19.3"
-    eslint-plugin-node "^11.1.0"
-    mdn-data "^2.0.26"
-    rollup "^2.75.7"
-    sanitize-filename "^1.6.3"
-    unist-builder "^3.0.0"
-
 "@webdoky/yari-ports@^2.23.0":
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-2.23.0.tgz#44e8813244a859c1b6cfc7017247faaba61e4928"
@@ -1669,6 +1651,19 @@
     mdn-data "^2.0.26"
     rollup "^2.75.7"
     sanitize-filename "^1.6.3"
+    unist-builder "^3.0.0"
+
+"@webdoky/yari-ports@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.1.0.tgz#83c1dddb51510714ffac41b0e62b333d53f8a134"
+  integrity sha512-vqvaF4+F5mJeAx4u/bFfUlCu+qxeGFKh/FU19fmRjfFS8dmyYdmIz+8EcREwqOHkQb6hYwuMFoF3nCcu3iSDZg==
+  dependencies:
+    "@mdn/browser-compat-data" "^4.1.2"
+    "@mdn/yari" "^1.7.0"
+    browser-specs "^2.19.3"
+    esm-resolve "^1.0.8"
+    filenamify "^5.1.1"
+    mdn-data "^2.0.26"
     unist-builder "^3.0.0"
 
 "@webref/css@^5.4.0":
@@ -3757,6 +3752,11 @@ eslint@^8.8.0:
     strip-json-comments "^3.1.0"
     text-table "^0.2.0"
 
+esm-resolve@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/esm-resolve/-/esm-resolve-1.0.8.tgz#1a8121a85a914863463cf05883492e0a55b872d4"
+  integrity sha512-pzYHY8bf7uLpDuefGsI6JtHVS1J3N1uOkIEC36ejvvWhiiMr/xKBX4PrxCtsxeISJbCEMBLkPZvRwZNHgdwn5A==
+
 espree@^9.4.0:
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/espree/-/espree-9.4.0.tgz#cd4bc3d6e9336c433265fc0aa016fc1aaf182f8a"
@@ -4130,6 +4130,11 @@ filename-reserved-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
   integrity sha512-lc1bnsSr4L4Bdif8Xb/qrtokGbq5zlsms/CYH8PP+WtCkGNF65DPiQY8vG3SakEdRn8Dlnm+gW/qWKKjS5sZzQ==
 
+filename-reserved-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-3.0.0.tgz#3d5dd6d4e2d73a3fed2ebc4cd0b3448869a081f7"
+  integrity sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==
+
 filenamify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-2.1.0.tgz#88faf495fb1b47abfd612300002a16228c677ee9"
@@ -4138,6 +4143,15 @@ filenamify@^2.0.0:
     filename-reserved-regex "^2.0.0"
     strip-outer "^1.0.0"
     trim-repeated "^1.0.0"
+
+filenamify@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-5.1.1.tgz#a1ccc5ae678a5e34f578afcb9b72898264d166d2"
+  integrity sha512-M45CbrJLGACfrPOkrTp3j2EcO9OBkKUYME0eiqOCa7i2poaklU0jhlIaMlr8ijLorT0uLAzrn3qXOp5684CkfA==
+  dependencies:
+    filename-reserved-regex "^3.0.0"
+    strip-outer "^2.0.0"
+    trim-repeated "^2.0.0"
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -8664,6 +8678,11 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
+strip-outer@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strip-outer/-/strip-outer-2.0.0.tgz#c45c724ed9b1ff6be5f660503791404f4714084b"
+  integrity sha512-A21Xsm1XzUkK0qK1ZrytDUvqsQWict2Cykhvi0fBQntGG5JSprESasEyV1EZ/4CiR5WB5KjzLTrP/bO37B0wPg==
+
 strnum@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
@@ -8932,6 +8951,13 @@ trim-repeated@^1.0.0:
   integrity sha512-pkonvlKk8/ZuR0D5tLW8ljt5I8kmxp2XKymhepUeOdCEfKpZaktSArkLHZt76OB1ZvO9bssUsDty4SWhLvZpLg==
   dependencies:
     escape-string-regexp "^1.0.2"
+
+trim-repeated@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/trim-repeated/-/trim-repeated-2.0.0.tgz#5d60556d6d40d9461b7c7e06c3ac20b6b1d50090"
+  integrity sha512-QUHBFTJGdOwmp0tbOG505xAgOp/YliZP/6UgafFXYZ26WT1bvQmSMJUvkeVSASuJJHbqsFbynTvkd5W8RBTipg==
+  dependencies:
+    escape-string-regexp "^5.0.0"
 
 trim-trailing-lines@^1.1.0:
   version "1.1.4"

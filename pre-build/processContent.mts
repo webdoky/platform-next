@@ -6,9 +6,9 @@ dotenv.config({ path: '.env.local' });
 
 const processContent = async () => {
   const runner = new Runner({
-    pathToLocalizedContent: `external/translated-content/files`,
-    pathToOriginalContent: `external/original-content/files`,
-    pathToCache: `cache/`,
+    pathToLocalizedContent: process.env.PATH_TO_LOCALIZED_CONTENT,
+    pathToOriginalContent: process.env.PATH_TO_ORIGINAL_CONTENT,
+    pathToCache: 'cache',
     sourceLocale: process.env.SOURCE_LOCALE,
     targetLocale: process.env.TARGET_LOCALE,
   });

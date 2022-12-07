@@ -32,6 +32,7 @@ export default function WdNavMenu({ supSection }: Params) {
                 'text-ui-primary': link.isCurrent,
                 'transition transform hover:translate-x-1 hover:text-ui-primary':
                   !link.isCurrent,
+                'wd-nav-link--not-translated': !link.hasLocalizedContent,
               })}
             >
               <WdNavItem page={link} isCurrent={link.isCurrent} />
@@ -61,6 +62,7 @@ export default function WdNavMenu({ supSection }: Params) {
                       'text-ui-primary': page.isCurrent,
                       'transition transform hover:translate-x-1 hover:text-ui-primary':
                         !page.isCurrent,
+                      'wd-nav-link--not-translated': !page.hasLocalizedContent,
                     })}
                   >
                     <WdNavItem page={page} isCurrent={page.isCurrent} />

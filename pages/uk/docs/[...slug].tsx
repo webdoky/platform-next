@@ -61,7 +61,7 @@ export default function DocEntry({
     section,
   } = page;
   const robots = hasContent ? 'all' : 'noindex,nofollow';
-  const hasSidebar = !!macros.length;
+  const hasSidebar = !!macros?.length;
 
   const [headerHeight, setHeaderHeight] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);

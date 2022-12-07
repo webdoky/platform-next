@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export interface LinkItem {
   path: string;
+  hasLocalizedContent?: boolean;
   isCurrent: boolean;
   title: string;
 }

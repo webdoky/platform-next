@@ -41,7 +41,7 @@ const refreshExternalImages = async () => {
               slug,
             });
           } else {
-            throw new Error(`Missing image's src on the page ${slug}`);
+            console.error(`Missing image's src on the page ${slug}`);
           }
         }
       );
