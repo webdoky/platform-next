@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "@webdoky/content-processor": "^1.10.0",
+    "@webdoky/content-processor": "^1.11.2",
     "@webdoky/yari-ports": "^2.16.1",
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
