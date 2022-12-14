@@ -66,6 +66,8 @@ export const readIndex = async (): Promise<IndexFileObject> => {
 export const readRedirects = async (
   pathToContent: string
 ): Promise<Record<string, string>> => {
+  const targetLocale = process.env.TARGET_LOCALE;
+  const sourceLocale = process.env.SOURCE_LOCALE;
   const file = await fs.readFile(
     path.resolve(pathToContent, '_redirects.txt'),
     'utf-8'
@@ -85,7 +87,9 @@ export const readRedirects = async (
           `Parsing error, expected 2 parts, but got ${parts.length}`
         );
       }
-      return parts;
+      return parts.map((entry) =>
+        entry.replace(`/${sourceLocale}/`, `/${targetLocale}/`)
+      );
     })
   );
 };
