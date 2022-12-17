@@ -1,4 +1,6 @@
-import { popularitiesJson } from '@webdoky/yari-ports';
+import readJsonDependency from '../utils/readJsonDependency';
+
+const popularitiesJson = readJsonDependency('@mdn/yari/popularities.json');
 
 interface PopularityItem {
   link: string;
