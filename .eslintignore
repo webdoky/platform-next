@@ -1,0 +1,4 @@
+external
+node_modules
+cache
+.next

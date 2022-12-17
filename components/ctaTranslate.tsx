@@ -17,8 +17,8 @@ export default function CtaTranslate() {
         швидше!
       </p>
       <p>
-        <Link href="/docs/#yak-doluchytysia">
-          <a className="text-ui-typo">Як долучитися?</a>
+        <Link href="/docs/#yak-doluchytysia" className="text-ui-typo">
+          Як долучитися?
         </Link>
       </p>
     </div>

@@ -16,7 +16,6 @@ const processContent = async () => {
     redirectMap = await readRedirects(
       `${pathToOriginalContent}/${sourceLocale?.toLowerCase()}`
     );
-    console.log('got redirects map', redirectMap);
   } catch (error) {
     console.warn(error, "Failed to read redirects map, assuming it's empty...");
   }
@@ -24,7 +23,7 @@ const processContent = async () => {
   const runner = new Runner({
     pathToLocalizedContent,
     pathToOriginalContent,
-    pathToCache: `cache/`,
+    pathToCache: 'cache',
     sourceLocale,
     targetLocale,
     redirectMap,

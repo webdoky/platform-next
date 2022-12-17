@@ -14,6 +14,9 @@ interface Params {
   };
 }
 
+const MISSING_TRANSLATION_MESSAGE =
+  'Це посилання веде на сторінку, якої ще не існує. Ймовірно, ми її ще не переклали.';
+
 export default function WdNavMenu({ supSection }: Params) {
   return (
     <div>
@@ -32,7 +35,11 @@ export default function WdNavMenu({ supSection }: Params) {
                 'text-ui-primary': link.isCurrent,
                 'transition transform hover:translate-x-1 hover:text-ui-primary':
                   !link.isCurrent,
+                'wd-nav-link--not-translated': !link.hasLocalizedContent,
               })}
+              title={
+                !link.hasLocalizedContent ? MISSING_TRANSLATION_MESSAGE : ''
+              }
             >
               <WdNavItem page={link} isCurrent={link.isCurrent} />
             </li>
@@ -61,7 +68,13 @@ export default function WdNavMenu({ supSection }: Params) {
                       'text-ui-primary': page.isCurrent,
                       'transition transform hover:translate-x-1 hover:text-ui-primary':
                         !page.isCurrent,
+                      'wd-nav-link--not-translated': !page.hasLocalizedContent,
                     })}
+                    title={
+                      !page.hasLocalizedContent
+                        ? MISSING_TRANSLATION_MESSAGE
+                        : ''
+                    }
                   >
                     <WdNavItem page={page} isCurrent={page.isCurrent} />
                   </li>

@@ -33,7 +33,6 @@ export interface ContentItem {
   // ...data,
   updatesInOriginalRepo: string[];
   section: string;
-  sourceLastUpdatetAt?: number;
   translationLastUpdatedAt?: string;
   browser_compat: unknown; // TODO::
   prev?: string;
@@ -75,7 +74,6 @@ export interface PageData {
   originalPath: string;
   updatesInOriginalRepo: string[];
   section: string;
-  sourceLastUpdatetAt?: number;
   translationLastUpdatedAt?: string;
   browser_compat: unknown; // TODO::
 
@@ -85,8 +83,6 @@ export interface PageData {
   tags: string[];
   browserCompat: string;
 }
-
-const headers = { 'Content-Type': 'application/json' };
 
 const readIndex = async (): Promise<IndexFileObject> => {
   const file = await fs.readFile(
@@ -159,7 +155,6 @@ export default class WdContentLoader {
       'utf-8'
     );
     const pageData = JSON.parse(file) as PageData;
-
     return pageData;
   }
 }

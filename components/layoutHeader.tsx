@@ -21,16 +21,16 @@ export default function LayoutHeader() {
       <div className="container">
         <div className="flex items-center justify-between -mx-2 sm:-mx-4">
           <div className="flex flex-col items-center px-2 mr-auto sm:px-4 sm:flex-row">
-            <Link href="/">
-              <a
-                className="flex items-center text-ui-primary no-underline"
-                title="На головну"
-              >
-                <Logo width={40} className="text-ui-primary" />
-                <span className="hidden ml-2 text-xl font-black tracking-tighter sm:block">
-                  WebDoky
-                </span>
-              </a>
+            <Link
+              href="/"
+              className="flex items-center text-ui-primary no-underline"
+              title="На головну"
+              passHref
+            >
+              <Logo width={40} className="text-ui-primary" />
+              <span className="hidden ml-2 text-xl font-black tracking-tighter sm:block">
+                WebDoky
+              </span>
             </Link>
 
             <div className="hidden ml-2 mr-5 sm:flex items-center sm:ml-2">

@@ -25,8 +25,8 @@ export default function NotFoundPage({ basePath }) {
           </h1>
         </div>
         <div className="mb-10 flex items-center justify-center">
-          <Link href="/">
-            <a className="font-bold text-xl">Повернутись на головну</a>
+          <Link href="/" className="font-bold text-xl">
+            Повернутись на головну
           </Link>
           .
         </div>
