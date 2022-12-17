@@ -46,6 +46,7 @@ jobs:
           TARGET_LOCALE: 'uk'
           BASE_PATH: 'https://webdoky.org'
           PATH_TO_LOCALIZED_CONTENT: './external/translated-content/files'
+          PATH_TO_ORIGINAL_CONTENT: './external/original-content/files'
 
       - name: Builds static app
         run: yarn build
@@ -54,6 +55,7 @@ jobs:
           TARGET_LOCALE: 'uk'
           BASE_PATH: 'https://webdoky.org'
           PATH_TO_LOCALIZED_CONTENT: './external/translated-content/files'
+          PATH_TO_ORIGINAL_CONTENT: './external/original-content/files'
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Pushes to deployment repository

@@ -63,6 +63,37 @@ export const readIndex = async (): Promise<IndexFileObject> => {
   return JSON.parse(file);
 };
 
+export const readRedirects = async (
+  pathToContent: string
+): Promise<Record<string, string>> => {
+  const targetLocale = process.env.TARGET_LOCALE;
+  const sourceLocale = process.env.SOURCE_LOCALE;
+  const file = await fs.readFile(
+    path.resolve(pathToContent, '_redirects.txt'),
+    'utf-8'
+  );
+  const contents = file.split('\n');
+  const redirectionDirectives = contents.filter(
+    (maybeDirective) =>
+      maybeDirective && // empty strings are not valid redirects
+      !maybeDirective.startsWith('#') // hash-started string is considered a comment
+  );
+
+  return Object.fromEntries(
+    redirectionDirectives.map((directiveString) => {
+      const parts = directiveString.split('\t').filter(Boolean);
+      if (parts.length !== 2) {
+        throw new Error(
+          `Parsing error, expected 2 parts, but got ${parts.length}`
+        );
+      }
+      return parts.map((entry) =>
+        entry.replace(`/${sourceLocale}/`, `/${targetLocale}/`)
+      );
+    })
+  );
+};
+
 export const readAllPages = async (fields: (keyof PageData)[]) => {
   const mainIndex = await readIndex();
   const pages: Partial<PageData>[] = [];
