@@ -139,23 +139,23 @@ export default function Search() {
                   onMouseEnter={() => setFocusIndex(index)}
                   onMouseDown={() => go()}
                 >
-                  <Link href={result.path}>
-                    <a
-                      className={classNames(
-                        'block p-2 -mx-2 text-base font-bold rounded-lg no-underline',
-                        focusIndex === index
-                          ? 'bg-ui-sidebar text-ui-primary'
-                          : 'text-ui-typo'
-                      )}
-                    >
-                      <span className="flex items-center">
-                        {result.title}
-                        <ChevronRightIcon size={1.3} class-name="mx-1" />
-                        <span className="font-normal opacity-75">
-                          {result.path}
-                        </span>
+                  <Link
+                    href={result.path}
+                    className={classNames(
+                      'block p-2 -mx-2 text-base font-bold rounded-lg no-underline',
+                      focusIndex === index
+                        ? 'bg-ui-sidebar text-ui-primary'
+                        : 'text-ui-typo'
+                    )}
+                    passHref
+                  >
+                    <span className="flex items-center">
+                      {result.title}
+                      <ChevronRightIcon size={1.3} class-name="mx-1" />
+                      <span className="font-normal opacity-75">
+                        {result.path}
                       </span>
-                    </a>
+                    </span>
                   </Link>
                 </li>
               ))

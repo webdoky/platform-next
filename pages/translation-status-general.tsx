@@ -28,7 +28,6 @@ export async function getStaticProps() {
           'originalPath',
           'updatesInOriginalRepo',
           'hasContent',
-          'sourceLastUpdatedAt',
           'translationLastUpdatedAt',
         ])
       ),

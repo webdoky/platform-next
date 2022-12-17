@@ -38,8 +38,8 @@ export default function LayoutFooter({
                   CC-BY-SA 2.5
                 </a>{' '}
                 (
-                <Link href="/docs/licensing/">
-                  <a className="text-ui-typo">докладніше тут</a>
+                <Link href="/docs/licensing/" className="text-ui-typo">
+                  докладніше тут
                 </Link>
                 ).
               </p>
@@ -88,8 +88,8 @@ export default function LayoutFooter({
                   CC-BY-SA 2.5
                 </a>{' '}
                 (
-                <Link href="/docs/licensing/">
-                  <a className="text-ui-typo">докладніше тут</a>
+                <Link href="/docs/licensing/" className="text-ui-typo">
+                  докладніше тут
                 </Link>
                 ).
               </p>

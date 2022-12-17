@@ -45,7 +45,6 @@ export interface PageData {
   originalPath: string;
   updatesInOriginalRepo: string[];
   section: string;
-  sourceLastUpdatedAt?: number;
   translationLastUpdatedAt?: string;
 
   // data fields
