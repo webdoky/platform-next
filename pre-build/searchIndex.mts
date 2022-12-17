@@ -37,7 +37,7 @@ const prepareSearchIndex = async () => {
   const contentIndex = await readIndex();
   const pages = contentIndex.index;
   if (pages.length === 0) {
-    throw new Error('Index is empty');
+    throw new Error('Failed to collect data for search index: no pages found');
   }
   const wdSearchData: SearchIndexData[] = pages
     .filter(({ hasContent }) => hasContent)
@@ -47,7 +47,7 @@ const prepareSearchIndex = async () => {
       slug,
     }));
   if (wdSearchData.length === 0) {
-    throw new Error('wdSearchData is empty');
+    throw new Error('Failed to collect data for search index: no pages with content found');
   }
 
   console.info(
