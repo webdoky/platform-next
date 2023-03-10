@@ -1,13 +1,23 @@
+import map from 'lodash/map';
+import pick from 'lodash/pick';
+import toLower from 'lodash/toLower';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import Logo from '../components/logo';
 import MetaHead from '../components/metaHead';
 import WdChangelogLoader from '../content/wdChangelogLoader';
+import WdContentLoader from '../content/wdContentLoader';
+import populateChangelogWithLinks from '../utils/populateChangelogWithLinks';
 
 export async function getStaticProps() {
+  const pages = await WdContentLoader.getAll();
+  const slugsToPaths = new Map(
+    map(pages, (page) => [toLower(page.slug), pick(page, ['path', 'title'])])
+  );
   const changelogs = await WdChangelogLoader.getAll();
 
-  const changeLogContent = changelogs[0].content || '';
+  let changeLogContent = changelogs[0].content || '';
+  changeLogContent = populateChangelogWithLinks(changeLogContent, slugsToPaths);
 
   return {
     props: {
