@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "@mdn/yari": "^1.29.2",
-    "@webdoky/content-processor": "^1.14.0",
+    "@webdoky/content-processor": "^1.16.0",
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
     "dotenv": "^16.0.1",

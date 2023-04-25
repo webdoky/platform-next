@@ -651,7 +651,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
+"@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3", "@types/unist@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
@@ -710,14 +710,15 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.14.0.tgz#8956d2bd5bc8209cb88a6b736d20ecc57c9ae237"
-  integrity sha512-cX7fN6m8nYRra+SvW7QZhID2dAAJrwk4y4sovYlymQogamtEkUXXQv/S74m8+vNo58MG0zuk57iLi1J+bk4gPA==
+"@webdoky/content-processor@^1.16.0":
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.16.0.tgz#9661059b35659ba1df618841efd15668007133a8"
+  integrity sha512-QdWEzGaBEpduLjHb4oLBQmELx0eEKB36/rXDbRS9QN5bJDSj/zk306OjTfmgw71N3GjsA24chKTH8VQ1LQy+kA==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-node-resolve" "^13.3.0"
+    "@types/unist" "^2.0.6"
     "@webdoky/yari-ports" "^3.5.0"
     acorn-import-assertions "^1.8.0"
     cyrillic-to-translit-js "^3.2.1"
