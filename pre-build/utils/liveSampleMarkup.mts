@@ -4,6 +4,8 @@ const defaultSampleHead = `
 <style>
   body {
     background: #fff;
+    margin: 0;
+    padding: 0;
   }
   .missing-sample__body {
     background: #fef9c3;

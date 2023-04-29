@@ -113,12 +113,15 @@
   }
 
   .wd--live-sample {
-    @apply border border-ui-border max-w-full;
+    @apply border border-ui-border max-w-full w-full p-2;
   }
 
   .wd--interactive-example {
     @apply border w-full border-ui-border my-4;
 
+    &.is-default-height {
+      height: 375px;
+    }
     &.is-js-height {
       height: 500px;
     }
