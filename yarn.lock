@@ -710,16 +710,16 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.16.0.tgz#9661059b35659ba1df618841efd15668007133a8"
-  integrity sha512-QdWEzGaBEpduLjHb4oLBQmELx0eEKB36/rXDbRS9QN5bJDSj/zk306OjTfmgw71N3GjsA24chKTH8VQ1LQy+kA==
+"@webdoky/content-processor@^1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.17.0.tgz#0a4ad6fbb5ce9b92927f4d05e5d903dd472a4584"
+  integrity sha512-xa1IqQChVw/6wC8CPF+m/8UGcCPIWR8qA++HwRvL9e11Zs/QKNjZhnlhs2g9N6zDUhl7oPCR6zfF/PGO27IsHQ==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-node-resolve" "^13.3.0"
     "@types/unist" "^2.0.6"
-    "@webdoky/yari-ports" "^3.5.0"
+    "@webdoky/yari-ports" "^3.6.0"
     acorn-import-assertions "^1.8.0"
     cyrillic-to-translit-js "^3.2.1"
     github-slugger "^1.4.0"
@@ -749,10 +749,10 @@
     unist-util-visit "^4.1.0"
     unist-util-visit-parents "^5.1.0"
 
-"@webdoky/yari-ports@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.5.0.tgz#20cd26ef6fa46f0f163361c5114c1c74bf386a21"
-  integrity sha512-XPSaEigu8Dr/V9ZGt32kgzbrovpMQ++c6EZdgOtKweIzYRT5LtPZFMkhwxl8UAJGc7SpiQPfk7c+K7EwCGs3IQ==
+"@webdoky/yari-ports@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.6.0.tgz#c56803c81dd947ec99d8256ad9c050d8b12d72be"
+  integrity sha512-KGxHLZqFC7ay0KPK90+KqZ0a7/lVdNGB062oTn4PSRFqngVj5o+S0Z10Qgsgbti4tc7Tu4Jt8VZS7pJ9eyLgtw==
   dependencies:
     "@mdn/browser-compat-data" "^4.1.2"
     "@mdn/yari" "^1.7.0"

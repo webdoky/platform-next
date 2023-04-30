@@ -32,7 +32,7 @@ jobs:
       - name: Sets up node
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Fetches dependencies
         run: |
