@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "@mdn/browser-compat-data": "^4.1.2",
     "@mdn/yari": "^1.29.2",
     "@webdoky/content-processor": "^1.16.0",
     "classnames": "^2.3.1",
