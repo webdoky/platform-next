@@ -47,42 +47,45 @@ export default function WdNavMenu({ supSection }: Params) {
         </ul>
       )}
       {supSection.sections &&
-        supSection.sections.map((section, index) => (
-          <div
-            key={section.title}
-            className={classNames('pb-4 mb-4 border-ui-border', {
-              'border-b': index < supSection.sections.length - 1,
-            })}
-          >
-            <WdNavSubMenu
-              expanded={!!section.expanded}
-              showHeader={!!section.title}
-              headerContent={<>{section.title}</>}
+        supSection.sections
+          .filter((section) => section.items?.length > 0)
+          .map((section, index) => (
+            <div
+              key={section.title}
+              className={classNames('pb-4 mb-4 border-ui-border', {
+                'border-b': index < supSection.sections.length - 1,
+              })}
             >
-              <ul className="max-w-full pl-2 mb-0">
-                {section.items.map((page) => (
-                  <li
-                    id={page.path}
-                    key={page.path}
-                    className={classNames({
-                      'text-ui-primary': page.isCurrent,
-                      'transition transform hover:translate-x-1 hover:text-ui-primary':
-                        !page.isCurrent,
-                      'wd-nav-link--not-translated': !page.hasLocalizedContent,
-                    })}
-                    title={
-                      !page.hasLocalizedContent
-                        ? MISSING_TRANSLATION_MESSAGE
-                        : ''
-                    }
-                  >
-                    <WdNavItem page={page} isCurrent={page.isCurrent} />
-                  </li>
-                ))}
-              </ul>
-            </WdNavSubMenu>
-          </div>
-        ))}
+              <WdNavSubMenu
+                expanded={!!section.expanded}
+                showHeader={!!section.title}
+                headerContent={<>{section.title}</>}
+              >
+                <ul className="max-w-full pl-2 mb-0">
+                  {section.items.map((page) => (
+                    <li
+                      id={page.path}
+                      key={page.path}
+                      className={classNames({
+                        'text-ui-primary': page.isCurrent,
+                        'transition transform hover:translate-x-1 hover:text-ui-primary':
+                          !page.isCurrent,
+                        'wd-nav-link--not-translated':
+                          !page.hasLocalizedContent,
+                      })}
+                      title={
+                        !page.hasLocalizedContent
+                          ? MISSING_TRANSLATION_MESSAGE
+                          : ''
+                      }
+                    >
+                      <WdNavItem page={page} isCurrent={page.isCurrent} />
+                    </li>
+                  ))}
+                </ul>
+              </WdNavSubMenu>
+            </div>
+          ))}
     </div>
   );
 }
