@@ -710,16 +710,16 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.20.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.20.2.tgz#069b6091ad33764491c8ff626b65a0496c793a5f"
-  integrity sha512-+7na8c8bvyLkaWizjo2tI81Xw8Ky6EToFpZFAZypcx+KNAiLsqhIMb1Nc0MbvZFRbyvVdrtfQHfzapTNo28IuA==
+"@webdoky/content-processor@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.22.0.tgz#2a8589c0af2ffa743d5e2c5b655231e40b003d19"
+  integrity sha512-OfYAotbcpH3CBu0tgO+8dAi1usxppiAJ9MxYBmMSAXkh4Rzs4EOdWX4hBBi54LbfjmetJ0/1bLgpqtxDgsVnwA==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-node-resolve" "^13.3.0"
     "@types/unist" "^2.0.6"
-    "@webdoky/yari-ports" "^3.7.2"
+    "@webdoky/yari-ports" "^3.8.0"
     acorn-import-assertions "^1.8.0"
     cyrillic-to-translit-js "^3.2.1"
     github-slugger "^1.4.0"
@@ -749,17 +749,17 @@
     unist-util-visit "^4.1.0"
     unist-util-visit-parents "^5.1.0"
 
-"@webdoky/yari-ports@^3.7.2":
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.7.2.tgz#f70ce1026dc20c3245e746fdf587e6ca955cfbd5"
-  integrity sha512-5gVpN5fOK9U9CdLiQzoDW8HuQl0WkOvHTZw4zOpJNk63LRAjTmWSWYq4RTKunSsXXt54wuT0VX+iFOS2Ghfusw==
+"@webdoky/yari-ports@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/yari-ports/-/yari-ports-3.8.0.tgz#30646e30647c086ac31394cc46ee3a6f2fc77673"
+  integrity sha512-Oy5F2YeHbJ02LuS0PC7KZGkJnTNicpXDQCYYsPVfqgnxq9e5SiR3g4nySBtASd7QLrELHSq7VKtYC0kFqRmAPw==
   dependencies:
     "@mdn/browser-compat-data" "^4.1.2"
     "@mdn/yari" "^1.7.0"
     browser-specs "^2.19.3"
-    esm-resolve "^1.0.8"
     filenamify "^5.1.1"
     mdn-data "^2.0.26"
+    resolve-package-path "^4.0.3"
     unist-builder "^3.0.0"
 
 "@webref/css@^5.4.4":
@@ -2527,11 +2527,6 @@ eslint@^8.8.0:
     strip-ansi "^6.0.1"
     strip-json-comments "^3.1.0"
     text-table "^0.2.0"
-
-esm-resolve@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/esm-resolve/-/esm-resolve-1.0.8.tgz#1a8121a85a914863463cf05883492e0a55b872d4"
-  integrity sha512-pzYHY8bf7uLpDuefGsI6JtHVS1J3N1uOkIEC36ejvvWhiiMr/xKBX4PrxCtsxeISJbCEMBLkPZvRwZNHgdwn5A==
 
 espree@^9.4.0:
   version "9.4.1"
@@ -5735,6 +5730,18 @@ path-parse@^1.0.7:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
+path-root-regex@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/path-root-regex/-/path-root-regex-0.1.2.tgz#bfccdc8df5b12dc52c8b43ec38d18d72c04ba96d"
+  integrity sha512-4GlJ6rZDhQZFE0DPVKh0e9jmZ5egZfxTkp7bcRDuPlJXbAwhxcl2dINPUAsjLdejqaLsCeg8axcLjIbvBjN4pQ==
+
+path-root@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/path-root/-/path-root-0.1.1.tgz#9a4a6814cac1c0cd73360a95f32083c8ea4745b7"
+  integrity sha512-QLcPegTHF11axjfojBIoDygmS2E3Lf+8+jI6wOVmNVenrKSo3mFdSGiIgdSHenczw3wPtlVMQaFVwGmM7BJdtg==
+  dependencies:
+    path-root-regex "^0.1.0"
+
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
@@ -6355,6 +6362,13 @@ resolve-from@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
   integrity sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
+
+resolve-package-path@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/resolve-package-path/-/resolve-package-path-4.0.3.tgz#31dab6897236ea6613c72b83658d88898a9040aa"
+  integrity sha512-SRpNAPW4kewOaNUt8VPqhJ0UMxawMwzJD8V7m1cJfdSTK9ieZwS6K7Dabsm4bmLFM96Z5Y/UznrpG5kt1im8yA==
+  dependencies:
+    path-root "^0.1.1"
 
 resolve@^1.1.7, resolve@^1.17.0, resolve@^1.19.0, resolve@^1.20.0, resolve@^1.22.0, resolve@^1.22.1:
   version "1.22.1"
