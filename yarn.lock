@@ -2528,6 +2528,11 @@ eslint@^8.8.0:
     strip-json-comments "^3.1.0"
     text-table "^0.2.0"
 
+esm-resolve@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/esm-resolve/-/esm-resolve-1.0.8.tgz#1a8121a85a914863463cf05883492e0a55b872d4"
+  integrity sha512-pzYHY8bf7uLpDuefGsI6JtHVS1J3N1uOkIEC36ejvvWhiiMr/xKBX4PrxCtsxeISJbCEMBLkPZvRwZNHgdwn5A==
+
 espree@^9.4.0:
   version "9.4.1"
   resolved "https://registry.yarnpkg.com/espree/-/espree-9.4.1.tgz#51d6092615567a2c2cff7833445e37c28c0065bd"
