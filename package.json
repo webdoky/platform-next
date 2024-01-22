@@ -4,10 +4,12 @@
     "@mdn/browser-compat-data": "^4.1.2",
     "@mdn/yari": "^1.29.2",
     "@webdoky/content-processor": "^1.22.0",
+    "algoliasearch": "^4.22.1",
     "classnames": "^2.3.1",
     "cyrillic-to-translit-js": "^3.2.1",
     "dotenv": "^16.0.1",
     "esm-resolve": "^1.0.8",
+    "fast-glob": "^3.3.2",
     "fs-extra": "^10.1.0",
     "fuse.js": "^3.6.1",
     "github-slugger": "^1.4.0",
@@ -38,7 +40,8 @@
     "ts-node": "^10.8.1",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",
-    "unist-util-visit-parents": "^5.1.0"
+    "unist-util-visit-parents": "^5.1.0",
+    "valibot": "^0.26.0"
   },
   "scripts": {
     "pre-build": "node --loader ts-node/esm ./pre-build/index.mts",
@@ -49,7 +52,8 @@
     "next-lint": "next lint",
     "prestart": "npm run export",
     "lint": "eslint ./ --ext js,jsx,ts,mts,tsx",
-    "start": "serve out"
+    "start": "serve out",
+    "populate-algolia": "node --loader ts-node/esm ./populate-algolia/index.mts"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
