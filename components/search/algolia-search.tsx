@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import 'instantsearch.css/themes/satellite.css';
 import { useMemo } from 'react';
 import {
-  Configure,
   Hits,
   type HitsProps,
+  Menu,
   PoweredBy,
   RefinementList,
   SearchBox,
@@ -49,7 +49,7 @@ export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
             document.documentElement.dataset.theme == 'dark' ? 'dark' : 'light'
           }
         />
-        <RefinementList attribute="section" />
+        <Menu attribute="section" />
         <NoResultsBoundary fallback={<NoResults />}>
           <Hits classNames={hitsClassNames} hitComponent={Hit} />
         </NoResultsBoundary>

@@ -5,9 +5,14 @@ import processContent from './processContent.mjs';
 import refreshExternalImages from './externalImages.mjs';
 
 (async function () {
-  await processContent();
-  await refreshInternalImages();
-  await extractEmbeddedSamples();
-  await refreshExternalImages();
-  await extractLiveExamples();
+  try {
+    await processContent();
+    await refreshInternalImages();
+    await extractEmbeddedSamples();
+    await refreshExternalImages();
+    await extractLiveExamples();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 })();

@@ -1,17 +1,21 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
-import rehypeExternalLinks from 'rehype-external-links';
+
 import matter from 'gray-matter';
-import { ContentItem } from './wdContentLoader';
-import { visit, Node } from 'unist-util-visit';
-import htmlSlugify from '../utils/sluggerPlugin';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { pick } from 'lodash';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
 import rehypePrism from 'rehype-prism';
+import rehypeStringify from 'rehype-stringify';
+import remarkRehype from 'remark-rehype';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import type { Node } from 'unist';
+import { visit } from 'unist-util-visit';
+
+import htmlSlugify from '../utils/sluggerPlugin';
+
+import type { ContentItem } from './wdContentLoader';
 
 export type HtmlNode = Node & {
   tagName?: string;

@@ -208,7 +208,9 @@ blockquote {
 
 .hit-link {
   color: currentColor;
+  padding: 1.5rem;
   text-decoration: none;
+  width: 100%;
 }
 
 .search-hits {
@@ -241,21 +243,108 @@ blockquote {
 .ais-Hits-item.ais-Hits-item {
   background-color: var(--color-ui-background);
   color: var(--color-ui-typo);
+  padding: 0;
 
   &:hover {
-    background-color: color-mix(
-      in oklab,
-      var(--color-ui-primary) 20%,
-      var(--color-ui-background)
-    );
+    filter: contrast(1.2);
 
     h4 {
       text-decoration: underline;
     }
+  }
+  h4 svg {
+    display: inline;
+    margin-right: 0.5em;
+    max-height: 1em;
   }
 }
 
 .ais-SearchBox-input.ais-SearchBox-input {
   background-color: var(--color-ui-sidebar);
   color: var(--color-ui-typo);
+}
+
+.ais-Menu-list.ais-Menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  padding: 0 0.5rem;
+}
+
+.hit-css {
+  color: color-mix(
+    in oklab,
+    theme("colors.orange.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.orange.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-glossary {
+  color: color-mix(
+    in oklab,
+    theme("colors.gray.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.gray.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-guide {
+  color: color-mix(
+    in oklab,
+    theme("colors.purple.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.purple.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-html {
+  color: color-mix(
+    in oklab,
+    theme("colors.green.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.green.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-javascript {
+  color: color-mix(
+    in oklab,
+    theme("colors.yellow.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.yellow.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-svg {
+  color: color-mix(
+    in oklab,
+    theme("colors.pink.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.pink.500") 20%,
+    var(--color-ui-background)
+  );
 }
