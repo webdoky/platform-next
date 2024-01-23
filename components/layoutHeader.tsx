@@ -1,5 +1,5 @@
 import Logo from './logo';
-import Search from './search';
+import Search from './search/search';
 import ToggleDarkMode from './toggleDarkMode';
 import { GithubIcon } from './icons';
 import Link from 'next/link';
@@ -9,8 +9,9 @@ import classNames from 'classnames';
 export default function LayoutHeader() {
   const router = useRouter();
   const currentRoute = router.asPath;
-  const nav: { path: string; title: string }[] = process.env
-    .mainNav as unknown as {
+  const nav: { path: string; title: string }[] = JSON.parse(
+    process.env.mainNav
+  ) as unknown as {
     path: string;
     title: string;
   }[];
