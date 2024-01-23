@@ -5,76 +5,76 @@
 // Colors ----------------------------
 
 :root {
-  --color-ui-background: theme('colors.white');
-  --color-ui-typo: theme('colors.gray.700');
-  --color-ui-sidebar: theme('colors.gray.200');
-  --color-ui-sidebar-lighter-1: theme('colors.gray.50');
-  --color-ui-border: theme('colors.gray.300');
-  --color-ui-primary: theme('colors.indigo.600');
-  --color-ui-footer: theme('colors.gray.100');
-  --color-ui-primary-lighter-1: theme('colors.indigo.300');
+  --color-ui-background: theme("colors.white");
+  --color-ui-typo: theme("colors.gray.700");
+  --color-ui-sidebar: theme("colors.gray.200");
+  --color-ui-sidebar-lighter-1: theme("colors.gray.50");
+  --color-ui-border: theme("colors.gray.300");
+  --color-ui-primary: theme("colors.indigo.600");
+  --color-ui-footer: theme("colors.gray.100");
+  --color-ui-primary-lighter-1: theme("colors.indigo.300");
 
-  --color-ui-warning: theme('colors.yellow.100');
-  --color-ui-warning-border: theme('colors.yellow.500');
-  --color-ui-note: theme('colors.indigo.100');
-  --color-ui-note-border: theme('colors.indigo.500');
-  --color-ui-deprecated: theme('colors.red.100');
-  --color-ui-deprecated-border: theme('colors.red.500');
+  --color-ui-warning: theme("colors.yellow.100");
+  --color-ui-warning-border: theme("colors.yellow.500");
+  --color-ui-note: theme("colors.indigo.100");
+  --color-ui-note-border: theme("colors.indigo.500");
+  --color-ui-deprecated: theme("colors.red.100");
+  --color-ui-deprecated-border: theme("colors.red.500");
   --color-ui-supported: rgba(16, 195, 109, 0.2);
 
   // Icons for BCD table
-  --icon-platform-desktop: url('/icons/computer-line.svg');
-  --icon-platform-mobile: url('/icons/smartphone-line.svg');
-  --icon-platform-server: url('/icons/server-line.svg');
-  --icon-browser-chrome: url('/icons/chrome-line.svg');
-  --icon-browser-edge: url('/icons/edge-fill.svg');
-  --icon-browser-firefox: url('/icons/firefox-line.svg');
-  --icon-browser-ie: url('/icons/ie-fill.svg');
-  --icon-browser-opera: url('/icons/opera-fill.svg');
-  --icon-browser-safari: url('/icons/safari-line.svg');
-  --icon-browser-android: url('/icons/android-line.svg');
-  --icon-browser-samsung-internet: url('/icons/samsung-internet.svg');
-  --icon-browser-deno: url('/icons/deno-fill.svg');
-  --icon-browser-nodejs: url('/icons/nodejs-line.svg');
+  --icon-platform-desktop: url("/icons/computer-line.svg");
+  --icon-platform-mobile: url("/icons/smartphone-line.svg");
+  --icon-platform-server: url("/icons/server-line.svg");
+  --icon-browser-chrome: url("/icons/chrome-line.svg");
+  --icon-browser-edge: url("/icons/edge-fill.svg");
+  --icon-browser-firefox: url("/icons/firefox-line.svg");
+  --icon-browser-ie: url("/icons/ie-fill.svg");
+  --icon-browser-opera: url("/icons/opera-fill.svg");
+  --icon-browser-safari: url("/icons/safari-line.svg");
+  --icon-browser-android: url("/icons/android-line.svg");
+  --icon-browser-samsung-internet: url("/icons/samsung-internet.svg");
+  --icon-browser-deno: url("/icons/deno-fill.svg");
+  --icon-browser-nodejs: url("/icons/nodejs-line.svg");
 
   // translation status
   --color-intl-status-not-translated: rgba(252, 115, 115, 0.3);
   --color-intl-status-out-of-date: rgba(251, 191, 26, 0.3);
-  --color-intl-status-up-to-date: rgba(16, 195, 109, 0.3);  
+  --color-intl-status-up-to-date: rgba(16, 195, 109, 0.3);
 }
 
-html[lights-out] {
-  --color-ui-background: theme('colors.gray.900');
-  --color-ui-typo: theme('colors.gray.100');
-  --color-ui-sidebar: theme('colors.gray.800');
-  --color-ui-sidebar-lighter-1: theme('colors.gray.700');
-  --color-ui-primary-lighter-1: theme('colors.indigo.300');
-  --color-ui-border: theme('colors.gray.800');
-  --color-ui-primary: theme('colors.indigo.500');
-  --color-ui-footer: theme('colors.gray.700');
+html[data-theme="dark"] {
+  --color-ui-background: theme("colors.gray.900");
+  --color-ui-typo: theme("colors.gray.100");
+  --color-ui-sidebar: theme("colors.gray.800");
+  --color-ui-sidebar-lighter-1: theme("colors.gray.700");
+  --color-ui-primary-lighter-1: theme("colors.indigo.300");
+  --color-ui-border: theme("colors.gray.800");
+  --color-ui-primary: theme("colors.indigo.500");
+  --color-ui-footer: theme("colors.gray.700");
 
-  --color-ui-warning: theme('colors.yellow.900');
-  --color-ui-warning-border: theme('colors.yellow.600');
-  --color-ui-note: theme('colors.indigo.900');
-  --color-ui-note-border: theme('colors.indigo.600');
-  --color-ui-deprecated: theme('colors.red.900');
-  --color-ui-deprecated-border: theme('colors.red.600');
+  --color-ui-warning: theme("colors.yellow.900");
+  --color-ui-warning-border: theme("colors.yellow.600");
+  --color-ui-note: theme("colors.indigo.900");
+  --color-ui-note-border: theme("colors.indigo.600");
+  --color-ui-deprecated: theme("colors.red.900");
+  --color-ui-deprecated-border: theme("colors.red.600");
   --color-ui-supported: rgba(16, 195, 109, 0.45);
 
   // Icons for BCD table
-  --icon-platform-desktop: url('/icons-dark/computer-line.svg');
-  --icon-platform-mobile: url('/icons-dark/smartphone-line.svg');
-  --icon-platform-server: url('/icons-dark/server-line.svg');
-  --icon-browser-chrome: url('/icons-dark/chrome-line.svg');
-  --icon-browser-edge: url('/icons-dark/edge-fill.svg');
-  --icon-browser-firefox: url('/icons-dark/firefox-line.svg');
-  --icon-browser-ie: url('/icons-dark/ie-fill.svg');
-  --icon-browser-opera: url('/icons-dark/opera-fill.svg');
-  --icon-browser-safari: url('/icons-dark/safari-line.svg');
-  --icon-browser-android: url('/icons-dark/android-line.svg');
-  --icon-browser-samsung-internet: url('/icons-dark/samsung-internet.svg');
-  --icon-browser-deno: url('/icons-dark/deno-fill.svg');
-  --icon-browser-nodejs: url('/icons-dark/nodejs-line.svg');
+  --icon-platform-desktop: url("/icons-dark/computer-line.svg");
+  --icon-platform-mobile: url("/icons-dark/smartphone-line.svg");
+  --icon-platform-server: url("/icons-dark/server-line.svg");
+  --icon-browser-chrome: url("/icons-dark/chrome-line.svg");
+  --icon-browser-edge: url("/icons-dark/edge-fill.svg");
+  --icon-browser-firefox: url("/icons-dark/firefox-line.svg");
+  --icon-browser-ie: url("/icons-dark/ie-fill.svg");
+  --icon-browser-opera: url("/icons-dark/opera-fill.svg");
+  --icon-browser-safari: url("/icons-dark/safari-line.svg");
+  --icon-browser-android: url("/icons-dark/android-line.svg");
+  --icon-browser-samsung-internet: url("/icons-dark/samsung-internet.svg");
+  --icon-browser-deno: url("/icons-dark/deno-fill.svg");
+  --icon-browser-nodejs: url("/icons-dark/nodejs-line.svg");
 
   // translation status
   --color-intl-status-not-translated: rgba(252, 85, 85, 0.4);
@@ -82,7 +82,7 @@ html[lights-out] {
   --color-intl-status-up-to-date: rgba(16, 195, 109, 0.45);
 
   pre,
-  code[class*='language-'] {
+  code[class*="language-"] {
     @apply bg-ui-border;
   }
 }
@@ -119,7 +119,7 @@ h4 {
 
   a {
     &::before {
-      content: '#';
+      content: "#";
       margin-right: -1em;
       padding-left: 0.125em;
       @apply text-ui-primary absolute opacity-0 float-left;
@@ -174,12 +174,12 @@ blockquote {
 }
 
 .wd-doc-page .sidebar {
-    @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
-    transform: translateX(-100%);
+  @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
+  transform: translateX(-100%);
 }
 
 .wd-doc-page .sidebar.open {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 @screen lg {
@@ -198,4 +198,64 @@ blockquote {
 }
 .doc-status__table .doc-status--translated.doc-status--up-to-date {
   background-color: var(--color-intl-status-up-to-date);
+}
+
+.disabled {
+  cursor: not-allowed;
+  filter: opacity(0.5);
+  pointer-events: none;
+}
+
+.hit-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.search-hits {
+  max-height: calc(100vh - 120px);
+}
+
+.search-dummy {
+  max-height: 40px;
+}
+
+.ais-SearchBox-form::before {
+  background: rgba(0, 0, 0, 0)
+    url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%235a5e9a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22%3E%3C%2Fline%3E%3C%2Fsvg%3E)
+    repeat scroll 0% 0%;
+  content: "";
+  height: 1rem;
+  left: 1rem;
+  margin-top: -0.5rem;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+}
+
+.ais-PoweredBy {
+  text-align: center;
+  justify-content: center;
+  min-height: 1.6em;
+}
+
+.ais-Hits-item.ais-Hits-item {
+  background-color: var(--color-ui-background);
+  color: var(--color-ui-typo);
+
+  &:hover {
+    background-color: color-mix(
+      in oklab,
+      var(--color-ui-primary) 20%,
+      var(--color-ui-background)
+    );
+
+    h4 {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ais-SearchBox-input.ais-SearchBox-input {
+  background-color: var(--color-ui-sidebar);
+  color: var(--color-ui-typo);
 }

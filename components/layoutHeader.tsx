@@ -1,5 +1,5 @@
 import Logo from './logo';
-import Search from './search';
+import Search from './search/search';
 import ToggleDarkMode from './toggleDarkMode';
 import { GithubIcon } from './icons';
 import Link from 'next/link';
