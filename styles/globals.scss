@@ -5,76 +5,76 @@
 // Colors ----------------------------
 
 :root {
-  --color-ui-background: theme('colors.white');
-  --color-ui-typo: theme('colors.gray.700');
-  --color-ui-sidebar: theme('colors.gray.200');
-  --color-ui-sidebar-lighter-1: theme('colors.gray.50');
-  --color-ui-border: theme('colors.gray.300');
-  --color-ui-primary: theme('colors.indigo.600');
-  --color-ui-footer: theme('colors.gray.100');
-  --color-ui-primary-lighter-1: theme('colors.indigo.300');
+  --color-ui-background: theme("colors.white");
+  --color-ui-typo: theme("colors.gray.700");
+  --color-ui-sidebar: theme("colors.gray.200");
+  --color-ui-sidebar-lighter-1: theme("colors.gray.50");
+  --color-ui-border: theme("colors.gray.300");
+  --color-ui-primary: theme("colors.indigo.600");
+  --color-ui-footer: theme("colors.gray.100");
+  --color-ui-primary-lighter-1: theme("colors.indigo.300");
 
-  --color-ui-warning: theme('colors.yellow.100');
-  --color-ui-warning-border: theme('colors.yellow.500');
-  --color-ui-note: theme('colors.indigo.100');
-  --color-ui-note-border: theme('colors.indigo.500');
-  --color-ui-deprecated: theme('colors.red.100');
-  --color-ui-deprecated-border: theme('colors.red.500');
+  --color-ui-warning: theme("colors.yellow.100");
+  --color-ui-warning-border: theme("colors.yellow.500");
+  --color-ui-note: theme("colors.indigo.100");
+  --color-ui-note-border: theme("colors.indigo.500");
+  --color-ui-deprecated: theme("colors.red.100");
+  --color-ui-deprecated-border: theme("colors.red.500");
   --color-ui-supported: rgba(16, 195, 109, 0.2);
 
   // Icons for BCD table
-  --icon-platform-desktop: url('/icons/computer-line.svg');
-  --icon-platform-mobile: url('/icons/smartphone-line.svg');
-  --icon-platform-server: url('/icons/server-line.svg');
-  --icon-browser-chrome: url('/icons/chrome-line.svg');
-  --icon-browser-edge: url('/icons/edge-fill.svg');
-  --icon-browser-firefox: url('/icons/firefox-line.svg');
-  --icon-browser-ie: url('/icons/ie-fill.svg');
-  --icon-browser-opera: url('/icons/opera-fill.svg');
-  --icon-browser-safari: url('/icons/safari-line.svg');
-  --icon-browser-android: url('/icons/android-line.svg');
-  --icon-browser-samsung-internet: url('/icons/samsung-internet.svg');
-  --icon-browser-deno: url('/icons/deno-fill.svg');
-  --icon-browser-nodejs: url('/icons/nodejs-line.svg');
+  --icon-platform-desktop: url("/icons/computer-line.svg");
+  --icon-platform-mobile: url("/icons/smartphone-line.svg");
+  --icon-platform-server: url("/icons/server-line.svg");
+  --icon-browser-chrome: url("/icons/chrome-line.svg");
+  --icon-browser-edge: url("/icons/edge-fill.svg");
+  --icon-browser-firefox: url("/icons/firefox-line.svg");
+  --icon-browser-ie: url("/icons/ie-fill.svg");
+  --icon-browser-opera: url("/icons/opera-fill.svg");
+  --icon-browser-safari: url("/icons/safari-line.svg");
+  --icon-browser-android: url("/icons/android-line.svg");
+  --icon-browser-samsung-internet: url("/icons/samsung-internet.svg");
+  --icon-browser-deno: url("/icons/deno-fill.svg");
+  --icon-browser-nodejs: url("/icons/nodejs-line.svg");
 
   // translation status
   --color-intl-status-not-translated: rgba(252, 115, 115, 0.3);
   --color-intl-status-out-of-date: rgba(251, 191, 26, 0.3);
-  --color-intl-status-up-to-date: rgba(16, 195, 109, 0.3);  
+  --color-intl-status-up-to-date: rgba(16, 195, 109, 0.3);
 }
 
 html[lights-out] {
-  --color-ui-background: theme('colors.gray.900');
-  --color-ui-typo: theme('colors.gray.100');
-  --color-ui-sidebar: theme('colors.gray.800');
-  --color-ui-sidebar-lighter-1: theme('colors.gray.700');
-  --color-ui-primary-lighter-1: theme('colors.indigo.300');
-  --color-ui-border: theme('colors.gray.800');
-  --color-ui-primary: theme('colors.indigo.500');
-  --color-ui-footer: theme('colors.gray.700');
+  --color-ui-background: theme("colors.gray.900");
+  --color-ui-typo: theme("colors.gray.100");
+  --color-ui-sidebar: theme("colors.gray.800");
+  --color-ui-sidebar-lighter-1: theme("colors.gray.700");
+  --color-ui-primary-lighter-1: theme("colors.indigo.300");
+  --color-ui-border: theme("colors.gray.800");
+  --color-ui-primary: theme("colors.indigo.500");
+  --color-ui-footer: theme("colors.gray.700");
 
-  --color-ui-warning: theme('colors.yellow.900');
-  --color-ui-warning-border: theme('colors.yellow.600');
-  --color-ui-note: theme('colors.indigo.900');
-  --color-ui-note-border: theme('colors.indigo.600');
-  --color-ui-deprecated: theme('colors.red.900');
-  --color-ui-deprecated-border: theme('colors.red.600');
+  --color-ui-warning: theme("colors.yellow.900");
+  --color-ui-warning-border: theme("colors.yellow.600");
+  --color-ui-note: theme("colors.indigo.900");
+  --color-ui-note-border: theme("colors.indigo.600");
+  --color-ui-deprecated: theme("colors.red.900");
+  --color-ui-deprecated-border: theme("colors.red.600");
   --color-ui-supported: rgba(16, 195, 109, 0.45);
 
   // Icons for BCD table
-  --icon-platform-desktop: url('/icons-dark/computer-line.svg');
-  --icon-platform-mobile: url('/icons-dark/smartphone-line.svg');
-  --icon-platform-server: url('/icons-dark/server-line.svg');
-  --icon-browser-chrome: url('/icons-dark/chrome-line.svg');
-  --icon-browser-edge: url('/icons-dark/edge-fill.svg');
-  --icon-browser-firefox: url('/icons-dark/firefox-line.svg');
-  --icon-browser-ie: url('/icons-dark/ie-fill.svg');
-  --icon-browser-opera: url('/icons-dark/opera-fill.svg');
-  --icon-browser-safari: url('/icons-dark/safari-line.svg');
-  --icon-browser-android: url('/icons-dark/android-line.svg');
-  --icon-browser-samsung-internet: url('/icons-dark/samsung-internet.svg');
-  --icon-browser-deno: url('/icons-dark/deno-fill.svg');
-  --icon-browser-nodejs: url('/icons-dark/nodejs-line.svg');
+  --icon-platform-desktop: url("/icons-dark/computer-line.svg");
+  --icon-platform-mobile: url("/icons-dark/smartphone-line.svg");
+  --icon-platform-server: url("/icons-dark/server-line.svg");
+  --icon-browser-chrome: url("/icons-dark/chrome-line.svg");
+  --icon-browser-edge: url("/icons-dark/edge-fill.svg");
+  --icon-browser-firefox: url("/icons-dark/firefox-line.svg");
+  --icon-browser-ie: url("/icons-dark/ie-fill.svg");
+  --icon-browser-opera: url("/icons-dark/opera-fill.svg");
+  --icon-browser-safari: url("/icons-dark/safari-line.svg");
+  --icon-browser-android: url("/icons-dark/android-line.svg");
+  --icon-browser-samsung-internet: url("/icons-dark/samsung-internet.svg");
+  --icon-browser-deno: url("/icons-dark/deno-fill.svg");
+  --icon-browser-nodejs: url("/icons-dark/nodejs-line.svg");
 
   // translation status
   --color-intl-status-not-translated: rgba(252, 85, 85, 0.4);
@@ -82,7 +82,7 @@ html[lights-out] {
   --color-intl-status-up-to-date: rgba(16, 195, 109, 0.45);
 
   pre,
-  code[class*='language-'] {
+  code[class*="language-"] {
     @apply bg-ui-border;
   }
 }
@@ -119,7 +119,7 @@ h4 {
 
   a {
     &::before {
-      content: '#';
+      content: "#";
       margin-right: -1em;
       padding-left: 0.125em;
       @apply text-ui-primary absolute opacity-0 float-left;
@@ -174,12 +174,12 @@ blockquote {
 }
 
 .wd-doc-page .sidebar {
-    @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
-    transform: translateX(-100%);
+  @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
+  transform: translateX(-100%);
 }
 
 .wd-doc-page .sidebar.open {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 @screen lg {
@@ -198,4 +198,20 @@ blockquote {
 }
 .doc-status__table .doc-status--translated.doc-status--up-to-date {
   background-color: var(--color-intl-status-up-to-date);
+}
+
+.index {
+  margin-bottom: 1rem;
+
+  ul {
+    margin: 0.5rem 0 2rem;
+
+    @media screen and (min-width: 1200px) {
+      columns: 3;
+    }
+
+    li {
+      margin: 0 0 0.5rem;
+    }
+  }
 }
