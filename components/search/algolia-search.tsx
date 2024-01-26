@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import type { MenuItem } from 'instantsearch.js/es/connectors/menu/connectMenu';
 import 'instantsearch.css/themes/satellite.css';
 import { useMemo } from 'react';
 import {
@@ -6,9 +7,9 @@ import {
   type HitsProps,
   Menu,
   PoweredBy,
-  RefinementList,
   SearchBox,
   type SearchBoxProps,
+  useInstantSearch,
 } from 'react-instantsearch';
 
 import Hit from './hit';
@@ -23,6 +24,56 @@ const SEARCH_BOX_CLASS_NAMES: SearchBoxProps['classNames'] = {
     'absolute inset-y-0 left-0 flex items-center justify-center px-3 py-2 opacity-50',
 };
 
+const SECTION_LABELS: Record<string, string> = {
+  css: 'CSS',
+  glossary: 'Глосарій',
+  guide: 'Посібники',
+  html: 'HTML',
+  javascript: 'JavaScript',
+  svg: 'SVG',
+};
+
+const PAGE_TYPE_LABELS: Record<string, string> = {
+  'css-at-rule': 'Директиви CSS',
+  'css-function': 'Функції CSS',
+  'css-module': 'Модулі CSS',
+  'css-property': 'Властивості CSS',
+  'css-pseudo-class': 'Псевдокласи CSS',
+  'css-pseudo-element': 'Псевдоелементи CSS',
+  'css-selector': 'Селектори CSS',
+  'css-shorthand-property': 'Властивості-скорочення CSS',
+  'css-type': 'Типи CSS',
+  'glossary-definition': 'Визначення глосарія',
+  'glossary-disambiguation': 'Уоднозначнення глосарія',
+  guide: 'Посібники',
+  'javascript-class': 'Класи JavaScript',
+  'javascript-constructor': 'Конструктори JavaScript',
+  'javascript-instance-method': 'Методи примірників JavaScript',
+  'javascript-language-feature': 'Мовні особливості JavaScript',
+  'javascript-namespace': 'Простори імен JavaScript',
+  'javascript-operator': 'Оператори JavaScript',
+  'javascript-statement': 'Інструкції JavaScript',
+  'javascript-static-method': 'Статичні методи JavaScript',
+  'html-attribute': 'Атрибути HTML',
+  'html-attribute-value': 'Значення атрибутів HTML',
+  'html-element': 'Елементи HTML',
+  'landing-page': 'Цільові сторінки',
+};
+
+function transformSectionItems(items: MenuItem[]) {
+  return items.map((item) => ({
+    ...item,
+    label: SECTION_LABELS[item.label] || item.label,
+  }));
+}
+
+function transformPageTypeItems(items: MenuItem[]) {
+  return items.map((item) => ({
+    ...item,
+    label: PAGE_TYPE_LABELS[item.label] || item.label,
+  }));
+}
+
 export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
   const hitsClassNames = useMemo<HitsProps<HitType>['classNames']>(
     () => ({
@@ -31,6 +82,9 @@ export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
     }),
     []
   );
+  const {
+    indexUiState: { menu: { section } = {} },
+  } = useInstantSearch();
   return (
     <>
       <SearchBox
@@ -49,7 +103,14 @@ export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
             document.documentElement.dataset.theme == 'dark' ? 'dark' : 'light'
           }
         />
-        <Menu attribute="section" />
+        <Menu attribute="section" transformItems={transformSectionItems} />
+        {section && (
+          <Menu
+            attribute="page-type"
+            className="border-t"
+            transformItems={transformPageTypeItems}
+          />
+        )}
         <NoResultsBoundary fallback={<NoResults />}>
           <Hits classNames={hitsClassNames} hitComponent={Hit} />
         </NoResultsBoundary>
