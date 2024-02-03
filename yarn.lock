@@ -814,10 +814,10 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.22.1":
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.22.1.tgz#d053aabc740854074e182beaaaca071c4b2c1eb8"
-  integrity sha512-WeFxQ+JboYi/yMzp7pIZe5E38Rus0AAsbkJxrCsU0fg5DqLZlWpAiGxlQcXyCzbdeS2+2Qx6bmGFgOikswcdvw==
+"@webdoky/content-processor@^1.22.2":
+  version "1.22.2"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.22.2.tgz#12d79a92e047c57997be5bc5273d563cda9e3062"
+  integrity sha512-wDhvRWREO7OuAP9sdtq52itRCU4KtFXuRG9eWMXouSE/HQcjerLU3srTMLRpDypxlHp+j6dTMjZGzqjsK1hLoA==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
