@@ -20,6 +20,8 @@
   --color-ui-note-border: theme("colors.indigo.500");
   --color-ui-deprecated: theme("colors.red.100");
   --color-ui-deprecated-border: theme("colors.red.500");
+  --color-ui-experimental: theme("colors.purple.100");
+  --color-ui-experimental-border: theme("colors.purple.500");
   --color-ui-supported: rgba(16, 195, 109, 0.2);
 
   // Icons for BCD table
@@ -59,6 +61,8 @@ html[lights-out] {
   --color-ui-note-border: theme("colors.indigo.600");
   --color-ui-deprecated: theme("colors.red.900");
   --color-ui-deprecated-border: theme("colors.red.600");
+  --color-ui-experimental: theme("colors.purple.800");
+  --color-ui-experimental-border: theme("colors.purple.400");
   --color-ui-supported: rgba(16, 195, 109, 0.45);
 
   // Icons for BCD table
