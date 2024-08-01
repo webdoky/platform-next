@@ -18,7 +18,7 @@ export default function populateChangelogWithLinks(
     const correctedSlug = slug
       .replaceAll('_colon_', ':')
       .replaceAll('_doublecolon_', '::')
-      .replaceAll('_asterisk_', '*');
+      .replaceAll('_star_', '*');
     const changedPage = slugsToPaths.get(toLower(correctedSlug));
     if (changedPage?.path) {
       return `${action}(${section}):</strong> <a href="${changedPage.path}">${
