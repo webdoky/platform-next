@@ -201,7 +201,8 @@
   // notecards
   .notecard__warning,
   .notecard__note,
-  .notecard__deprecated {
+  .notecard__deprecated,
+  .notecard__experimental {
     @apply border-l-4 py-2 pl-4 pr-4 mb-4;
 
     h4 {
@@ -226,6 +227,11 @@
   .notecard__note {
     background: var(--color-ui-note);
     border-color: var(--color-ui-note-border);
+  }
+
+  .notecard__experimental {
+    background: var(--color-ui-experimental);
+    border-color: var(--color-ui-experimental-border);
   }
 
   // spec table
