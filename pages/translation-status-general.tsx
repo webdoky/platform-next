@@ -59,10 +59,10 @@ export default function IndexPage({
           <div className="order-1 w-full md:w-2/3">
             <div className="wd-content">
               <h1 id="пара-слів-про-нас">
+                Стан перекладу документації загалом
                 <a href="#Стан-перекладу-документації" aria-hidden="true">
                   <span className="icon icon-link"></span>
                 </a>
-                Стан перекладу документації загалом
               </h1>
               <p>
                 <Link href="/translation-status-priority/">
@@ -70,10 +70,10 @@ export default function IndexPage({
                 </Link>
               </p>
               <h2 id="як-зявився-цей-проєкт">
+                Огляд
                 <a href="#Огляд" aria-hidden="true">
                   <span className="icon icon-link"></span>
                 </a>
-                Огляд
               </h2>
               <p>
                 Нижче наведена порівняльна таблиця стану перекладу документації
