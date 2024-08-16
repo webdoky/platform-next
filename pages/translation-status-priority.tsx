@@ -58,10 +58,10 @@ export default function IndexPage({
           <div className="order-1 w-full md:w-2/3">
             <div className="wd-content">
               <h1 id="пара-слів-про-нас">
+                Статус перекладу пріоритетних сторінок
                 <a href="#Стан-перекладу-документації" aria-hidden="true">
                   <span className="icon icon-link"></span>
                 </a>
-                Статус перекладу пріоритетних сторінок
               </h1>
               <p>
                 <Link href="/translation-status-general/">
@@ -69,10 +69,10 @@ export default function IndexPage({
                 </Link>
               </p>
               <h2 id="як-зявився-цей-проєкт">
+                Огляд
                 <a href="#Огляд" aria-hidden="true">
                   <span className="icon icon-link"></span>
                 </a>
-                Огляд
               </h2>
               <p>
                 Популярність різних сторінок береться з аналітики MDN, де ця
