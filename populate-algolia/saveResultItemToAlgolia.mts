@@ -1,12 +1,13 @@
-import type { SearchIndex } from 'algoliasearch';
-import type { PrebuildResultItem } from './transformPrebuildResultItem.mjs';
-import getStringByteSize from './getStringByteSize.mjs';
+import type { Algoliasearch } from 'algoliasearch';
 
-const CHUNK_SIZE = 1000;
+import getStringByteSize from './getStringByteSize.mjs';
+import type { PrebuildResultItem } from './transformPrebuildResultItem.mjs';
+
+const CHUNK_SIZE = 5000;
 export default async function saveResultItemToAlgolia(
   resultItem: PrebuildResultItem,
   text: string,
-  index: SearchIndex
+  client: Algoliasearch
 ): Promise<void> {
   const contentChunks: string[] = [];
   let nextChunk = '';
@@ -22,11 +23,12 @@ export default async function saveResultItemToAlgolia(
   if (nextChunk) {
     contentChunks.push(nextChunk + '.');
   }
-  await index.saveObjects(
-    contentChunks.map((content, i) => ({
+  await client.saveObjects({
+    indexName: process.env.NEXT_PUBLIC_ALGOLIA_INDEX,
+    objects: contentChunks.map((content, i) => ({
       objectID: `${resultItem.slug}-${i}`,
       ...resultItem,
       content,
-    }))
-  );
+    })),
+  });
 }

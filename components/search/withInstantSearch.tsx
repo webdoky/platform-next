@@ -4,6 +4,10 @@ import { InstantSearch } from 'react-instantsearch';
 import { getAlgoliaIndexName, getAlgoliaClient } from '../../utils/algolia';
 import SearchFocusedContext from './context';
 
+const FUTURE = {
+  preserveSharedStateOnUnmount: true,
+};
+
 export default function withInstantSearch<T extends Record<string, unknown>>(
   Component: FC<T>
 ) {
@@ -16,7 +20,11 @@ export default function withInstantSearch<T extends Record<string, unknown>>(
       [isFocused, setIsFocused]
     );
     return (
-      <InstantSearch indexName={indexName} searchClient={searchClient}>
+      <InstantSearch
+        future={FUTURE}
+        indexName={indexName}
+        searchClient={searchClient}
+      >
         <SearchFocusedContext.Provider value={searchFocusedValue}>
           <Component {...props} />
         </SearchFocusedContext.Provider>

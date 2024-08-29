@@ -1,7 +1,8 @@
+import { readFile } from 'fs/promises';
+
 import transformPrebuildResultItem, {
   type PrebuildResultItem,
 } from './transformPrebuildResultItem.mjs';
-import { readFile } from 'fs/promises';
 
 export default async function extractPrebuildResultItem(
   filePath: string

@@ -16,6 +16,7 @@ const NO_GO_TAGS: string[] = [
   '.bc-data',
   '.bc-specs',
   'iframe',
+  '#Quick_links',
 ];
 
 const CUT_MARKERS: string[] = [
