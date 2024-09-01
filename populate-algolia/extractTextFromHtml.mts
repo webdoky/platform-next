@@ -26,41 +26,6 @@ const CUT_MARKERS: string[] = [
   '#sumisnist-z-brauzeramy',
 ];
 
-const BLANK_REGEXP = /^\s+$/;
-
-// export default function extractTextFromHtml(htmlCode: string): string {
-//   if (!htmlCode) {
-//     throw new Error(`No HTML code provided`);
-//   }
-//   const $ = load(htmlCode);
-//   NO_GO_TAGS.forEach((noGoTag) => {
-//     $(noGoTag).remove();
-//   });
-//   CUT_MARKERS.forEach((cutMarker) => {
-//     const cutMarkerElement = $(cutMarker);
-//     cutMarkerElement.nextAll().remove();
-//     cutMarkerElement.remove();
-//   });
-//   const linesArray = $.root()
-//     .children()
-//     .map((_, element) => {
-//       if (element.tagName === 'UL') {
-//         return element.children;
-//       }
-//       return [element];
-//     })
-//     .toArray()
-//     .flat()
-//     .map((element) => $.text([element]));
-//   console.log('linesArray', linesArray);
-//   let text = linesArray.filter((line) => !line.match(BLANK_REGEXP)).join('\n');
-//   text = text.replace(/(\s)+/g, '$1').trim();
-//   if (!text) {
-//     throw new Error(`No text found in HTML`);
-//   }
-//   return text;
-// }
-
 export default function extractTextFromHtml(htmlCode: string): string {
   if (!htmlCode) {
     throw new Error(`No HTML code provided`);

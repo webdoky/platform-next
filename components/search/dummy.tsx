@@ -31,7 +31,7 @@ export default function SearchDummy() {
         </button>
         <span className="ais-SearchBox-loadingIndicator" hidden={!isFocused}>
           <svg
-            aria-label="Results are loading"
+            aria-label="Результати завантажуються"
             width="16"
             height="16"
             viewBox="0 0 38 38"
