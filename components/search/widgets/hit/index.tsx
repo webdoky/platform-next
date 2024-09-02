@@ -5,7 +5,7 @@ import { Highlight, Snippet } from 'react-instantsearch';
 
 import SectionIcon from './sectionIcon';
 import useHit from './useHit';
-import type { Hit } from './validation';
+import type { Hit } from './models';
 
 export default function Hit({ hit }: { hit: Hit & HitType }) {
   const { handleClick, isLoading } = useHit();

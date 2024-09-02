@@ -1,9 +1,9 @@
-import { useCallback, useContext } from 'react';
+import { useCallback } from 'react';
 
-import SearchFocusedContext from './context';
+import useFocus from './useFocus';
 
-export default function SearchDummy() {
-  const { isFocused, setIsFocused } = useContext(SearchFocusedContext);
+export default function SearchFallback() {
+  const { isFocused, setIsFocused } = useFocus();
   const handleFocus = useCallback(() => setIsFocused(true), [setIsFocused]);
   return (
     <div className="ais-SearchBox w-full search-dummy" onFocus={handleFocus}>
