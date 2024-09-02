@@ -11,10 +11,12 @@ import {
   useInstantSearch,
 } from 'react-instantsearch';
 
+import useFocus from '../useFocus';
+
 import Hit from './hit';
 import NoResults from './noResults';
 import NoResultsBoundary from './noResultsBoundary';
-import type { Hit as HitType } from './validation';
+import type { Hit as HitType } from './hit/models';
 
 import 'instantsearch.css/themes/satellite.css';
 
@@ -75,7 +77,9 @@ function transformPageTypeItems(items: MenuItem[]) {
   }));
 }
 
-export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
+export default function SearchWidgets() {
+  const { isFocused } = useFocus();
+
   const hitsClassNames = useMemo<HitsProps<HitType>['classNames']>(
     () => ({
       item: 'border-ui-sidebar border-b',
@@ -83,9 +87,11 @@ export default function AlgoliaSearch({ isFocused }: { isFocused: boolean }) {
     }),
     []
   );
+
   const {
     indexUiState: { menu: { section } = {} },
   } = useInstantSearch();
+
   return (
     <>
       <SearchBox

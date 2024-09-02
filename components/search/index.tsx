@@ -1,18 +1,35 @@
-import SearchDummy from './dummy';
-import useSearch from './useSearch';
-import withInstantSearch from './withInstantSearch';
+import { lazy, Suspense, useMemo } from 'react';
+import { InstantSearch } from 'react-instantsearch';
 
-function Search() {
-  const { AlgoliaSearch, handleFocus, isFocused, rootReference } = useSearch();
+import { getAlgoliaIndexName, getAlgoliaClient } from '../../utils/algolia';
+
+import { FocusOuterWrapper, FocusProvider } from './useFocus';
+
+import SearchFallback from './fallback';
+
+const SearchWidgets = lazy(() => import('./widgets'));
+
+const FUTURE = {
+  preserveSharedStateOnUnmount: true,
+};
+
+export default function Search() {
+  const searchClient = useMemo(() => getAlgoliaClient(), []);
+  const indexName = useMemo(() => getAlgoliaIndexName(), []);
+
   return (
-    <div className="relative" onFocus={handleFocus} ref={rootReference}>
-      {typeof AlgoliaSearch === 'function' ? (
-        <AlgoliaSearch isFocused={isFocused} />
-      ) : (
-        <SearchDummy />
-      )}
-    </div>
+    <InstantSearch
+      future={FUTURE}
+      indexName={indexName}
+      searchClient={searchClient}
+    >
+      <FocusProvider>
+        <FocusOuterWrapper className="relative">
+          <Suspense fallback={<SearchFallback />}>
+            <SearchWidgets />
+          </Suspense>
+        </FocusOuterWrapper>
+      </FocusProvider>
+    </InstantSearch>
   );
 }
-
-export default withInstantSearch(Search);
