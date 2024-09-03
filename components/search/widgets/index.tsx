@@ -51,6 +51,7 @@ const PAGE_TYPE_LABELS: Record<string, string> = {
   guide: 'Посібники',
   'javascript-class': 'Класи JavaScript',
   'javascript-constructor': 'Конструктори JavaScript',
+  'javascript-instance-data-property': 'Властивості даних JavaScript',
   'javascript-instance-method': 'Методи примірників JavaScript',
   'javascript-language-feature': 'Мовні особливості JavaScript',
   'javascript-namespace': 'Простори імен JavaScript',
@@ -61,6 +62,7 @@ const PAGE_TYPE_LABELS: Record<string, string> = {
   'html-attribute-value': 'Значення атрибутів HTML',
   'html-element': 'Елементи HTML',
   'landing-page': 'Цільові сторінки',
+  'svg-attribute': 'Атрибути SVG',
 };
 
 function transformSectionItems(items: MenuItem[]) {
