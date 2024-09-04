@@ -189,16 +189,16 @@ export default function TranslationStatus({
       </div>
 
       <h2 id="Стан-перекладу-за-розділами">
+        Стан перекладу за розділами
         <a href="#Стан-перекладу-за-розділами" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        Стан перекладу за розділами
       </h2>
       <h3 id="CSS">
+        CSS
         <a href="#CSS" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        CSS
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection
@@ -208,10 +208,10 @@ export default function TranslationStatus({
       </div>
 
       <h3 id="HTML">
+        HTML
         <a href="#HTML" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        HTML
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection
@@ -221,10 +221,10 @@ export default function TranslationStatus({
       </div>
 
       <h3 id="JavaScript">
+        JavaScript
         <a href="#JavaScript" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        JavaScript
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection
@@ -234,10 +234,10 @@ export default function TranslationStatus({
       </div>
 
       <h3 id="SVG">
+        SVG
         <a href="#SVG" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        SVG
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection
@@ -247,10 +247,10 @@ export default function TranslationStatus({
       </div>
 
       <h3 id="Посібники">
+        Посібники
         <a href="#Посібники" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        Посібники
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection
@@ -260,10 +260,10 @@ export default function TranslationStatus({
       </div>
 
       <h3 id="Глосарій">
+        Глосарій
         <a href="#Глосарій" aria-hidden="true">
           <span className="icon icon-link"></span>
         </a>
-        Глосарій
       </h3>
       <div className="wd-table-scroll">
         <TranslationStatusSection

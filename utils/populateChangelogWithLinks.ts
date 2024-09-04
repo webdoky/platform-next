@@ -15,12 +15,16 @@ export default function populateChangelogWithLinks(
   slugsToPaths: Map<string, { path?: string; title?: string }>
 ): string {
   return changelog.replaceAll(CHANGE_REGEXP, (_, action, section, slug) => {
-    const changedPage = slugsToPaths.get(toLower(slug));
+    const correctedSlug = slug
+      .replaceAll('_colon_', ':')
+      .replaceAll('_doublecolon_', '::')
+      .replaceAll('_star_', '*');
+    const changedPage = slugsToPaths.get(toLower(correctedSlug));
     if (changedPage?.path) {
       return `${action}(${section}):</strong> <a href="${changedPage.path}">${
-        changedPage.title ? escape(changedPage.title) : slug
+        changedPage.title ? escape(changedPage.title) : correctedSlug
       }</a>`;
     }
-    return `${action}(${section}):</strong> ${slug}`;
+    return `${action}(${section}):</strong> ${correctedSlug}`;
   });
 }
