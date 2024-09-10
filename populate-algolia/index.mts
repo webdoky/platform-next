@@ -1,16 +1,17 @@
+import { writeFile } from 'fs/promises';
+
 import * as dotenv from 'dotenv';
 import fg from 'fast-glob';
 
+import extractPrebuildResultItem from './extractPrebuildResultItem.mjs';
 import extractTextFromHtml from './extractTextFromHtml.mjs';
-import getAlgoliaIndex from './getAlgoliaIndex.mjs';
+import getAlgoliaClient from './getAlgoliaClient.mjs';
 import hash from './hash.mjs';
 import { getHash, initHashes, saveHash } from './hashes.mjs';
-import extractPrebuildResultItem from './extractPrebuildResultItem.mjs';
 import saveResultItemToAlgolia from './saveResultItemToAlgolia.mjs';
-import { writeFile } from 'fs/promises';
 
 dotenv.config({ path: '.env.local' });
-const index = getAlgoliaIndex();
+const client = getAlgoliaClient();
 
 async function run() {
   try {
@@ -41,7 +42,7 @@ async function run() {
       if (process.env.NODE_ENV !== 'production') {
         await writeFile('debug.txt', text, 'utf8');
       }
-      await saveResultItemToAlgolia(resultItem, text, index);
+      await saveResultItemToAlgolia(resultItem, text, client);
       await saveHash(slug, newHash);
       filesProcessed++;
     }
