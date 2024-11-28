@@ -7,7 +7,7 @@ export function getHash(slug: string): string | undefined {
 
 export async function saveHash(slug: string, hashValue: string): Promise<void> {
   hashes[slug] = hashValue;
-  const json = JSON.stringify(hashes);
+  const json = JSON.stringify(hashes, null, 2);
   await writeFile('hashes.json', json, 'utf8');
 }
 

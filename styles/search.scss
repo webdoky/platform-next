@@ -1,0 +1,148 @@
+.disabled {
+  cursor: not-allowed;
+  filter: opacity(0.5);
+  pointer-events: none;
+}
+
+.hit-link {
+  color: currentColor;
+  padding: 1.5rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.search-hits {
+  max-height: calc(100vh - 120px);
+}
+
+.search-dummy {
+  max-height: 40px;
+}
+
+.ais-SearchBox-form::before {
+  background: rgba(0, 0, 0, 0)
+    url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%235a5e9a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22%3E%3C%2Fline%3E%3C%2Fsvg%3E)
+    repeat scroll 0% 0%;
+  content: "";
+  height: 1rem;
+  left: 1rem;
+  margin-top: -0.5rem;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+}
+
+.ais-PoweredBy {
+  text-align: center;
+  justify-content: center;
+  min-height: 1.6em;
+}
+
+.ais-Hits-item.ais-Hits-item {
+  background-color: var(--color-ui-background);
+  color: var(--color-ui-typo);
+  padding: 0;
+
+  &:hover {
+    filter: contrast(1.2);
+
+    h4 {
+      text-decoration: underline;
+    }
+  }
+  h4 svg {
+    display: inline;
+    margin-right: 0.5em;
+    max-height: 1em;
+  }
+}
+
+.ais-SearchBox-input.ais-SearchBox-input {
+  background-color: var(--color-ui-sidebar);
+  color: var(--color-ui-typo);
+}
+
+.ais-Menu-list.ais-Menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  padding: 0 0.5rem;
+}
+
+.hit-css {
+  color: color-mix(
+    in oklab,
+    theme("colors.orange.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.orange.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-glossary {
+  color: color-mix(
+    in oklab,
+    theme("colors.gray.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.gray.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-guide {
+  color: color-mix(
+    in oklab,
+    theme("colors.purple.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.purple.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-html {
+  color: color-mix(
+    in oklab,
+    theme("colors.green.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.green.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-javascript {
+  color: color-mix(
+    in oklab,
+    theme("colors.yellow.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.yellow.500") 20%,
+    var(--color-ui-background)
+  );
+}
+
+.hit-svg {
+  color: color-mix(
+    in oklab,
+    theme("colors.pink.500") 20%,
+    var(--color-ui-typo)
+  );
+  background-color: color-mix(
+    in oklab,
+    theme("colors.pink.500") 20%,
+    var(--color-ui-background)
+  );
+}
