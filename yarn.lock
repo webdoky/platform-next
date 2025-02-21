@@ -794,10 +794,10 @@
   resolved "https://registry.yarnpkg.com/@use-it/interval/-/interval-1.0.0.tgz#c42c68f22ca29a0dc929041746373d94496d2b3a"
   integrity sha512-WQFcnSt/xM/mS8ZtJ0ut5lhPrl+V0HDPPcI/J0eUClsfiD+/r8A7IeW/pVcfpSVGWRmN3+WnjNteWuKyWs2WZg==
 
-"@webdoky/content-processor@^1.24.1":
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.24.1.tgz#c7d62e69b6e72eebb4befe63d3e82da10d8892c8"
-  integrity sha512-xH9FxHJ7TfhERE4zCfCYJrmVrQJMblyrq1dQbLNlZcjom7MIiRluSWU2z4Szj+s0st8Ww+p7RI6L/Vja8QPLmg==
+"@webdoky/content-processor@^1.25.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@webdoky/content-processor/-/content-processor-1.25.0.tgz#b5bc6482612e41f6cea487ee98c15ab9159faaec"
+  integrity sha512-SlpwMnh8B/szEzuP3kJh4/QUl4DmgdRaPr2VUF7J4B2WCFSXXYG94WkxcyHPNprTKce4UgTuYGmgcQN7FvypaQ==
   dependencies:
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
