@@ -65,7 +65,6 @@ export default function TranslationStatus({
     html: [],
     javascript: [],
     svg: [],
-    guide: [],
     glossary: [],
   };
 
@@ -103,7 +102,6 @@ export default function TranslationStatus({
     ...supportedSections.html,
     ...supportedSections.javascript,
     ...supportedSections.svg,
-    ...supportedSections.guide,
   ];
 
   return (
@@ -169,11 +167,6 @@ export default function TranslationStatus({
               allPages={supportedSections.svg}
               title="SVG"
               anchor="SVG"
-            />
-            <TranslationOverallStatusRow
-              allPages={supportedSections.guide}
-              title="Посібники"
-              anchor="Посібники"
             />
             <TranslationOverallStatusRow
               allPages={supportedSections.glossary}
@@ -242,19 +235,6 @@ export default function TranslationStatus({
       <div className="wd-table-scroll">
         <TranslationStatusSection
           pages={filterPages(supportedSections.svg, filterState)}
-          includePopularity={true}
-        />
-      </div>
-
-      <h3 id="Посібники">
-        Посібники
-        <a href="#Посібники" aria-hidden="true">
-          <span className="icon icon-link"></span>
-        </a>
-      </h3>
-      <div className="wd-table-scroll">
-        <TranslationStatusSection
-          pages={filterPages(supportedSections.guide, filterState)}
           includePopularity={true}
         />
       </div>
