@@ -11,6 +11,7 @@ import LayoutFooter from '../../../components/layoutFooter';
 import MetaHead from '../../../components/metaHead';
 import { normalizeUrl } from '../../../utils/url';
 import CtaTranslate from '../../../components/ctaTranslate';
+import BaselineIndicator from '../../../components/baselineIndicator/baselineIndicator';
 
 const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
 
@@ -59,6 +60,7 @@ export default function DocEntry({
     originalPath,
     path,
     section,
+    baseline,
   } = page;
   const robots = hasContent ? 'all' : 'noindex,nofollow';
   const hasSidebar = !!macros?.length;
@@ -125,7 +127,10 @@ export default function DocEntry({
                 <div className="wd-content">
                   <h1>{title}</h1>
                   {hasContent ? (
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                    <>
+                      <BaselineIndicator status={baseline} />
+                      <div dangerouslySetInnerHTML={{ __html: content }} />
+                    </>
                   ) : (
                     <div>
                       <p>

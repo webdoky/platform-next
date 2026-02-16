@@ -17,6 +17,12 @@ export interface MacroData {
   result: string;
 }
 
+export interface BaselineItem {
+  baseline: false | 'high' | 'low';
+  baseline_low_date?: string;
+  support: Record<string, string>;
+}
+
 export interface ContentItem {
   id?: string; // TODO???
   title: string;
@@ -37,6 +43,7 @@ export interface ContentItem {
   browser_compat: unknown; // TODO::
   prev?: string;
   next?: string;
+  baseline: BaselineItem;
 }
 
 // TODO: merge types
@@ -82,6 +89,7 @@ export interface PageData {
   slug: string;
   tags: string[];
   browserCompat: string;
+  baseline: BaselineItem;
 }
 
 const readIndex = async (): Promise<IndexFileObject> => {
