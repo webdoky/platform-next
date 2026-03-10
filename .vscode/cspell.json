@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en-US,uk",
+  "languageId": "*",
+  "dictionaries": [
+    "bash",
+    "css",
+    "filetypes",
+    "fullstack",
+    "html",
+    "latex",
+    "markdown",
+    "node",
+    "npm",
+    // "project-words",
+    "spelling-additions",
+    // "ignore-additions",
+    "softwareTerms",
+    "typescript"
+  ],
+  "ignorePaths": [".vscode/cspell.json", ".vscode/extensions.json", "/*.txt"],
+  "allowCompoundWords": true,
+  "dictionaryDefinitions": [
+    {
+      "name": "spelling-additions",
+      "path": "../uk_spelling_additions.txt",
+      "addWords": true
+    }
+    // {
+    //   "name": "ignore-additions",
+    //   "path": "../uk_ignore_additions.txt",
+    //   "addWords": true
+    // },
+    // {
+    //   "name": "project-words",
+    //   "path": "../en_spelling_additions.txt",
+    //   "addWords": true
+    // }
+  ]
+}
