@@ -1,5 +1,8 @@
 import classNames from 'classnames';
 import Link from 'next/link';
+import type { MouseEventHandler } from 'react';
+
+import confirmMdnNavigation from '../utils/confirm-mdn-navigation';
 
 export interface LinkItem {
   path: string;
@@ -10,14 +13,21 @@ export interface LinkItem {
 
 interface Params {
   isCurrent: boolean;
+  isMissing: boolean;
   page: LinkItem;
 }
-
-export default function WdNavItem({ page, isCurrent }: Params) {
+export default function WdNavItem({ isCurrent, isMissing, page }: Params) {
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = isMissing
+    ? (event) => {
+        event.preventDefault();
+        confirmMdnNavigation(page.path);
+      }
+    : null;
   return (
     <Link
       href={page.path}
       className="flex items-center py-1 relative text-ui-typo no-underline"
+      onClick={handleClick}
       passHref
     >
       <span

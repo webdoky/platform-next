@@ -1,18 +1,19 @@
-import WdLayout from '../../../components/wdLayout';
-import WdContentLoader, { ContentItem } from '../../../content/wdContentLoader';
-import { XIcon, MenuIcon } from '../../../components/icons';
 import classNames from 'classnames';
-import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import WdNav from '../../../components/wdNav';
-import WdOnThisPage from '../../../components/wdOnThisPage';
+import { useCallback, useEffect, useRef, useState } from 'react';
+
+import CtaTranslate from '../../../components/ctaTranslate';
 import EditOnGithub from '../../../components/editOnGithub';
+import { XIcon, MenuIcon } from '../../../components/icons';
 import LayoutFooter from '../../../components/layoutFooter';
 import MetaHead from '../../../components/metaHead';
+import WdLayout from '../../../components/wdLayout';
+import WdNav from '../../../components/wdNav';
+import WdOnThisPage from '../../../components/wdOnThisPage';
+import WdContentLoader, { ContentItem } from '../../../content/wdContentLoader';
+import getMdnUrl from '../../../utils/get-mdn-url';
 import { normalizeUrl } from '../../../utils/url';
-import CtaTranslate from '../../../components/ctaTranslate';
-
-const mdnUrlPrefix = 'https://developer.mozilla.org/en-US/docs/';
+import confirmMdnNavigation from '../../../utils/confirm-mdn-navigation';
 
 export async function getStaticPaths() {
   const pages = await WdContentLoader.getAll(['slug']);
@@ -99,6 +100,46 @@ export default function DocEntry({
     top: `${headerHeight}px`,
     height: `calc(100vh - ${headerHeight}px)`,
   };
+  const contentWrapperReference = useRef(null);
+
+  const handleLinkClick = useCallback(
+    (event) => {
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute('href');
+      if (
+        event.currentTarget.classList.contains('wd-nav-link--not-translated')
+      ) {
+        confirmMdnNavigation(href);
+        return;
+      }
+      if (href) {
+        router.push(href);
+      }
+    },
+    [router]
+  );
+
+  useEffect(() => {
+    if (!contentWrapperReference.current) {
+      return;
+    }
+    // Find nested internal links and add click handler
+    const links = contentWrapperReference.current.querySelectorAll(
+      'a[href^="/"]'
+    ) as HTMLAnchorElement[];
+    links.forEach((link) => {
+      // Ignore for in-page anchor
+      if (link.getAttribute('href').startsWith('#')) {
+        return;
+      }
+      link.addEventListener('click', handleLinkClick);
+    });
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('click', handleLinkClick);
+      });
+    };
+  }, [handleLinkClick]);
 
   return (
     <main className="wd-doc-page">
@@ -125,7 +166,10 @@ export default function DocEntry({
                 <div className="wd-content">
                   <h1>{title}</h1>
                   {hasContent ? (
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                    <div
+                      dangerouslySetInnerHTML={{ __html: content }}
+                      ref={contentWrapperReference}
+                    />
                   ) : (
                     <div>
                       <p>
@@ -135,7 +179,7 @@ export default function DocEntry({
                       </p>
                       <a
                         className="wd-external"
-                        href={`${mdnUrlPrefix}${slug}`}
+                        href={getMdnUrl(slug)}
                         target="_blank"
                         rel=" noopener noreferrer"
                       >
@@ -192,7 +236,7 @@ export default function DocEntry({
 
         <footer className="border-t border-ui-border">
           <LayoutFooter
-            originalLink={`${mdnUrlPrefix}${slug}`}
+            originalLink={getMdnUrl(slug)}
             originalTitle={title}
             originalPath={originalPath}
           />

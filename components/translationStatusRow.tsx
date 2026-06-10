@@ -1,5 +1,8 @@
 import { ContentItem } from '../content/wdContentLoader';
 import classNames from 'classnames';
+
+import getMdnUrl from '../utils/get-mdn-url';
+import CopyToClipboard from './copyToClipboard';
 import {
   GithubIcon,
   GlobeIcon,
@@ -7,7 +10,6 @@ import {
   TerminalIcon,
   FileCodeIcon,
 } from './icons';
-import CopyToClipboard from './copyToClipboard';
 
 interface Params {
   page: Partial<ContentItem & { popularity: number }>;
@@ -62,9 +64,7 @@ export default function TranslationStatusRow({
 
   const noteOnUpdate = `Оригінальний вміст: [${escapeHtml(
     title
-  )}@MDN](https://developer.mozilla.org/en-us/docs/${
-    page.slug
-  }), [сирці ${escapeHtml(
+  )}@MDN](${getMdnUrl(page.slug)}), [сирці ${escapeHtml(
     title
   )}@GitHub](https://github.com/mdn/content/blob/main/files/en-us${
     page.originalPath
@@ -136,7 +136,7 @@ export default function TranslationStatusRow({
           <a
             className="text-ui-typo px-2"
             title="Переглянути оригінальний текст на MDN"
-            href={`https://developer.mozilla.org/en-us/docs/${page.slug}`}
+            href={getMdnUrl(page.slug)}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -160,7 +160,7 @@ export default function TranslationStatusRow({
               <CopyToClipboard
                 text={noteOnUpdate}
                 className={'px-2'}
-                title={'Cкопіювати перелік комітів зі змінами'}
+                title={'Скопіювати перелік комітів зі змінами'}
               >
                 <CopyIcon size={1.7} />
               </CopyToClipboard>
@@ -168,7 +168,7 @@ export default function TranslationStatusRow({
               <CopyToClipboard
                 text={gitDiffCommand}
                 className={'px-2'}
-                title={'Cкопіювати команду Git для перегляду всіх змін'}
+                title={'Скопіювати команду Git для перегляду всіх змін'}
               >
                 <FileCodeIcon size={1.7} />
               </CopyToClipboard>
@@ -181,7 +181,7 @@ export default function TranslationStatusRow({
                 text={bashCommand}
                 className={'px-2'}
                 title={
-                  'Cкопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
+                  'Скопіювати bash скрипт для ініціалізації файлу перекладу (скопіювати і виконати в корені репозиторію)'
                 }
               >
                 <TerminalIcon size={1.7} />
@@ -190,7 +190,7 @@ export default function TranslationStatusRow({
               <CopyToClipboard
                 text={noteOnUpdate}
                 className={'px-2'}
-                title={'Cкопіювати заголовок для коміт-повідомлення'}
+                title={'Скопіювати заголовок для коміт-повідомлення'}
               >
                 <CopyIcon size={1.7} />
               </CopyToClipboard>

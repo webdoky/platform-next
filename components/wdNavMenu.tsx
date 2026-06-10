@@ -41,7 +41,11 @@ export default function WdNavMenu({ supSection }: Params) {
                 !link.hasLocalizedContent ? MISSING_TRANSLATION_MESSAGE : ''
               }
             >
-              <WdNavItem page={link} isCurrent={link.isCurrent} />
+              <WdNavItem
+                page={link}
+                isCurrent={link.isCurrent}
+                isMissing={!link.hasLocalizedContent}
+              />
             </li>
           ))}
         </ul>
@@ -79,7 +83,11 @@ export default function WdNavMenu({ supSection }: Params) {
                           : ''
                       }
                     >
-                      <WdNavItem page={page} isCurrent={page.isCurrent} />
+                      <WdNavItem
+                        page={page}
+                        isCurrent={page.isCurrent}
+                        isMissing={!page.hasLocalizedContent}
+                      />
                     </li>
                   ))}
                 </ul>
