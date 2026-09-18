@@ -1,9 +1,15 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+// eslint-disable-next-line @next/next/no-script-in-document
+import Script from 'next/script';
 
 export default function Document() {
   return (
     <Html lang="uk-UA">
       <Head>
+        <Script
+          src="../utils/apply-dark-mode.ts"
+          strategy="beforeInteractive"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html:
